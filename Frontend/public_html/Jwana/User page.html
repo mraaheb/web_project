@@ -1,15 +1,186 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodMeals | User Page</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="topbar">
+    <div class="container topbar-row">
+      <a class="brand" href="index.html">
+        <span class="brand-dot"></span>
+        <span class="brand-name">MoodMeals</span>
+        <span class="brand-sub">Easy Healthy Recipes</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="user.html" class="nav-link active">User</a>
+        <a href="my-recipes.html" class="nav-link">My Recipes</a>
+      </nav>
+
+      <div class="auth">
+        <button class="btn btn-outline" id="signOutBtn">Sign Out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+
+      <!-- Welcome -->
+      <div class="section-head">
+        <h1 class="page-title">Welcome, <span id="userNameText">User</span> 👋</h1>
+        <p class="muted">Here you can explore recipes, like, and add favorites.</p>
+      </div>
+
+      <!-- User Info -->
+      <section class="panel">
+        <div class="panel-head">
+          <h2>User Information</h2>
+          <a class="btn btn-primary small-btn" href="my-recipes.html">Go to My Recipes</a>
+        </div>
+
+        <div class="user-info">
+          <img id="userAvatar" class="avatar" src="images/default-user.png" alt="User profile">
+          <div>
+            <div class="user-name" id="userFullName">Guest User</div>
+            <div class="muted" id="userEmail">guest@email.com</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- All Recipes + Filter -->
+      <section class="panel">
+        <div class="panel-head">
+          <h2>All Available Recipes</h2>
+
+          <div class="filter-row">
+            <label class="muted" for="categoryFilter">Filter by category:</label>
+            <select id="categoryFilter" class="select">
+              <option value="all">All</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+              <option value="snack">Snack</option>
+              <option value="drink">Drink</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table" id="allRecipesTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Recipe Name</th>
+                <th>Recipe Photo</th>
+                <th>Recipe Creator</th>
+                <th>Total Likes</th>
+                <th>Category</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <!-- SAMPLE DATA (Phase 1) -->
+              <tr data-category="drink">
+                <td>1</td>
+                <td>Green Energy Smoothie</td>
+                <td><img src="images/green-energy-smoothie.jpg" alt="Green Energy Smoothie" class="recipe-photo" /></td>
+                <td><img src="images/user1.jpg" alt="John Doe" class="creator-photo" /> John Doe</td>
+                <td>42</td> <!-- Sample like count -->
+                <td>Drink</td>
+                <td class="actions">
+                  <button class="btn btn-outline mini" data-action="like">Like</button>
+                  <button class="btn btn-outline mini" data-action="fav">Favorite</button>
+                  <a class="btn btn-primary mini" href="view-recipe.html?id=1">View</a>
+                </td>
+              </tr>
+
+              <tr data-category="breakfast">
+                <td>2</td>
+                <td>Cinnamon Fruit Oats</td>
+                <td><img src="images/cinnamon-fruit-oats.jpg" alt="Cinnamon Fruit Oats" class="recipe-photo" /></td>
+                <td><img src="images/user2.jpg" alt="Jane Doe" class="creator-photo" /> Jane Doe</td>
+                <td>35</td>
+                <td>Breakfast</td>
+                <td class="actions">
+                  <button class="btn btn-outline mini" data-action="like">Like</button>
+                  <button class="btn btn-outline mini" data-action="fav">Favorite</button>
+                  <a class="btn btn-primary mini" href="view-recipe.html?id=2">View</a>
+                </td>
+              </tr>
+
+              <tr data-category="lunch">
+                <td>3</td>
+                <td>Fresh Quinoa Salad</td>
+                <td><img src="images/fresh-quinoa-salad.jpg" alt="Fresh Quinoa Salad" class="recipe-photo" /></td>
+                <td><img src="images/user3.jpg" alt="Alice Smith" class="creator-photo" /> Alice Smith</td>
+                <td>50</td>
+                <td>Lunch</td>
+                <td class="actions">
+                  <button class="btn btn-outline mini" data-action="like">Like</button>
+                  <button class="btn btn-outline mini" data-action="fav">Favorite</button>
+                  <a class="btn btn-primary mini" href="view-recipe.html?id=3">View</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="muted note">
+          * Like/Favorite buttons are for Phase 1 UI only (no backend).
+        </p>
+      </section>
+
+      <!-- Favorites Table -->
+      <section class="panel">
+        <div class="panel-head">
+          <h2>My Favorite Recipes</h2>
+          <p class="muted">Demo favorites list (Phase 1).</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table" id="favTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Recipe Name</th>
+                <th>Recipe Photo</th>
+                <th>Creator</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+
+            <tbody id="favBody">
+              <tr>
+                <td>1</td>
+                <td>Fresh Quinoa Salad</td>
+                <td><img src="images/fresh-quinoa-salad.jpg" alt="Fresh Quinoa Salad" class="recipe-photo" /></td>
+                <td><img src="images/user3.jpg" alt="Alice Smith" class="creator-photo" /> Alice Smith</td>
+                <td><button class="btn btn-outline mini" disabled>Remove</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div class="muted">©️ 2026 MoodMeals</div>
+      <div class="muted">User Page</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
 </html>
