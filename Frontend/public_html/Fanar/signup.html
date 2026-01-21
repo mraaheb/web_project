@@ -1,59 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VibeBite | Sign up</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> VibeBite | Sign up</title>
+  <link rel="stylesheet" href="../CSS/Fanar.css" />
 </head>
 
 <body>
-<div class="auth-bg" style="background-image:url('../images/Signup.png')"></div>
+  <div class="bg-blobs" aria-hidden="true"></div>
 
-<header class="header">
-  <div class="logo">
-    <img src="../images/logo.png">
-  </div>
-</header>
+  <header class="header" id="top">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <div class="logo">
+          <img src="../images/logo.png" alt="VibeBite logo" >
+        </div>
+      </a>
 
-<main class="auth-box">
-  <h1>Create account ✨</h1>
-  <p>Join VibeBite and save your favorite recipes.</p>
-
-  <form>
-    <div class="line-field">
-      <label>First name</label>
-      <input required>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="login.html">Login</a>
+        <a class="btn btn-main" href="signup.html">Sign up</a>
+      </div>
     </div>
+  </header>
 
-    <div class="line-field">
-      <label>Last name</label>
-      <input required>
+
+  <footer class="footer">
+    <div class="footer-center">
+      <div class="foot-name">VibeBite</div>
+      <div class="foot-small">Bites for every vibe.</div>
+
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <span>|</span>
+        <a href="#">Twitter</a>
+      </div>
+
+      <div class="copy">© 2026 VibeBite</div>
     </div>
+  </footer>
 
-    <div class="line-field">
-      <label>Email</label>
-      <input type="email" required>
-    </div>
-
-    <div class="line-field">
-      <label>Password</label>
-      <input type="password" required>
-    </div>
-
-    <div class="line-actions">
-      <button class="btn btn-main">Create account</button>
-      <button class="btn btn-dark" type="button"
-        onclick="slide('login.html','left')">Back</button>
-    </div>
-  </form>
-
-  <p>
-    Already have an account?
-    <a href="login.html" data-slide="left">Login</a>
-  </p>
-</main>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
