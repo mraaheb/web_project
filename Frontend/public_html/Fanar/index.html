@@ -3,295 +3,220 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> VibeBite | Home</title>
+  <title>VibeBite | Home</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
-  <!-- NAV -->
-  <header class="header">
+<body>
+  <div class="bg-blobs" aria-hidden="true"></div>
+
+  <header class="header" id="top">
     <div class="nav">
       <a class="brand" href="index.html">
         <div class="logo">
-          <span class="logo-icon">🫶</span>
-          <span class="logo-text"> VibeBite </span>
+          <img src="../images/logo.png" alt="VibeBite logo" >
         </div>
-        <div class="tagline">Pick your mood, find your meal</div>
       </a>
 
-      <nav class="menu">
-        <a href="#moods">Moods</a>
-        <a href="#why">Why</a>
-        <a href="#picks">Quick Picks</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <!-- Required: login + sign up on homepage -->
       <div class="nav-actions">
-        <a class="btn btn-ghost" href="login.html">Log-in</a>
-        <a class="btn" href="signup.html">Sign-up</a>
+        <a class="btn btn-ghost" href="login.html">Login</a>
+        <a class="btn btn-main" href="signup.html">Sign up</a>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
-    <div class="hero-img">
-      <img
-        src="https://images.unsplash.com/photo-1543353071-087092ec393a?auto=format&fit=crop&w=1600&q=80"
-        alt="Healthy bowl"
-      />
-    </div>
-
     <div class="hero-box">
-      <div class="hero-mini">MOOD-BASED HEALTHY RECIPES</div>
       <h1>How do you feel today?</h1>
       <p>
-        You don’t always know what to eat… but you always know your mood.
-        Choose a vibe and get quick healthy recipes made for students.
+        Not sure what to eat? Start with how you feel.
+        Choose a mood and explore quick, healthy recipes made for students.
       </p>
 
       <div class="hero-buttons">
-        <a class="btn" href="#moods">Choose a Mood</a>
-        <a class="btn btn-dark" href="#picks">See Quick Picks</a>
+        <a class="btn btn-main" href="#moods">Choose a Mood</a>
+        <a class="btn btn-dark" href="#picks">Quick Picks</a>
+      </div>
+    </div>
+
+    <div class="hero-img">
+      <img src="../images/hero.png" alt="Healthy bowl">
+
+      <div class="hero-float f1">
+        <div class="float-icon" aria-hidden="true">🍽️</div>
+        <div class="float-text">
+          <div class="float-num">200+</div>
+          <div class="float-sub">recipes</div>
+        </div>
       </div>
 
-      <div class="hero-tags">
-        <span class="tag">⏱️ 10–20 min</span>
-        <span class="tag">💸 Budget</span>
-        <span class="tag">🥦 Healthy</span>
+      <div class="hero-float f2">
+        <div class="float-icon" aria-hidden="true">🥬</div>
+        <div class="float-text">
+          <div class="float-num">Healthy</div>
+          <div class="float-sub">quick choices</div>
+        </div>
+      </div>
+
+      <div class="hero-float f3">
+        <div class="float-icon" aria-hidden="true">❤️</div>
+        <div class="float-text">
+          <div class="float-num">14.5K</div>
+          <div class="float-sub">loved recipes</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- MOODS (like cards row) -->
   <section class="section" id="moods">
     <div class="container">
       <div class="section-title">
-        <div class="leaf">✦</div>
         <h2>Choose Your Mood</h2>
-        <p>Pick a feeling — we’ll match it with recipes that fit your day.</p>
+        <p>Select your mood to explore matching recipe categories.</p>
       </div>
 
       <div class="mood-grid">
-        <a class="mood focus" href="#">
-          <div class="mood-emoji">🎯</div>
-          <div class="mood-name">Focus</div>
-          <div class="mood-text">Light meals for study time</div>
-        </a>
-
-        <a class="mood calm" href="#">
-          <div class="mood-emoji">🌿</div>
-          <div class="mood-name">Calm</div>
-          <div class="mood-text">Soft & cozy but still healthy</div>
-        </a>
-
-        <a class="mood energy" href="#">
-          <div class="mood-emoji">⚡</div>
-          <div class="mood-name">Energy</div>
-          <div class="mood-text">Quick fuel that feels clean</div>
-        </a>
-
-        <a class="mood comfort" href="#">
-          <div class="mood-emoji">🤍</div>
-          <div class="mood-name">Comfort</div>
-          <div class="mood-text">Warm meals for tough days</div>
-        </a>
-
-        <a class="mood light" href="#">
-          <div class="mood-emoji">🥗</div>
-          <div class="mood-name">Light</div>
-          <div class="mood-text">Fresh & easy on the stomach</div>
-        </a>
-
-        <a class="mood night" href="#">
-          <div class="mood-emoji">🌙</div>
-          <div class="mood-name">Slow Night</div>
-          <div class="mood-text">Chill meals for late evenings</div>
-        </a>
+        <a class="mood focus" href="#picks"><div class="mood-emoji">🎯</div><div class="mood-name">Focus</div></a>
+        <a class="mood calm" href="#picks"><div class="mood-emoji">🌿</div><div class="mood-name">Calm</div></a>
+        <a class="mood energy" href="#picks"><div class="mood-emoji">⚡</div><div class="mood-name">Energy</div></a>
+        <a class="mood comfort" href="#picks"><div class="mood-emoji">🤍</div><div class="mood-name">Comfort</div></a>
+        <a class="mood light" href="#picks"><div class="mood-emoji">🥗</div><div class="mood-name">Light</div></a>
+        <a class="mood night" href="#picks"><div class="mood-emoji">🌙</div><div class="mood-name">Night</div></a>
       </div>
     </div>
   </section>
 
-  <!-- WHY CHOOSE US (3 cards like bakery) -->
-  <section class="section alt" id="why">
+  <section class="section alt" id="picks">
     <div class="container">
       <div class="section-title">
-        <div class="leaf">✦</div>
-        <h2>Why MoodMeals?</h2>
-        <p>Made for real student life — quick, simple, and mood-friendly.</p>
+        <h2>Bites for every vibe</h2>
       </div>
 
-      <div class="cards">
-        <article class="card">
-          <div class="card-img">
-            <img
-              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80"
-              alt="Healthy ingredients"
-            />
-          </div>
-          <h3>Healthy, not boring</h3>
-          <p>Simple ingredients, balanced meals, and real flavor.</p>
-          <a class="btn btn-small" href="#picks">View recipes</a>
-        </article>
+      <div class="picks-wrap">
+        <button class="p-arrow" id="picksLeft" type="button" aria-label="Previous">
+          <span class="arr">‹</span>
+        </button>
 
-        <article class="card">
-          <div class="card-img">
-            <img
-              src="https://images.unsplash.com/photo-1556911220-e15b29be8cde?auto=format&fit=crop&w=1200&q=80"
-              alt="Quick cooking"
-            />
-          </div>
-          <h3>Quick steps</h3>
-          <p>Perfect for dorms & small kitchens. 10–20 minutes.</p>
-          <a class="btn btn-small" href="#picks">View recipes</a>
-        </article>
+        <div class="picks-viewport" aria-label="Quick Picks slider">
+          <div class="pick-track" id="pickTrack">
+            <a class="pick" href="viewrecipe.html">
+              <div class="pick-overlay">
+                <span class="pick-badge light">Light</span>
+                <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
+              </div>
+              <img src="../images/Lemon Chicken Salad.png" alt="Lemon Chicken Salad">
+              <div class="pick-info">
+                <div class="pick-name">Lemon Chicken Salad</div>
+                <div class="pick-meta">15 min • high protein • fresh <br>⭐⭐⭐⭐⭐</div>
+              </div>
+            </a>
 
-        <article class="card">
-          <div class="card-img">
-            <img
-              src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=1200&q=80"
-              alt="Cozy meal"
-            />
+            <a class="pick" href="viewrecipe.html">
+              <div class="pick-overlay">
+                <span class="pick-badge energy">Energy</span>
+                <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
+              </div>
+              <img src="../images/Energy Wrap.jpg" alt="Energy Wrap">
+              <div class="pick-info">
+                <div class="pick-name">Energy Wrap</div>
+                <div class="pick-meta">10 min • no oven • veggies <br>⭐⭐⭐⭐</div>
+              </div>
+            </a>
+
+            <a class="pick" href="viewrecipe.html">
+              <div class="pick-overlay">
+                <span class="pick-badge comfort">Comfort</span>
+                <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
+              </div>
+              <img src="../images/Comfort Pasta Bowl.png" alt="Comfort Pasta Bowl">
+              <div class="pick-info">
+                <div class="pick-name">Comfort Pasta Bowl</div>
+                <div class="pick-meta">20 min • cozy • easy <br>⭐⭐⭐⭐</div>
+              </div>
+            </a>
+
+            <a class="pick" href="viewrecipe.html">
+              <div class="pick-overlay">
+                <span class="pick-badge focus">Focus</span>
+                <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
+              </div>
+              <img src="../images/Rice Bowl.JPG" alt="Focus Rice Bowl">
+              <div class="pick-info">
+                <div class="pick-name">Focus Rice Bowl</div>
+                <div class="pick-meta">18 min • study friendly <br>⭐⭐⭐</div>
+              </div>
+            </a>
+
+            <a class="pick" href="viewrecipe.html">
+              <div class="pick-overlay">
+                <span class="pick-badge calm">Calm</span>
+                <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
+              </div>
+              <img src="../images/Calm Soup.WEBP" alt="Calm Soup">
+              <div class="pick-info">
+                <div class="pick-name">Calm Soup</div>
+                <div class="pick-meta">15 min • warm • relaxing <br>⭐⭐</div>
+              </div>
+            </a>
+
+            <a class="pick" href="viewrecipe.html">
+              <div class="pick-overlay">
+                <span class="pick-badge night">Night</span>
+                <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
+              </div>
+              <img src="../images/Slow Night Snack.AVIF" alt="Slow Night Snack">
+              <div class="pick-info">
+                <div class="pick-name">Slow Night Snack</div>
+                <div class="pick-meta">8 min • light • chill <br>⭐⭐⭐⭐</div>
+              </div>
+            </a>
           </div>
-          <h3>Mood match</h3>
-          <p>Food that supports your vibe: focus, calm, energy, comfort.</p>
-          <a class="btn btn-small" href="#moods">Choose mood</a>
-        </article>
+        </div>
+
+        <button class="p-arrow" id="picksRight" type="button" aria-label="Next">
+          <span class="arr">›</span>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- QUICK PICKS (like bakery gallery part but nicer) -->
-  <section class="section" id="picks">
+  <section class="section challenge-cta reveal" id="challenge">
     <div class="container">
-      <div class="section-title">
-        <div class="leaf">✦</div>
-        <h2>Quick Picks</h2>
-        <p>Sample recipes (placeholders for Phase 1).</p>
-      </div>
+      <div class="challenge-float">
+        <div class="challenge-glow" aria-hidden="true"></div>
 
-      <div class="pick-grid">
-        <div class="pick">
-          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80" alt="Salad" />
-          <div class="pick-info">
-            <div class="pick-top">
-              <div class="pick-name">Lemon Chicken Salad</div>
-              <span class="badge light">🥗 Light</span>
+        <div class="challenge-card" data-bg="../images/food.AVIF">
+          <div class="challenge-content">
+            <h2>30-Day Healthy Mood Challenge</h2>
+            <p>
+              A one-month demo that shows how VibeBite suggests meals
+              based on your daily mood — quick, simple, and healthy.
+            </p>
+            <br>
+
+            <div class="challenge-actions">
+              <a href="login.html" class="btn btn-main">Join the Challenge</a>
             </div>
-            <div class="pick-meta">⏱️ 15 min • 💸 cheap • 🥦 high protein</div>
           </div>
         </div>
 
-        <div class="pick">
-          <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80" alt="Wrap" />
-          <div class="pick-info">
-            <div class="pick-top">
-              <div class="pick-name">Energy Wrap</div>
-              <span class="badge energy">⚡ Energy</span>
-            </div>
-            <div class="pick-meta">⏱️ 10 min • 💧 fresh • 🍞 no oven</div>
-          </div>
-        </div>
-
-        <div class="pick">
-          <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1200&q=80" alt="Pasta bowl" />
-          <div class="pick-info">
-            <div class="pick-top">
-              <div class="pick-name">Comfort Pasta Bowl</div>
-              <span class="badge comfort">🤍 Comfort</span>
-            </div>
-            <div class="pick-meta">⏱️ 20 min • 🧀 cozy • 🥦 add veggies</div>
-          </div>
-        </div>
-
-        <div class="pick">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Rice bowl" />
-          <div class="pick-info">
-            <div class="pick-top">
-              <div class="pick-name">Focus Rice Bowl</div>
-              <span class="badge focus">🎯 Focus</span>
-            </div>
-            <div class="pick-meta">⏱️ 18 min • 🍚 simple • 🧠 study-friendly</div>
-          </div>
-        </div>
-
-        <div class="pick">
-          <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=1200&q=80" alt="Soup" />
-          <div class="pick-info">
-            <div class="pick-top">
-              <div class="pick-name">Calm Soup</div>
-              <span class="badge calm">🌿 Calm</span>
-            </div>
-            <div class="pick-meta">⏱️ 15 min • 🍲 warm • 😌 relax</div>
-          </div>
-        </div>
-
-        <div class="pick">
-          <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1200&q=80" alt="Night snack" />
-          <div class="pick-info">
-            <div class="pick-top">
-              <div class="pick-name">Slow Night Snack</div>
-              <span class="badge night">🌙 Night</span>
-            </div>
-            <div class="pick-meta">⏱️ 8 min • 🍓 sweet • 💤 chill</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="center">
-        <a class="btn btn-dark" href="signup.html">Create account →</a>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT (simple) -->
-  <section class="section alt" id="contact">
-    <div class="container">
-      <div class="section-title">
-        <div class="leaf">✦</div>
-        <h2>Contact</h2>
-        <p>For Phase 1, this is just a nice placeholder form.</p>
-      </div>
-
-      <div class="form-box">
-        <div class="two">
-          <div class="field">
-            <label>Name</label>
-            <input type="text" placeholder="Your name" />
-          </div>
-          <div class="field">
-            <label>Email</label>
-            <input type="email" placeholder="name@email.com" />
-          </div>
-        </div>
-
-        <div class="field">
-          <label>Message</label>
-          <textarea rows="5" placeholder="Write your message..."></textarea>
-        </div>
-
-        <div class="right">
-          <button class="btn btn-dark" type="button">Send</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer-box">
-      <div>
-        <div class="foot-name">🫶 MoodMeals</div>
-        <div class="foot-small">Mood-based healthy recipes for students.</div>
+    <div class="footer-center">
+      <div class="foot-name">VibeBite</div>
+      <div class="foot-small">Bites for every vibe.</div>
+
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <span>|</span>
+        <a href="#">Twitter</a>
       </div>
-      <div class="foot-links">
-        <a href="login.html">Log-in</a>
-        <a href="signup.html">Sign-up</a>
-        <a href="#moods">Moods</a>
-      </div>
+
+      <div class="copy">© 2026 VibeBite</div>
     </div>
-    <div class="copy">© 2026 MoodMeals</div>
   </footer>
 
   <script src="script.js"></script>
