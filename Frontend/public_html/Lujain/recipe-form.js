@@ -9,17 +9,25 @@ document.addEventListener("DOMContentLoaded", function () {
     var stepsList = document.getElementById("stepsList");
     var msgAdd = document.getElementById("addRecipeMsg");
 
-    // إضافة مكون جديد
+    // إضافة مكون جديد (Name + Quantity)
     if (addIngBtn && ingList) {
       addIngBtn.addEventListener("click", function () {
         var wrapper = document.createElement("div");
+        wrapper.className = "ingredient-row";
         
-        var inp = document.createElement("input");
-        inp.type = "text";
-        inp.name = "ingredient";
-        inp.placeholder = "e.g., 1 tsp salt";
-        inp.className = "input";
-        inp.required = true;
+        var inpName = document.createElement("input");
+        inpName.type = "text";
+        inpName.name = "ingredient-name";
+        inpName.placeholder = "e.g., Chicken";
+        inpName.className = "input";
+        inpName.required = true;
+        
+        var inpQty = document.createElement("input");
+        inpQty.type = "text";
+        inpQty.name = "ingredient-quantity";
+        inpQty.placeholder = "e.g., 1 breast";
+        inpQty.className = "input";
+        inpQty.required = true;
         
         var deleteBtn = document.createElement("button");
         deleteBtn.type = "button";
@@ -27,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
         deleteBtn.className = "delete-btn";
         deleteBtn.onclick = function() { wrapper.remove(); };
         
-        wrapper.appendChild(inp);
+        wrapper.appendChild(inpName);
+        wrapper.appendChild(inpQty);
         wrapper.appendChild(deleteBtn);
         ingList.appendChild(wrapper);
       });
@@ -79,17 +88,25 @@ document.addEventListener("DOMContentLoaded", function () {
     var stepsList2 = document.getElementById("editStepsList");
     var msgEdit = document.getElementById("editRecipeMsg");
 
-    // إضافة مكون جديد
+    // إضافة مكون جديد (Name + Quantity)
     if (addIngBtn2 && ingList2) {
       addIngBtn2.addEventListener("click", function () {
         var wrapper = document.createElement("div");
+        wrapper.className = "ingredient-row";
         
-        var inp = document.createElement("input");
-        inp.type = "text";
-        inp.name = "ingredient";
-        inp.placeholder = "e.g., 1 tsp salt";
-        inp.className = "input";
-        inp.required = true;
+        var inpName = document.createElement("input");
+        inpName.type = "text";
+        inpName.name = "ingredient-name";
+        inpName.placeholder = "e.g., Chicken";
+        inpName.className = "input";
+        inpName.required = true;
+        
+        var inpQty = document.createElement("input");
+        inpQty.type = "text";
+        inpQty.name = "ingredient-quantity";
+        inpQty.placeholder = "e.g., 1 breast";
+        inpQty.className = "input";
+        inpQty.required = true;
         
         var deleteBtn = document.createElement("button");
         deleteBtn.type = "button";
@@ -97,7 +114,8 @@ document.addEventListener("DOMContentLoaded", function () {
         deleteBtn.className = "delete-btn";
         deleteBtn.onclick = function() { wrapper.remove(); };
         
-        wrapper.appendChild(inp);
+        wrapper.appendChild(inpName);
+        wrapper.appendChild(inpQty);
         wrapper.appendChild(deleteBtn);
         ingList2.appendChild(wrapper);
       });
