@@ -1,15 +1,102 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodMeals | Add Recipe</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/recipe-form.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="topbar">
+    <div class="container topbar-row">
+      <a class="brand" href="index.html">
+        <span class="brand-dot"></span>
+        <span class="brand-name">MoodMeals</span>
+        <span class="brand-sub">Easy Healthy Recipes</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="user.html" class="nav-link">User</a>
+        <a href="my-recipes.html" class="nav-link active">My Recipes</a>
+      </nav>
+      <div class="auth">
+        <button class="btn btn-outline" id="signOutBtn">Sign Out</button>
+      </div>
+    </div>
+  </header>
+  <main class="section">
+    <div class="container">
+      <div class="section-head">
+        <h1 class="page-title">Add New Recipe</h1>
+        <p class="muted">Fill the form below (Phase 1 demo).</p>
+      </div>
+      <section class="panel">
+        <form id="addRecipeForm" class="form-grid">
+          <label class="field">
+            <span>Recipe Name</span>
+            <input type="text" id="recipeName" placeholder="e.g., Chicken Wrap" required>
+          </label>
+          <label class="field">
+            <span>Category</span>
+            <select id="recipeCategory" class="select" required>
+              <option value="">Select...</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+              <option value="snack">Snack</option>
+              <option value="drink">Drink</option>
+            </select>
+          </label>
+          <label class="field full">
+            <span>Description</span>
+            <textarea id="recipeDesc" rows="3" placeholder="Write a short description..." required></textarea>
+          </label>
+          <label class="field full">
+            <span>Recipe Photo</span>
+            <input type="file" id="recipePhoto" accept="image/*">
+            <small class="muted">Optional in Phase 1 (UI only).</small>
+          </label>
+          <label class="field full">
+            <span>Video URL (optional)</span>
+            <input type="url" id="recipeVideo" placeholder="https://youtube.com/...">
+          </label>
+          <!-- Ingredients -->
+          <div class="full">
+            <div class="block-head">
+              <h3>Ingredients</h3>
+              <button type="button" class="btn btn-outline mini" id="addIngredientBtn">+ Add Ingredient</button>
+            </div>
+            <div id="ingredientsList" class="stack">
+              <input class="input" type="text" name="ingredient" placeholder="e.g., 1 chicken breast" required>
+            </div>
+          </div>
+          <!-- Steps -->
+          <div class="full">
+            <div class="block-head">
+              <h3>Instructions</h3>
+              <button type="button" class="btn btn-outline mini" id="addStepBtn">+ Add Step</button>
+            </div>
+            <div id="stepsList" class="stack">
+              <textarea class="input" name="step" rows="2" placeholder="Step 1..." required></textarea>
+            </div>
+          </div>
+          <p id="addRecipeMsg" class="form-msg full"></p>
+          <div class="full form-actions">
+            <button type="submit" class="btn btn-primary">Save Recipe (Demo)</button>
+            <a class="btn btn-outline" href="my-recipes.html">Cancel</a>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container footer-row">
+      <div class="muted">©️ 2026 MoodMeals</div>
+      <div class="muted">Add Recipe Page</div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
 </html>
