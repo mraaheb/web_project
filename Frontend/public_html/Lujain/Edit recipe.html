@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodMeals | Edit Recipe</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/recipe-form.js"></script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="topbar">
+    <div class="container topbar-row">
+      <a class="brand" href="index.html">
+        <span class="brand-dot"></span>
+        <span class="brand-name">MoodMeals</span>
+        <span class="brand-sub">Easy Healthy Recipes</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="user.html" class="nav-link">User</a>
+        <a href="my-recipes.html" class="nav-link active">My Recipes</a>
+      </nav>
+
+      <div class="auth">
+        <button class="btn btn-outline" id="signOutBtn">Sign Out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+
+      <div class="section-head">
+        <h1 class="page-title">Edit Recipe</h1>
+        <p class="muted">Update the recipe info (Phase 1 demo).</p>
+      </div>
+
+      <section class="panel">
+        <form id="editRecipeForm" class="form-grid">
+
+          <label class="field">
+            <span>Recipe Name</span>
+            <input type="text" id="editRecipeName" value="Chicken Wrap" required>
+          </label>
+
+          <label class="field">
+            <span>Category</span>
+            <select id="editRecipeCategory" class="select" required>
+              <option value="">Select...</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch" selected>Lunch</option>
+              <option value="dinner">Dinner</option>
+              <option value="snack">Snack</option>
+              <option value="drink">Drink</option>
+            </select>
+          </label>
+
+          <label class="field full">
+            <span>Description</span>
+            <textarea id="editRecipeDesc" rows="3" required>Quick wrap for busy days.</textarea>
+          </label>
+
+          <label class="field full">
+            <span>Recipe Photo</span>
+            <input type="file" id="editRecipePhoto" accept="image/*">
+            <small class="muted">Optional in Phase 1 (UI only).</small>
+          </label>
+
+          <label class="field full">
+            <span>Video URL (optional)</span>
+            <input type="url" id="editRecipeVideo" value="https://youtube.com/" placeholder="https://youtube.com/...">
+          </label>
+
+          <!-- Ingredients -->
+          <div class="full">
+            <div class="block-head">
+              <h3>Ingredients</h3>
+              <button type="button" class="btn btn-outline mini" id="editAddIngredientBtn">+ Add Ingredient</button>
+            </div>
+
+            <div id="editIngredientsList" class="stack">
+              <input class="input" type="text" name="ingredient" value="1 chicken breast" required>
+              <input class="input" type="text" name="ingredient" value="1 tortilla" required>
+              <input class="input" type="text" name="ingredient" value="Lettuce" required>
+            </div>
+          </div>
+
+          <!-- Steps -->
+          <div class="full">
+            <div class="block-head">
+              <h3>Instructions</h3>
+              <button type="button" class="btn btn-outline mini" id="editAddStepBtn">+ Add Step</button>
+            </div>
+
+            <div id="editStepsList" class="stack">
+              <textarea class="input" name="step" rows="2" required>Cook chicken and slice it.</textarea>
+              <textarea class="input" name="step" rows="2" required>Add lettuce and chicken to tortilla.</textarea>
+              <textarea class="input" name="step" rows="2" required>Wrap and serve.</textarea>
+            </div>
+          </div>
+
+          <p id="editRecipeMsg" class="form-msg full"></p>
+
+          <div class="full form-actions">
+            <button type="submit" class="btn btn-primary">Save Changes (Demo)</button>
+            <a class="btn btn-outline" href="my-recipes.html">Cancel</a>
+          </div>
+
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div class="muted">©️ 2026 MoodMeals</div>
+      <div class="muted">Edit Recipe Page</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
