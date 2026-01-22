@@ -11,7 +11,7 @@
   <!-- Navbar -->
   <header class="topbar">
     <div class="container topbar-row">
-      <a class="brand" href="index.html">
+      <a class="brand" href="../Fanar/index.html">
         <span class="brand-dot"></span>
         <span class="brand-name">MoodMeals</span>
         <span class="brand-sub">Easy Healthy Recipes</span>
@@ -61,15 +61,15 @@
           
           <label class="field full">
             <span>Upload Recipe Photo</span>
-            <input type="file" id="recipePhoto" accept="image/*">
-            <small class="muted">Optional in Phase 1 (UI only).</small>
+            <input type="file" id="recipePhoto" accept="image/*" required>
+            <small class="muted">Required - upload an image of your recipe.</small>
           </label>
           
           <!-- Ingredients -->
           <div class="full">
             <div class="block-head">
               <h3>Ingredients</h3>
-              <button type="button" class="btn btn-outline mini" id="addIngredientBtn">+ Add another ingredient</button>
+              <button type="button" class="btn mini" id="addIngredientBtn">+ Add Ingredient</button>
             </div>
             
             <div id="ingredientsList" class="stack">
@@ -77,10 +77,17 @@
                 <div class="ing-field">
                   <label>Ingredient 1:</label>
                   <div class="ing-inputs">
-                    <input class="input" type="text" name="ingredient-name" placeholder="Name: [name]" required>
-                    <input class="input" type="text" name="ingredient-quantity" placeholder="Quantity: [quantity]" required>
+                    <div class="ing-input-wrapper">
+                      <span class="input-label">Name:</span>
+                      <input class="input" type="text" name="ingredient-name" placeholder="e.g., Chicken" required>
+                    </div>
+                    <div class="ing-input-wrapper">
+                      <span class="input-label">Quantity:</span>
+                      <input class="input" type="text" name="ingredient-quantity" placeholder="e.g., 200g" required>
+                    </div>
                   </div>
                 </div>
+                <button type="button" class="delete-btn">×</button>
               </div>
             </div>
           </div>
@@ -89,13 +96,16 @@
           <div class="full">
             <div class="block-head">
               <h3>Instructions</h3>
-              <button type="button" class="btn btn-outline mini" id="addStepBtn">+ Add another step</button>
+              <button type="button" class="btn mini" id="addStepBtn">+ Add Step</button>
             </div>
             
             <div id="stepsList" class="stack">
-              <div class="step-field">
-                <label>Step 1:</label>
-                <textarea class="input" name="step" rows="2" placeholder="[step instruction]" required></textarea>
+              <div class="step-row">
+                <div class="step-field">
+                  <label>Step 1:</label>
+                  <textarea class="input" name="step" rows="2" placeholder="Describe this step..." required></textarea>
+                </div>
+                <button type="button" class="delete-btn">×</button>
               </div>
             </div>
           </div>
@@ -103,14 +113,14 @@
           <!-- Upload Video or URL -->
           <div class="full">
             <label class="field">
-              <span>Upload Video or URL:</span>
+              <span>Upload Video (Optional):</span>
               <input type="file" id="recipeVideoFile" accept="video/*">
               <small class="muted">Or provide a YouTube URL below</small>
             </label>
             
             <label class="field">
-              <span>Video URL:</span>
-              <input type="url" id="recipeVideo" placeholder="[URL]">
+              <span>Video URL (Optional):</span>
+              <input type="url" id="recipeVideo" placeholder="https://youtube.com/...">
             </label>
           </div>
           
@@ -118,6 +128,7 @@
           
           <div class="full form-actions">
             <button type="submit" class="btn btn-primary">Add Recipe</button>
+            <a href="../Jwana/My recipes.html" class="btn btn-outline">Cancel</a>
           </div>
           
         </form>
@@ -127,8 +138,9 @@
   
   <footer class="footer">
     <div class="container footer-row">
-      <div class="muted">©️ 2026 MoodMeals</div>
+      <div class="foot-name">MoodMeals</div>
       <div class="muted">Add Recipe Page</div>
+      <div class="copy">© 2026 MoodMeals. All rights reserved.</div>
     </div>
   </footer>
   
