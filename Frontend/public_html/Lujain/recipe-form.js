@@ -24,6 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
         var inputsDiv = document.createElement("div");
         inputsDiv.className = "ing-inputs";
         
+        // Name wrapper
+        var nameWrapper = document.createElement("div");
+        nameWrapper.className = "ing-input-wrapper";
+        
+        var nameLabel = document.createElement("span");
+        nameLabel.className = "input-label";
+        nameLabel.textContent = "Name:";
+        
         var inpName = document.createElement("input");
         inpName.type = "text";
         inpName.name = "ingredient-name";
@@ -31,12 +39,29 @@ document.addEventListener("DOMContentLoaded", function () {
         inpName.className = "input";
         inpName.required = true;
         
+        nameWrapper.appendChild(nameLabel);
+        nameWrapper.appendChild(inpName);
+        
+        // Quantity wrapper
+        var qtyWrapper = document.createElement("div");
+        qtyWrapper.className = "ing-input-wrapper";
+        
+        var qtyLabel = document.createElement("span");
+        qtyLabel.className = "input-label";
+        qtyLabel.textContent = "Quantity:";
+        
         var inpQty = document.createElement("input");
         inpQty.type = "text";
         inpQty.name = "ingredient-quantity";
-        inpQty.placeholder = "e.g., 1 breast";
+        inpQty.placeholder = "e.g., 200g";
         inpQty.className = "input";
         inpQty.required = true;
+        
+        qtyWrapper.appendChild(qtyLabel);
+        qtyWrapper.appendChild(inpQty);
+        
+        inputsDiv.appendChild(nameWrapper);
+        inputsDiv.appendChild(qtyWrapper);
         
         var deleteBtn = document.createElement("button");
         deleteBtn.type = "button";
@@ -47,8 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
           updateIngredientLabels();
         };
         
-        inputsDiv.appendChild(inpName);
-        inputsDiv.appendChild(inpQty);
         fieldDiv.appendChild(label);
         fieldDiv.appendChild(inputsDiv);
         wrapper.appendChild(fieldDiv);
@@ -187,6 +210,14 @@ document.addEventListener("DOMContentLoaded", function () {
         var inputsDiv = document.createElement("div");
         inputsDiv.className = "ing-inputs";
         
+        // Name wrapper
+        var nameWrapper = document.createElement("div");
+        nameWrapper.className = "ing-input-wrapper";
+        
+        var nameLabel = document.createElement("span");
+        nameLabel.className = "input-label";
+        nameLabel.textContent = "Name:";
+        
         var inpName = document.createElement("input");
         inpName.type = "text";
         inpName.name = "ingredient-name";
@@ -194,12 +225,29 @@ document.addEventListener("DOMContentLoaded", function () {
         inpName.className = "input";
         inpName.required = true;
         
+        nameWrapper.appendChild(nameLabel);
+        nameWrapper.appendChild(inpName);
+        
+        // Quantity wrapper
+        var qtyWrapper = document.createElement("div");
+        qtyWrapper.className = "ing-input-wrapper";
+        
+        var qtyLabel = document.createElement("span");
+        qtyLabel.className = "input-label";
+        qtyLabel.textContent = "Quantity:";
+        
         var inpQty = document.createElement("input");
         inpQty.type = "text";
         inpQty.name = "ingredient-quantity";
-        inpQty.placeholder = "e.g., 1 breast";
+        inpQty.placeholder = "e.g., 200g";
         inpQty.className = "input";
         inpQty.required = true;
+        
+        qtyWrapper.appendChild(qtyLabel);
+        qtyWrapper.appendChild(inpQty);
+        
+        inputsDiv.appendChild(nameWrapper);
+        inputsDiv.appendChild(qtyWrapper);
         
         var deleteBtn = document.createElement("button");
         deleteBtn.type = "button";
@@ -210,8 +258,6 @@ document.addEventListener("DOMContentLoaded", function () {
           updateEditIngLabels();
         };
         
-        inputsDiv.appendChild(inpName);
-        inputsDiv.appendChild(inpQty);
         fieldDiv.appendChild(label);
         fieldDiv.appendChild(inputsDiv);
         wrapper.appendChild(fieldDiv);
