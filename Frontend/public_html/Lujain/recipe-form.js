@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (addIngBtn && ingList) {
       addIngBtn.addEventListener("click", function () {
         var wrapper = document.createElement("div");
-        wrapper.style.position = "relative";
         
         var inp = document.createElement("input");
         inp.type = "text";
@@ -38,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (addStepBtn && stepsList) {
       addStepBtn.addEventListener("click", function () {
         var wrapper = document.createElement("div");
-        wrapper.style.position = "relative";
         
         var ta = document.createElement("textarea");
         ta.name = "step";
@@ -85,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (addIngBtn2 && ingList2) {
       addIngBtn2.addEventListener("click", function () {
         var wrapper = document.createElement("div");
-        wrapper.style.position = "relative";
         
         var inp = document.createElement("input");
         inp.type = "text";
@@ -110,7 +107,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (addStepBtn2 && stepsList2) {
       addStepBtn2.addEventListener("click", function () {
         var wrapper = document.createElement("div");
-        wrapper.style.position = "relative";
         
         var ta = document.createElement("textarea");
         ta.name = "step";
