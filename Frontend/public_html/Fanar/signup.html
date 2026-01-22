@@ -1,45 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> VibeBite | Sign up</title>
-  <link rel="stylesheet" href="../CSS/Fanar.css" />
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <title>VibeBite | Sign up</title>
+
+  <!-- shared + page styles -->
+  <link rel="stylesheet" href="../CSS/base.css" >
+  <link rel="stylesheet" href="../CSS/Fanar.css" >
 </head>
 
-<body>
-  <div class="bg-blobs" aria-hidden="true"></div>
+<body class="auth-page">
 
-  <header class="header" id="top">
-    <div class="nav">
-      <a class="brand" href="index.html">
-        <div class="logo">
-          <img src="../images/logo.png" alt="VibeBite logo" >
-        </div>
-      </a>
-
-      <div class="nav-actions">
-        <a class="btn btn-ghost" href="login.html">Login</a>
-        <a class="btn btn-main" href="signup.html">Sign up</a>
+  <main class="auth-layout">
+    <!-- LEFT: IMAGE -->
+    <section class="auth-photo" aria-hidden="true">
+      <img src="../images/signup.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="photo-overlay">
+        <h2>Your mood. Your meal.</h2>
+        <p>Recipes chosen for your mood — easy, quick, and healthy.</p>
       </div>
-    </div>
-  </header>
+    </section>
 
-
-  <footer class="footer">
-    <div class="footer-center">
-      <div class="foot-name">VibeBite</div>
-      <div class="foot-small">Bites for every vibe.</div>
-
-      <div class="footer-links">
-        <a href="#">Instagram</a>
-        <span>|</span>
-        <a href="#">Twitter</a>
+    <!-- RIGHT: FORM -->
+    <section class="auth-panel">
+      <div class="auth-top">
+        <a class="auth-brand" href="index.html">
+          <img src="../images/logo.png" alt="VibeBite logo" class="auth-logo" >
+        </a>
       </div>
 
-      <div class="copy">© 2026 VibeBite</div>
-    </div>
-  </footer>
+      <div class="auth-card">
+        <h1 class="auth-title center-title">Create your account ✨</h1>
+        <p class="auth-sub center-sub">Create an account to save recipes and build your favorites.</p>
+
+        <form class="auth-form" id="signupForm" >
+          <div class="grid-2">
+            <div class="field">
+              <label class="field-label" for="firstName">First name</label>
+              <input class="field-input" id="firstName" name="firstName" type="text" placeholder="First name" required >
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="lastName">Last name</label>
+              <input class="field-input" id="lastName" name="lastName" type="text" placeholder="Last name" required >
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="email">Email</label>
+            <input class="field-input" id="email" name="email" type="email" placeholder="name@example.com" required >
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="password">Password</label>
+            <input class="field-input" id="password" name="password" type="password" placeholder="••••••••" required minlength="6" >
+          </div>
+
+          <div class="avatar-row">
+            <div class="avatar-pick">
+              <label class="field-label" for="profileImg">Profile image (optional)</label>
+              <input class="field-file" id="profileImg" name="profileImg" type="file" accept="image/*" >
+            </div>
+          </div>
+
+          <button class="btn btn-main" type="submit">Create account</button>
+
+          <p class="auth-foot">
+            Already have an account?
+            <a href="login.html">Login</a>
+          </p>
+        </form>
+      </div>
+
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
