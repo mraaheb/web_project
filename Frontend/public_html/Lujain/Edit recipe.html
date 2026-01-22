@@ -83,8 +83,14 @@
                 <div class="ing-field">
                   <label>Ingredient 1:</label>
                   <div class="ing-inputs">
-                    <input class="input" type="text" name="ingredient-name" placeholder="Name: [name]" value="Chicken Breast" required>
-                    <input class="input" type="text" name="ingredient-quantity" placeholder="Quantity: [quantity]" value="200g" required>
+                    <div class="ing-input-wrapper">
+                      <span class="input-label">Name:</span>
+                      <input class="input" type="text" name="ingredient-name" value="Chicken Breast" required>
+                    </div>
+                    <div class="ing-input-wrapper">
+                      <span class="input-label">Quantity:</span>
+                      <input class="input" type="text" name="ingredient-quantity" value="200g" required>
+                    </div>
                   </div>
                 </div>
                 <button type="button" class="delete-btn" onclick="this.parentElement.remove();">×</button>
@@ -95,8 +101,14 @@
                 <div class="ing-field">
                   <label>Ingredient 2:</label>
                   <div class="ing-inputs">
-                    <input class="input" type="text" name="ingredient-name" placeholder="Name: [name]" value="Olive Oil" required>
-                    <input class="input" type="text" name="ingredient-quantity" placeholder="Quantity: [quantity]" value="1 tbsp" required>
+                    <div class="ing-input-wrapper">
+                      <span class="input-label">Name:</span>
+                      <input class="input" type="text" name="ingredient-name" value="Olive Oil" required>
+                    </div>
+                    <div class="ing-input-wrapper">
+                      <span class="input-label">Quantity:</span>
+                      <input class="input" type="text" name="ingredient-quantity" value="1 tbsp" required>
+                    </div>
                   </div>
                 </div>
                 <button type="button" class="delete-btn" onclick="this.parentElement.remove();">×</button>
