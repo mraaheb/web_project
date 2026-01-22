@@ -7,8 +7,8 @@ body .section {
   min-height: calc(100vh - 180px);
   padding: 40px 20px;
   background: 
-    radial-gradient(800px 600px at 15% 20%, rgba(39,142,136,.09), transparent 65%),
-    radial-gradient(700px 500px at 85% 80%, rgba(201,154,34,.08), transparent 60%),
+    radial-gradient(circle, rgba(39,142,136,.09) 0%, transparent 70%) 15% 20% / 800px 600px no-repeat,
+    radial-gradient(circle, rgba(201,154,34,.08) 0%, transparent 70%) 85% 80% / 700px 500px no-repeat,
     linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
 }
 
