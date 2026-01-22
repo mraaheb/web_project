@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  var ingredientCounter = 2; // لأن عندنا 2 موجودين
-  var stepCounter = 2; // لأن عندنا 2 موجودين
-
   /* ===== ADD RECIPE: dynamic fields + submit demo ===== */
   var addRecipeForm = document.getElementById("addRecipeForm");
   if (addRecipeForm) {
@@ -15,8 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // إضافة مكون جديد (Name + Quantity) مع Label
     if (addIngBtn && ingList) {
       addIngBtn.addEventListener("click", function () {
-        ingredientCounter++;
-        
         var wrapper = document.createElement("div");
         wrapper.className = "ingredient-row";
         
@@ -24,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fieldDiv.className = "ing-field";
         
         var label = document.createElement("label");
-        label.textContent = "Ingredient " + ingredientCounter + ":";
+        label.textContent = "Ingredient:";
         
         var inputsDiv = document.createElement("div");
         inputsDiv.className = "ing-inputs";
@@ -49,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
         deleteBtn.className = "delete-btn";
         deleteBtn.onclick = function() { 
           wrapper.remove();
-          ingredientCounter--;
           updateIngredientLabels();
         };
         
@@ -60,14 +54,14 @@ document.addEventListener("DOMContentLoaded", function () {
         wrapper.appendChild(fieldDiv);
         wrapper.appendChild(deleteBtn);
         ingList.appendChild(wrapper);
+        
+        updateIngredientLabels();
       });
     }
 
     // إضافة خطوة تعليمات جديدة مع Label
     if (addStepBtn && stepsList) {
       addStepBtn.addEventListener("click", function () {
-        stepCounter++;
-        
         var wrapper = document.createElement("div");
         wrapper.className = "step-row";
         
@@ -75,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fieldDiv.className = "step-field";
         
         var label = document.createElement("label");
-        label.textContent = "Step " + stepCounter + ":";
+        label.textContent = "Step:";
         
         var ta = document.createElement("textarea");
         ta.name = "step";
@@ -90,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
         deleteBtn.className = "delete-btn";
         deleteBtn.onclick = function() { 
           wrapper.remove();
-          stepCounter--;
           updateStepLabels();
         };
         
@@ -99,6 +92,8 @@ document.addEventListener("DOMContentLoaded", function () {
         wrapper.appendChild(fieldDiv);
         wrapper.appendChild(deleteBtn);
         stepsList.appendChild(wrapper);
+        
+        updateStepLabels();
       });
     }
 
@@ -107,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
       labels.forEach(function(label, index) {
         label.textContent = "Ingredient " + (index + 1) + ":";
       });
-      ingredientCounter = labels.length;
     }
 
     function updateStepLabels() {
@@ -115,12 +109,50 @@ document.addEventListener("DOMContentLoaded", function () {
       labels.forEach(function(label, index) {
         label.textContent = "Step " + (index + 1) + ":";
       });
-      stepCounter = labels.length;
     }
+
+    // ربط أزرار الحذف الموجودة مسبقاً
+    function attachDeleteHandlers() {
+      var ingDeleteBtns = ingList.querySelectorAll(".delete-btn");
+      ingDeleteBtns.forEach(function(btn) {
+        btn.onclick = function() {
+          btn.parentElement.remove();
+          updateIngredientLabels();
+        };
+      });
+      
+      var stepDeleteBtns = stepsList.querySelectorAll(".delete-btn");
+      stepDeleteBtns.forEach(function(btn) {
+        btn.onclick = function() {
+          btn.parentElement.remove();
+          updateStepLabels();
+        };
+      });
+    }
+    
+    // تشغيل عند تحميل الصفحة
+    attachDeleteHandlers();
+    updateIngredientLabels();
+    updateStepLabels();
 
     // معالجة إرسال النموذج
     addRecipeForm.addEventListener("submit", function (e) {
       e.preventDefault();
+      
+      // التحقق من وجود ingredients و steps
+      var ingredients = ingList.querySelectorAll(".ingredient-row");
+      var steps = stepsList.querySelectorAll(".step-row");
+      
+      if (ingredients.length === 0) {
+        alert("Please add at least one ingredient!");
+        return false;
+      }
+      
+      if (steps.length === 0) {
+        alert("Please add at least one instruction step!");
+        return false;
+      }
+      
       if (msgAdd) {
         msgAdd.className = "form-msg show";
         msgAdd.textContent = "Recipe saved successfully (demo). Redirecting...";
@@ -140,14 +172,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var stepsList2 = document.getElementById("editStepsList");
     var msgEdit = document.getElementById("editRecipeMsg");
 
-    var editIngCounter = ingList2 ? ingList2.querySelectorAll(".ingredient-row").length : 2;
-    var editStepCounter = stepsList2 ? stepsList2.querySelectorAll(".step-row, .step-field").length : 2;
-
     // إضافة مكون جديد مع Label
     if (addIngBtn2 && ingList2) {
       addIngBtn2.addEventListener("click", function () {
-        editIngCounter++;
-        
         var wrapper = document.createElement("div");
         wrapper.className = "ingredient-row";
         
@@ -155,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fieldDiv.className = "ing-field";
         
         var label = document.createElement("label");
-        label.textContent = "Ingredient " + editIngCounter + ":";
+        label.textContent = "Ingredient:";
         
         var inputsDiv = document.createElement("div");
         inputsDiv.className = "ing-inputs";
@@ -180,7 +207,6 @@ document.addEventListener("DOMContentLoaded", function () {
         deleteBtn.className = "delete-btn";
         deleteBtn.onclick = function() { 
           wrapper.remove();
-          editIngCounter--;
           updateEditIngLabels();
         };
         
@@ -191,14 +217,14 @@ document.addEventListener("DOMContentLoaded", function () {
         wrapper.appendChild(fieldDiv);
         wrapper.appendChild(deleteBtn);
         ingList2.appendChild(wrapper);
+        
+        updateEditIngLabels();
       });
     }
 
     // إضافة خطوة تعليمات جديدة مع Label
     if (addStepBtn2 && stepsList2) {
       addStepBtn2.addEventListener("click", function () {
-        editStepCounter++;
-        
         var wrapper = document.createElement("div");
         wrapper.className = "step-row";
         
@@ -206,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fieldDiv.className = "step-field";
         
         var label = document.createElement("label");
-        label.textContent = "Step " + editStepCounter + ":";
+        label.textContent = "Step:";
         
         var ta = document.createElement("textarea");
         ta.name = "step";
@@ -221,7 +247,6 @@ document.addEventListener("DOMContentLoaded", function () {
         deleteBtn.className = "delete-btn";
         deleteBtn.onclick = function() { 
           wrapper.remove();
-          editStepCounter--;
           updateEditStepLabels();
         };
         
@@ -230,6 +255,8 @@ document.addEventListener("DOMContentLoaded", function () {
         wrapper.appendChild(fieldDiv);
         wrapper.appendChild(deleteBtn);
         stepsList2.appendChild(wrapper);
+        
+        updateEditStepLabels();
       });
     }
 
@@ -238,7 +265,6 @@ document.addEventListener("DOMContentLoaded", function () {
       labels.forEach(function(label, index) {
         label.textContent = "Ingredient " + (index + 1) + ":";
       });
-      editIngCounter = labels.length;
     }
 
     function updateEditStepLabels() {
@@ -246,12 +272,50 @@ document.addEventListener("DOMContentLoaded", function () {
       labels.forEach(function(label, index) {
         label.textContent = "Step " + (index + 1) + ":";
       });
-      editStepCounter = labels.length;
     }
+
+    // ربط أزرار الحذف الموجودة مسبقاً
+    function attachEditDeleteHandlers() {
+      var ingDeleteBtns = ingList2.querySelectorAll(".delete-btn");
+      ingDeleteBtns.forEach(function(btn) {
+        btn.onclick = function() {
+          btn.parentElement.remove();
+          updateEditIngLabels();
+        };
+      });
+      
+      var stepDeleteBtns = stepsList2.querySelectorAll(".delete-btn");
+      stepDeleteBtns.forEach(function(btn) {
+        btn.onclick = function() {
+          btn.parentElement.remove();
+          updateEditStepLabels();
+        };
+      });
+    }
+    
+    // تشغيل عند تحميل الصفحة
+    attachEditDeleteHandlers();
+    updateEditIngLabels();
+    updateEditStepLabels();
 
     // معالجة إرسال النموذج
     editRecipeForm.addEventListener("submit", function (e) {
       e.preventDefault();
+      
+      // التحقق من وجود ingredients و steps
+      var ingredients = ingList2.querySelectorAll(".ingredient-row");
+      var steps = stepsList2.querySelectorAll(".step-row");
+      
+      if (ingredients.length === 0) {
+        alert("Please add at least one ingredient!");
+        return false;
+      }
+      
+      if (steps.length === 0) {
+        alert("Please add at least one instruction step!");
+        return false;
+      }
+      
       if (msgEdit) {
         msgEdit.className = "form-msg show";
         msgEdit.textContent = "Changes saved successfully (demo). Redirecting...";
