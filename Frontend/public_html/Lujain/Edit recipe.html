@@ -11,7 +11,7 @@
   <!-- Navbar -->
   <header class="topbar">
     <div class="container topbar-row">
-      <a class="brand" href="index.html">
+      <a class="brand" href="../Fanar/index.html">
         <span class="brand-dot"></span>
         <span class="brand-name">MoodMeals</span>
         <span class="brand-sub">Easy Healthy Recipes</span>
@@ -40,7 +40,7 @@
           
           <label class="field">
             <span>Recipe Name</span>
-            <input type="text" id="editRecipeName" value="High-Protien Snack" required>
+            <input type="text" id="editRecipeName" value="High-Protein Snack" required>
           </label>
           
           <label class="field">
@@ -57,7 +57,7 @@
           
           <label class="field full">
             <span>Description</span>
-            <textarea id="editRecipeDesc" rows="3" required>This recipe is healthy and delecious and you can eat it as a snack during the day. It has high protein while low in carbs.</textarea>
+            <textarea id="editRecipeDesc" rows="3" required>This recipe is healthy and delicious and you can eat it as a snack during the day. It has high protein while low in carbs.</textarea>
           </label>
           
           <label class="field full">
@@ -74,28 +74,32 @@
           <div class="full">
             <div class="block-head">
               <h3>Ingredients</h3>
-              <button type="button" class="btn btn-outline mini" id="editAddIngredientBtn">+ Add Ingredient</button>
+              <button type="button" class="btn mini" id="editAddIngredientBtn">+ Add Ingredient</button>
             </div>
             
             <div id="editIngredientsList" class="stack">
+              <!-- Ingredient 1 -->
               <div class="ingredient-row">
                 <div class="ing-field">
                   <label>Ingredient 1:</label>
                   <div class="ing-inputs">
-                    <input class="input" type="text" name="ingredient-name" value="[name]" placeholder="Name:" required>
-                    <input class="input" type="text" name="ingredient-quantity" value="[quantity]" placeholder="Quantity:" required>
+                    <input class="input" type="text" name="ingredient-name" placeholder="Name: [name]" value="Chicken Breast" required>
+                    <input class="input" type="text" name="ingredient-quantity" placeholder="Quantity: [quantity]" value="200g" required>
                   </div>
                 </div>
+                <button type="button" class="delete-btn" onclick="this.parentElement.remove();">×</button>
               </div>
               
+              <!-- Ingredient 2 -->
               <div class="ingredient-row">
                 <div class="ing-field">
                   <label>Ingredient 2:</label>
                   <div class="ing-inputs">
-                    <input class="input" type="text" name="ingredient-name" value="[name]" placeholder="Name:" required>
-                    <input class="input" type="text" name="ingredient-quantity" value="[quantity]" placeholder="Quantity:" required>
+                    <input class="input" type="text" name="ingredient-name" placeholder="Name: [name]" value="Olive Oil" required>
+                    <input class="input" type="text" name="ingredient-quantity" placeholder="Quantity: [quantity]" value="1 tbsp" required>
                   </div>
                 </div>
+                <button type="button" class="delete-btn" onclick="this.parentElement.remove();">×</button>
               </div>
             </div>
           </div>
@@ -104,18 +108,26 @@
           <div class="full">
             <div class="block-head">
               <h3>Instructions</h3>
-              <button type="button" class="btn btn-outline mini" id="editAddStepBtn">+ Add Step</button>
+              <button type="button" class="btn mini" id="editAddStepBtn">+ Add Step</button>
             </div>
             
             <div id="editStepsList" class="stack">
-              <div class="step-field">
-                <label>Step 1:</label>
-                <textarea class="input" name="step" rows="2" required>[step instruction]</textarea>
+              <!-- Step 1 -->
+              <div class="step-row">
+                <div class="step-field">
+                  <label>Step 1:</label>
+                  <textarea class="input" name="step" rows="2" required>Preheat the oven to 180°C and prepare your baking tray.</textarea>
+                </div>
+                <button type="button" class="delete-btn" onclick="this.parentElement.remove();">×</button>
               </div>
               
-              <div class="step-field">
-                <label>Step 2:</label>
-                <textarea class="input" name="step" rows="2" required>[step instruction]</textarea>
+              <!-- Step 2 -->
+              <div class="step-row">
+                <div class="step-field">
+                  <label>Step 2:</label>
+                  <textarea class="input" name="step" rows="2" required>Season the chicken breast with salt, pepper, and olive oil.</textarea>
+                </div>
+                <button type="button" class="delete-btn" onclick="this.parentElement.remove();">×</button>
               </div>
             </div>
           </div>
@@ -134,7 +146,7 @@
             
             <label class="field">
               <span>Video URL:</span>
-              <input type="url" id="editRecipeVideo" value="[URL]" placeholder="https://youtube.com/...">
+              <input type="url" id="editRecipeVideo" placeholder="https://youtube.com/...">
             </label>
           </div>
           
@@ -142,6 +154,7 @@
           
           <div class="full form-actions">
             <button type="submit" class="btn btn-primary">Update Recipe</button>
+            <a href="../Jwana/My recipes.html" class="btn btn-outline">Cancel</a>
           </div>
           
         </form>
@@ -152,8 +165,9 @@
   
   <footer class="footer">
     <div class="container footer-row">
-      <div class="muted">©️ 2026 MoodMeals</div>
+      <div class="foot-name">MoodMeals</div>
       <div class="muted">Edit Recipe Page</div>
+      <div class="copy">© 2026 MoodMeals. All rights reserved.</div>
     </div>
   </footer>
   
