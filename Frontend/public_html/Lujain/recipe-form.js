@@ -12,26 +12,50 @@ document.addEventListener("DOMContentLoaded", function () {
     // إضافة مكون جديد
     if (addIngBtn && ingList) {
       addIngBtn.addEventListener("click", function () {
+        var wrapper = document.createElement("div");
+        wrapper.style.position = "relative";
+        
         var inp = document.createElement("input");
         inp.type = "text";
         inp.name = "ingredient";
         inp.placeholder = "e.g., 1 tsp salt";
         inp.className = "input";
         inp.required = true;
-        ingList.appendChild(inp);
+        
+        var deleteBtn = document.createElement("button");
+        deleteBtn.type = "button";
+        deleteBtn.textContent = "×";
+        deleteBtn.className = "delete-btn";
+        deleteBtn.onclick = function() { wrapper.remove(); };
+        
+        wrapper.appendChild(inp);
+        wrapper.appendChild(deleteBtn);
+        ingList.appendChild(wrapper);
       });
     }
 
     // إضافة خطوة تعليمات جديدة
     if (addStepBtn && stepsList) {
       addStepBtn.addEventListener("click", function () {
+        var wrapper = document.createElement("div");
+        wrapper.style.position = "relative";
+        
         var ta = document.createElement("textarea");
         ta.name = "step";
         ta.rows = 2;
         ta.placeholder = "Next step...";
         ta.className = "input";
         ta.required = true;
-        stepsList.appendChild(ta);
+        
+        var deleteBtn = document.createElement("button");
+        deleteBtn.type = "button";
+        deleteBtn.textContent = "×";
+        deleteBtn.className = "delete-btn";
+        deleteBtn.onclick = function() { wrapper.remove(); };
+        
+        wrapper.appendChild(ta);
+        wrapper.appendChild(deleteBtn);
+        stepsList.appendChild(wrapper);
       });
     }
 
@@ -60,26 +84,50 @@ document.addEventListener("DOMContentLoaded", function () {
     // إضافة مكون جديد
     if (addIngBtn2 && ingList2) {
       addIngBtn2.addEventListener("click", function () {
+        var wrapper = document.createElement("div");
+        wrapper.style.position = "relative";
+        
         var inp = document.createElement("input");
         inp.type = "text";
         inp.name = "ingredient";
         inp.placeholder = "e.g., 1 tsp salt";
         inp.className = "input";
         inp.required = true;
-        ingList2.appendChild(inp);
+        
+        var deleteBtn = document.createElement("button");
+        deleteBtn.type = "button";
+        deleteBtn.textContent = "×";
+        deleteBtn.className = "delete-btn";
+        deleteBtn.onclick = function() { wrapper.remove(); };
+        
+        wrapper.appendChild(inp);
+        wrapper.appendChild(deleteBtn);
+        ingList2.appendChild(wrapper);
       });
     }
 
     // إضافة خطوة تعليمات جديدة
     if (addStepBtn2 && stepsList2) {
       addStepBtn2.addEventListener("click", function () {
+        var wrapper = document.createElement("div");
+        wrapper.style.position = "relative";
+        
         var ta = document.createElement("textarea");
         ta.name = "step";
         ta.rows = 2;
         ta.placeholder = "Next step...";
         ta.className = "input";
         ta.required = true;
-        stepsList2.appendChild(ta);
+        
+        var deleteBtn = document.createElement("button");
+        deleteBtn.type = "button";
+        deleteBtn.textContent = "×";
+        deleteBtn.className = "delete-btn";
+        deleteBtn.onclick = function() { wrapper.remove(); };
+        
+        wrapper.appendChild(ta);
+        wrapper.appendChild(deleteBtn);
+        stepsList2.appendChild(wrapper);
       });
     }
 
