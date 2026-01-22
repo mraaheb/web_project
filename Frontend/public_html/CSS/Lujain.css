@@ -136,6 +136,21 @@ body .section {
   padding: 9px 16px;
   font-size: 0.9rem;
   border-radius: 12px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid var(--line);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.block-head .btn.mini:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow2);
+}
+
+.block-head .btn.mini:active {
+  transform: translateY(0);
 }
 
 /* Stack (Ingredients & Instructions Lists) */
@@ -249,6 +264,7 @@ body .section {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex: 1;
 }
 
 .ing-field label {
@@ -268,9 +284,23 @@ body .section {
   display: flex;
   align-items: flex-start;
   gap: 10px;
+  margin-bottom: 4px;
 }
 
 .ingredient-row .ing-field {
+  flex: 1;
+}
+
+/* Step Row with Delete Button */
+.step-row {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.step-row .step-field {
   flex: 1;
 }
 
@@ -280,6 +310,7 @@ body .section {
   flex-direction: column;
   gap: 8px;
   position: relative;
+  flex: 1;
 }
 
 .step-field label {
@@ -362,7 +393,13 @@ body .section {
 }
 
 /* For steps - delete button alignment */
-.step-field + .delete-btn {
+.step-row .delete-btn {
+  margin-top: 28px;
+}
+
+/* Ensure all delete buttons are consistent */
+.ingredient-row .delete-btn,
+.step-row .delete-btn {
   margin-top: 28px;
 }
 
