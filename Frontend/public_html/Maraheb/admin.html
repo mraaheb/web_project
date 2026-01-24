@@ -3,31 +3,205 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VibeBite | Home</title>
+  <title>VibeBite | Admin</title>
+
   <link rel="stylesheet" href="../CSS/base.css">
   <link rel="stylesheet" href="../CSS/Maraheb.css">
-
 </head>
 
 <body>
   <div class="bg-blobs" aria-hidden="true"></div>
 
+  <!-- HEADER  -->
   <header class="header" id="top">
     <div class="nav">
-      <a class="brand" href="index.html">
+      <a class="brand" href="#" id="logoHome">
         <div class="logo">
-          <img src="../images/logo.png" alt="VibeBite logo" >
+          <img src="../images/logo.png" alt="VibeBite logo">
         </div>
       </a>
 
-      <div class="nav-actions">
-        <a class="btn btn-ghost" href="login.html">Login</a>
-        <a class="btn btn-main" href="signup.html">Sign up</a>
-      </div>
+      <!-- Sign-out  -->
+      <a class="ad-signout" href="../Fanar/index.html" id="signOut">Sign-out</a>
     </div>
   </header>
 
+  <main class="ad-wrap">
 
+    <!-- Top welcome strip -->
+    <section class="ad-hero">
+      <div class="ad-hero__left">
+        <h1 class="ad-title">Welcome, <span id="adminFirstName">Maraheb</span></h1>
+        <p class="ad-sub">Admin dashboard · review reports & manage blocked users</p>
+      </div>
+
+      <div class="ad-hero__right">
+        <div class="ad-pill">
+          <span class="ad-dot" aria-hidden="true"></span>
+          <span>Admin Mode</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layout grid -->
+    <section class="ad-grid">
+
+      <!-- My Information -->
+      <section class="ad-card ad-card--info">
+        <div class="ad-card__head">
+          <h2 class="ad-h2">My Information</h2>
+        </div>
+
+        <div class="ad-info">
+          <div class="ad-info__row">
+            <div class="ad-info__k">Name</div>
+            <div class="ad-info__v" id="adminFullName">Maraheb Alrashedi</div>
+          </div>
+          <div class="ad-info__row">
+            <div class="ad-info__k">Email address</div>
+            <div class="ad-info__v" id="adminEmail">maraheb@vibebite.com</div>
+          </div>
+        </div>
+
+        <div class="ad-miniNote">
+          Tip: Clicking a recipe name opens the View Recipe page to review the report.
+        </div>
+      </section>
+
+      <!-- Reported Recipes -->
+      <section class="ad-card ad-card--reports">
+        <div class="ad-card__head ad-card__head--split">
+          <h2 class="ad-h2">Reported Recipes</h2>
+          <div class="ad-badge">
+            <span id="reportsCount">2</span> pending
+          </div>
+        </div>
+
+        <div class="ad-tableWrap" role="region" aria-label="Reported recipes table">
+          <table class="ad-table">
+            <thead>
+              <tr>
+                <th>Recipe Name</th>
+                <th>Recipe Creator</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="reportsBody">
+              <!-- Row 1 -->
+              <tr data-report-id="r1">
+                <td>
+                  <a class="ad-link" href="View%20recipe.html">Low-Carb Strawberry Cheesecake</a>
+                  <div class="ad-muted">Reported: Inappropriate</div>
+                </td>
+
+                <td>
+                  <div class="ad-user">
+                    <img class="ad-user__av" src="../images/person comm1.jpeg" alt="creator photo">
+                    <div class="ad-user__meta">
+                      <div class="ad-user__name">Ali Ahmed</div>
+                      <div class="ad-user__sub">Ali@vibebite.com</div>
+                    </div>
+                  </div>
+                </td>
+
+                <td>
+                  <form class="ad-actionForm" action="#" data-form="reportAction">
+                    <label class="ad-radio">
+                      <input type="radio" name="act-r1" value="block">
+                      <span>Block User</span>
+                    </label>
+
+                    <label class="ad-radio">
+                      <input type="radio" name="act-r1" value="dismiss">
+                      <span>Dismiss Report</span>
+                    </label>
+
+                    <button class="ad-btn ad-btn--main" type="submit">Submit</button>
+                  </form>
+                </td>
+              </tr>
+
+              <!-- Row 2 -->
+              <tr data-report-id="r2">
+                <td>
+                  <a class="ad-link" href="View%20recipe.html">Spicy Tuna Rice Bowl</a>
+                  <div class="ad-muted">Reported: Misleading info</div>
+                </td>
+
+                <td>
+                  <div class="ad-user">
+                    <img class="ad-user__av" src="../images/person comm2.jpeg" alt="creator photo">
+                    <div class="ad-user__meta">
+                      <div class="ad-user__name">Sara Ali</div>
+                      <div class="ad-user__sub">sara@vibebite.com</div>
+                    </div>
+                  </div>
+                </td>
+
+                <td>
+                  <form class="ad-actionForm" action="#" data-form="reportAction">
+                    <label class="ad-radio">
+                      <input type="radio" name="act-r2" value="block">
+                      <span>Block User</span>
+                    </label>
+
+                    <label class="ad-radio">
+                      <input type="radio" name="act-r2" value="dismiss">
+                      <span>Dismiss Report</span>
+                    </label>
+
+                    <button class="ad-btn ad-btn--main" type="submit">Submit</button>
+                  </form>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+          <!-- comment
+        <div class="ad-footHint">
+          Note: Phase 1 is front-end simulation. Actions only update the UI (no database).
+        </div>  
+           -->
+      </section>
+
+      <!-- Blocked Users -->
+      <section class="ad-card ad-card--blocked">
+        <div class="ad-card__head ad-card__head--split">
+          <h2 class="ad-h2">Blocked Users List</h2>
+          <div class="ad-badge ad-badge--soft">
+            <span id="blockedCount">1</span> blocked
+          </div>
+        </div>
+
+        <div class="ad-tableWrap" role="region" aria-label="Blocked users table">
+          <table class="ad-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email Address</th>
+              </tr>
+            </thead>
+
+            <tbody id="blockedBody">
+              <tr>
+                <td>Faisal Nasser</td>
+                <td>faisal@vibebite.com</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- Toast -->
+    <div class="ad-toast" id="adToast" role="status" aria-live="polite"></div>
+
+  </main>
+
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-center">
       <div class="foot-name">VibeBite</div>
@@ -43,6 +217,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="admin.js"></script>
 </body>
 </html>
