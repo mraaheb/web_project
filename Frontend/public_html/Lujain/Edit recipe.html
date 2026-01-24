@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodMeals | Edit Recipe</title>
+  <link rel="stylesheet" href="../CSS/base.css">
+  <link rel="stylesheet" href="../CSS/Lujain.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="topbar">
+    <div class="container topbar-row">
+      <a class="brand" href="../Fanar/index.html">
+        <img src="../images/logo.png" alt="MoodMeals Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-name">MoodMeals</span>
+          <span class="brand-sub">Easy Healthy Recipes</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="../Fanar/index.html" class="nav-link">Home</a>
+        <a href="../Jwana/user page.html" class="nav-link">User</a>
+        <a href="../Jwana/My recipes.html" class="nav-link active">My Recipes</a>
+      </nav>
+      <div class="auth">
+        <button class="btn btn-outline" id="signOutBtn">Sign Out</button>
+      </div>
+    </div>
+  </header>
+  
+  <main class="section">
+    <div class="container">
+      
+      <div class="section-head">
+        <h1 class="page-title">Edit Recipe</h1>
+        <p class="muted">Update the recipe info (Phase 1 demo).</p>
+      </div>
+      
+      <section class="panel">
+        <form id="editRecipeForm" class="form-grid">
+          
+          <label class="field">
+            <span>Recipe Name</span>
+            <input type="text" id="editRecipeName" value="High-Protein Snack" required>
+          </label>
+          
+          <label class="field">
+            <span>Category</span>
+            <select id="editRecipeCategory" class="select" required>
+              <option value="">Select...</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+              <option value="snack" selected>Snack</option>
+              <option value="drink">Drink</option>
+            </select>
+          </label>
+          
+          <label class="field full">
+            <span>Description</span>
+            <textarea id="editRecipeDesc" rows="3" required>This recipe is healthy and delicious and you can eat it as a snack during the day. It has high protein while low in carbs.</textarea>
+          </label>
+          
+          <label class="field full">
+            <span>Upload Recipe Photo:</span>
+            <div class="current-file">
+              <span class="muted">Current Photo:</span>
+              <button type="button" class="file-preview-btn">[photo]</button>
+            </div>
+            <input type="file" id="editRecipePhoto" accept="image/*">
+            <small class="muted">Optional in Phase 1 (UI only).</small>
+          </label>
+          
+          <!-- Ingredients -->
+          <div class="full">
+            <div class="block-head">
+              <h3>Ingredients</h3>
+              <button type="button" class="btn mini" id="editAddIngredientBtn">+ Add Ingredient</button>
+            </div>
+            
+            <div id="editIngredientsList" class="stack">
+              <!-- Ingredient 1 -->
+              <div class="ingredient-row">
+                <div class="ing-field">
+                  <label>Ingredient 1:</label>
+                  <div class="ing-inputs">
+                    <div class="ing-input-wrapper">
+                      <span class="input-label">Name:</span>
+                      <input class="input" type="text" name="ingredient-name" value="Chicken Breast" required>
+                    </div>
+                    <div class="ing-input-wrapper">
+                      <span class="input-label">Quantity:</span>
+                      <input class="input" type="text" name="ingredient-quantity" value="200g" required>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="delete-btn" onclick="this.parentElement.remove();">×</button>
+              </div>
+              
+              <!-- Ingredient 2 -->
+              <div class="ingredient-row">
+                <div class="ing-field">
+                  <label>Ingredient 2:</label>
+                  <div class="ing-inputs">
+                    <div class="ing-input-wrapper">
+                      <span class="input-label">Name:</span>
+                      <input class="input" type="text" name="ingredient-name" value="Olive Oil" required>
+                    </div>
+                    <div class="ing-input-wrapper">
+                      <span class="input-label">Quantity:</span>
+                      <input class="input" type="text" name="ingredient-quantity" value="1 tbsp" required>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="delete-btn" onclick="this.parentElement.remove();">×</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Instructions -->
+          <div class="full">
+            <div class="block-head">
+              <h3>Instructions</h3>
+              <button type="button" class="btn mini" id="editAddStepBtn">+ Add Step</button>
+            </div>
+            
+            <div id="editStepsList" class="stack">
+              <!-- Step 1 -->
+              <div class="step-row">
+                <div class="step-field">
+                  <label>Step 1:</label>
+                  <textarea class="input" name="step" rows="2" required>Preheat the oven to 180°C and prepare your baking tray.</textarea>
+                </div>
+                <button type="button" class="delete-btn" onclick="this.parentElement.remove();">×</button>
+              </div>
+              
+              <!-- Step 2 -->
+              <div class="step-row">
+                <div class="step-field">
+                  <label>Step 2:</label>
+                  <textarea class="input" name="step" rows="2" required>Season the chicken breast with salt, pepper, and olive oil.</textarea>
+                </div>
+                <button type="button" class="delete-btn" onclick="this.parentElement.remove();">×</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video or URL -->
+          <div class="full">
+            <label class="field">
+              <span>Video or URL:</span>
+              <div class="current-file">
+                <span class="muted">Current Video:</span>
+                <button type="button" class="file-preview-btn">[video]</button>
+              </div>
+              <input type="file" id="editRecipeVideoFile" accept="video/*">
+              <small class="muted">Or provide a YouTube URL below</small>
+            </label>
+            
+            <label class="field">
+              <span>Video URL:</span>
+              <input type="url" id="editRecipeVideo" placeholder="https://youtube.com/...">
+            </label>
+          </div>
+          
+          <p id="editRecipeMsg" class="form-msg full"></p>
+          
+          <div class="full form-actions">
+            <button type="submit" class="btn btn-primary">Update Recipe</button>
+            <a href="../Jwana/My recipes.html" class="btn btn-outline">Cancel</a>
+          </div>
+          
+        </form>
+      </section>
+      
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <div class="container footer-row">
+      <div class="foot-name">MoodMeals</div>
+      <div class="muted">Edit Recipe Page</div>
+      <div class="copy">© 2026 MoodMeals. All rights reserved.</div>
+    </div>
+  </footer>
+  
+  <script src="recipe-form.js"></script>
+</body>
+</html>
