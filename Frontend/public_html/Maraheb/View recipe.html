@@ -3,30 +3,201 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VibeBite | Home</title>
-  <link rel="stylesheet" href="../CSS/base.css">
+  <title>VibeBite | View Recipe</title>
 
+  <link rel="stylesheet" href="../CSS/base.css">
+  <link rel="stylesheet" href="../CSS/Maraheb.css">
 </head>
 
-<body>
+<body class="page-view-recipe">
   <div class="bg-blobs" aria-hidden="true"></div>
 
+  <!-- HEADER  -->
   <header class="header" id="top">
     <div class="nav">
-      <a class="brand" href="index.html">
+      <a class="brand" href="#" id="logoHome">
         <div class="logo">
-          <img src="../images/logo.png" alt="VibeBite logo" >
+          <img src="../images/logo.png" alt="VibeBite logo">
         </div>
       </a>
-
-      <div class="nav-actions">
-        <a class="btn btn-ghost" href="login.html">Login</a>
-        <a class="btn btn-main" href="signup.html">Sign up</a>
-      </div>
     </div>
   </header>
 
+  <!-- MAIN -->
+  <main class="vr-wrap">
 
+    <!-- HERO CARD -->
+    <section class="vr-hero">
+
+      <!-- Title + actions (always aligned) -->
+      <div class="vr-titleRow">
+        <div class="vr-titleBlock">
+          <h1 class="vr-title">Protein Oat Bowl</h1>
+          <p class="vr-sub">
+            A healthy oat bowl rich in protein and fiber to provide long-lasting energy without heavy sugar.
+            Perfect before classes or a study session.
+          </p>
+        </div>
+
+        <div class="vr-actions">
+          <button class="vr-btn vr-btn--ghost vr-fav" id="btnFav" type="button" aria-pressed="false">
+            <span class="vr-ic">♡</span>
+            <span>Favourite</span>
+          </button>
+
+          <button class="vr-btn vr-btn--ghost vr-like" id="btnLike" type="button" aria-pressed="false">
+            <span class="vr-ic">👍</span>
+            <span>Like</span>
+            <span class="vr-count" id="likeCount">18</span>
+          </button>
+
+          <button class="vr-btn vr-btn--danger" id="btnReport" type="button">
+            <span class="vr-ic">⚑</span>
+            <span>Report</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Media + Creator (balanced) -->
+      <div class="vr-hero__body">
+
+        <div class="vr-hero__media">
+          <img class="vr-hero__img" src="../images/recipe photo.jpeg" alt="Protein Oat Bowl">
+        </div>
+
+        <div class="vr-side">
+          <!-- Creator Card -->
+          <div class="vr-creator">
+            <img class="vr-creator__avatar" src="../images/recipe creator.jpeg" alt="Creator photo">
+            <div class="vr-creator__text">
+              <div class="vr-creator__label">Recipe Creator</div>
+              <div class="vr-creator__name">Huda Ahmed</div>
+              <div class="vr-creator__meta">Student · VibeBite community</div>
+            </div>
+          </div>
+
+          <!-- Facts (بدون Best for عشان ما يكرر Energy) -->
+          <div class="vr-facts">
+            <div class="vr-fact vr-fact--diff" tabindex="0" role="button" aria-label="Difficulty">
+              <div class="vr-fact__k">Difficulty</div>
+              <div class="vr-fact__v">Easy</div>
+            </div>
+
+            <div class="vr-fact vr-fact--serv" tabindex="0" role="button" aria-label="Servings">
+              <div class="vr-fact__k">Servings</div>
+              <div class="vr-fact__v">1</div>
+            </div>
+          </div>
+
+          <!-- Badges (شلت Energy من هنا عشان ما يتكرر) -->
+          <div class="vr-badgesUnder">
+            <span class="vr-chip">Ready in 10 min</span>
+            <span class="vr-chip">420 kcal</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTENT GRID -->
+    <section class="vr-grid">
+
+      <div class="vr-card">
+        <div class="vr-detailsHead">
+          <h2 class="vr-h2">Details</h2>
+          <!-- هنا طبقنا طلبهم: category داخل details -->
+          <span class="vr-chip vr-chip--energy">Category: Energy</span>
+        </div>
+
+        <p class="vr-text">
+          This bowl balances complex carbs + healthy fats + protein.
+          It keeps you full, supports focus, and avoids the “sugar crash”.
+        </p>
+      </div>
+
+      <div class="vr-card">
+        <h2 class="vr-h2">Ingredients</h2>
+        <ul class="vr-list">
+          <li>½ cup oats</li>
+          <li>1 cup milk (or almond milk)</li>
+          <li>1 scoop protein</li>
+          <li>1 banana (sliced)</li>
+          <li>1 tbsp peanut butter</li>
+          <li>Cinnamon (optional)</li>
+        </ul>
+      </div>
+
+      <div class="vr-card">
+        <h2 class="vr-h2">Instructions</h2>
+        <ol class="vr-steps">
+          <li>Cook oats with milk for 4–5 minutes.</li>
+          <li>Mix protein powder after removing from heat.</li>
+          <li>Top with banana + peanut butter.</li>
+          <li>Finish with cinnamon. Serve warm.</li>
+        </ol>
+      </div>
+
+      <div class="vr-card">
+        <h2 class="vr-h2">Video</h2>
+        <div class="vr-video">
+          <a class="vr-link" href="https://www.youtube.com/watch?v=m-3SdAiq904" id="videoLink">video link</a>
+        </div>
+      </div>
+
+      <!-- COMMENTS -->
+      <div class="vr-card vr-comments">
+        <div class="vr-comments__head">
+          <h2 class="vr-h2">Comments</h2>
+          <div class="vr-comments__meta">
+            <span id="commentsCount">0</span> comments
+          </div>
+        </div>
+
+        <div class="vr-addComment">
+          <img class="vr-addComment__avatar" src="../images/default-user.png" alt="Your avatar">
+          <div class="vr-addComment__box">
+            <textarea id="commentInput" rows="2" placeholder="Write a comment..."></textarea>
+            <div class="vr-addComment__actions">
+              <span class="vr-hint" id="hintText">Enter to add · Shift+Enter for new line</span>
+              <button class="vr-btn vr-btn--main" id="btnAddComment" type="button">Add Comment</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="vr-commentsList" id="commentsList" aria-label="Comments list">
+          <!-- JS fills -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Toast -->
+    <div class="vr-toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- Report Modal -->
+    <div class="vr-modal" id="reportModal" aria-hidden="true">
+      <div class="vr-modal__backdrop" data-close="1"></div>
+      <div class="vr-modal__card" role="dialog" aria-modal="true" aria-labelledby="reportTitle">
+        <h3 id="reportTitle">Report this recipe</h3>
+        <p class="vr-text">Pick a reason.</p>
+
+        <div class="vr-radio">
+          <label><input type="radio" name="reportReason" value="Spam"> Spam</label>
+          <label><input type="radio" name="reportReason" value="Inappropriate"> Inappropriate</label>
+          <label><input type="radio" name="reportReason" value="Misleading"> Misleading info</label>
+          <label><input type="radio" name="reportReason" value="Other"> Other</label>
+        </div>
+
+        <div class="vr-modal__actions">
+          <button class="vr-btn vr-btn--ghost" type="button" data-close="1">Cancel</button>
+          <button class="vr-btn vr-btn--danger" type="button" id="btnSubmitReport">Submit Report</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER  -->
   <footer class="footer">
     <div class="footer-center">
       <div class="foot-name">VibeBite</div>
@@ -42,6 +213,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="view-recipe.js"></script>
 </body>
 </html>
