@@ -3,32 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MoodMeals | User Page</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title> MoodMeals | User Page</title>
+  <link rel="stylesheet" href="../CSS/base.css">
+<link rel="stylesheet" href="my-style.css">
+
 </head>
 
 <body>
+            <!-- Navbar -->
+       <header class="topbar">
+          <div class="container topbar-row">
+            <a class="brand" href="../Fanar/index.html">
+              <img src="../images/logo.png" alt="MoodMeals Logo" class="brand-logo">
+              <div class="brand-text">
 
-  <!-- Navbar -->
-  <header class="topbar">
-    <div class="container topbar-row">
-      <a class="brand" href="index.html">
-        <span class="brand-dot"></span>
-        <span class="brand-name">MoodMeals</span>
-        <span class="brand-sub">Easy Healthy Recipes</span>
-      </a>
+                <span class="brand-sub">Easy Healthy Recipes</span>
+              </div>
+            </a>
+            <nav class="nav">
+      <a href="../Fanar/index.html">Home</a>
+              <a href="../Fanar/login.html" class="nav-link active">User</a>
+      <a href="My recipes.html">My Recipes</a>
+            </nav>
 
-      <nav class="nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="user.html" class="nav-link active">User</a>
-        <a href="my-recipes.html" class="nav-link">My Recipes</a>
-      </nav>
+            <div class="auth">
+<button class="btn btn-outline" id="signOutBtn">Sign Out</button>
 
-      <div class="auth">
-        <button class="btn btn-outline" id="signOutBtn">Sign Out</button>
-      </div>
-    </div>
-  </header>
+<script>
+  const signOutBtn = document.getElementById("signOutBtn");
+
+  signOutBtn.addEventListener("click", function() {
+    window.location.href = "../Fanar/index.html";  // تغيير المسار إلى صفحة index
+  });
+</script>
+            </div>
+          </div>
+        </header>
 
   <main class="section">
     <div class="container">
@@ -43,16 +53,32 @@
       <section class="panel">
         <div class="panel-head">
           <h2>User Information</h2>
-          <a class="btn btn-primary small-btn" href="my-recipes.html">Go to My Recipes</a>
+          <a class="btn btn-primary small-btn" href="My recipes.html">Go to My Recipes</a>
         </div>
 
         <div class="user-info">
-          <img id="userAvatar" class="avatar" src="images/default-user.png" alt="User profile">
+<img
+  id="userAvatar"
+  src="../images/default-user.png"
+  alt="User profile"
+  style="
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+  "
+>
           <div>
             <div class="user-name" id="userFullName">Guest User</div>
             <div class="muted" id="userEmail">guest@email.com</div>
           </div>
         </div>
+           <div class="user-stats">
+        <p><strong>Number of Recipes:</strong> <span id="recipeCount">0</span></p>
+        <p><strong>Total Likes:</strong> <span id="totalLikes">0</span></p>
+      </div>
+    
       </section>
 
       <!-- All Recipes + Filter -->
@@ -89,53 +115,67 @@
 
             <tbody>
               <!-- SAMPLE DATA (Phase 1) -->
-              <tr data-category="drink">
-                <td>1</td>
-                <td>Green Energy Smoothie</td>
-                <td><img src="images/green-energy-smoothie.jpg" alt="Green Energy Smoothie" class="recipe-photo" /></td>
-                <td><img src="images/user1.jpg" alt="John Doe" class="creator-photo" /> John Doe</td>
-                <td>42</td> <!-- Sample like count -->
-                <td>Drink</td>
-                <td class="actions">
-                  <button class="btn btn-outline mini" data-action="like">Like</button>
-                  <button class="btn btn-outline mini" data-action="fav">Favorite</button>
-                  <a class="btn btn-primary mini" href="view-recipe.html?id=1">View</a>
-                </td>
-              </tr>
+                        <tr data-category="drink">
+             <td>1</td>
+             <td>
+               <a href="../Maraheb/View recipe.html?id=1">
+                 Green Energy Smoothie
+               </a>
+             </td>
+             <td><img src="../images/green-energy-smoothie.png" alt="Green Energy Smoothie" class="recipe-photo" /></td>
+             <td><img src="../images/user1.jpg" alt="John Doe" class="creator-photo" /> John Doe</td>
+             <td>42</td>
+             <td>Drink</td>
+             <td class="actions">
+               <button class="btn btn-outline mini" data-action="like">Like</button>
+               <button class="btn btn-outline mini" data-action="fav">Favorite</button>
+               <a class="btn btn-primary mini" href="../Maraheb/View recipe.html?id=1">View</a>
+             </td>
+           </tr>
 
-              <tr data-category="breakfast">
-                <td>2</td>
-                <td>Cinnamon Fruit Oats</td>
-                <td><img src="images/cinnamon-fruit-oats.jpg" alt="Cinnamon Fruit Oats" class="recipe-photo" /></td>
-                <td><img src="images/user2.jpg" alt="Jane Doe" class="creator-photo" /> Jane Doe</td>
-                <td>35</td>
-                <td>Breakfast</td>
-                <td class="actions">
-                  <button class="btn btn-outline mini" data-action="like">Like</button>
-                  <button class="btn btn-outline mini" data-action="fav">Favorite</button>
-                  <a class="btn btn-primary mini" href="view-recipe.html?id=2">View</a>
-                </td>
-              </tr>
+           <tr data-category="breakfast">
+             <td>2</td>
+             <td>
+               <a href="../Maraheb/View recipe.html?id=2">
+                 Cinnamon Fruit Oats
+               </a>
+             </td>
+             <td><img src="../images/innamon-fruit-oats.png" alt="Cinnamon Fruit Oats" class="recipe-photo" /></td>
+             <td><img src="../images/user2.avif" alt="Jane Doe" class="creator-photo" /> Jane Doe</td>
+             <td>35</td>
+             <td>Breakfast</td>
+             <td class="actions">
+               <button class="btn btn-outline mini" data-action="like">Like</button>
+               <button class="btn btn-outline mini" data-action="fav">Favorite</button>
+               <a class="btn btn-primary mini" href="../Maraheb/View recipe.html?id=2">View</a>
+             </td>
+           </tr>
 
-              <tr data-category="lunch">
-                <td>3</td>
-                <td>Fresh Quinoa Salad</td>
-                <td><img src="images/fresh-quinoa-salad.jpg" alt="Fresh Quinoa Salad" class="recipe-photo" /></td>
-                <td><img src="images/user3.jpg" alt="Alice Smith" class="creator-photo" /> Alice Smith</td>
-                <td>50</td>
-                <td>Lunch</td>
-                <td class="actions">
-                  <button class="btn btn-outline mini" data-action="like">Like</button>
-                  <button class="btn btn-outline mini" data-action="fav">Favorite</button>
-                  <a class="btn btn-primary mini" href="view-recipe.html?id=3">View</a>
-                </td>
-              </tr>
+           <tr data-category="lunch">
+             <td>3</td>
+             <td>
+               <a href="../Maraheb/View recipe.html?id=3">
+                 Fresh Quinoa Salad
+               </a>
+             </td>
+             <td><img src="../images/fresh-quinoa-salad.webp" alt="Fresh Quinoa Salad" class="recipe-photo" /></td>
+             <td><img src="../images/user3.jpg" alt="Alice Smith" class="creator-photo" /> Alice Smith</td>
+             <td>50</td>
+             <td>Lunch</td>
+             <td class="actions">
+               <button class="btn btn-outline mini" data-action="like">Like</button>
+               <button class="btn btn-outline mini" data-action="fav">Favorite</button>
+               <a class="btn btn-primary mini" href="../Maraheb/View recipe.html?id=3">View</a>
+             </td>
+           </tr>
+
+
+              
             </tbody>
           </table>
         </div>
 
         <p class="muted note">
-          * Like/Favorite buttons are for Phase 1 UI only (no backend).
         </p>
       </section>
 
@@ -143,7 +183,7 @@
       <section class="panel">
         <div class="panel-head">
           <h2>My Favorite Recipes</h2>
-          <p class="muted">Demo favorites list (Phase 1).</p>
+          <p class="muted">.</p>
         </div>
 
         <div class="table-wrap">
@@ -161,10 +201,22 @@
             <tbody id="favBody">
               <tr>
                 <td>1</td>
-                <td>Fresh Quinoa Salad</td>
-                <td><img src="images/fresh-quinoa-salad.jpg" alt="Fresh Quinoa Salad" class="recipe-photo" /></td>
-                <td><img src="images/user3.jpg" alt="Alice Smith" class="creator-photo" /> Alice Smith</td>
-                <td><button class="btn btn-outline mini" disabled>Remove</button></td>
+                <td> <a href="../Maraheb/View recipe.html?id=3">Fresh Quinoa Salad </a> </td>
+                
+                
+                <td><img src="../images/fresh-quinoa-salad.webp" alt="Fresh Quinoa Salad" class="recipe-photo" /></td>
+                <td><img src="../images/user3.jpg" alt="Alice Smith" class="creator-photo" /> Alice Smith</td>
+             
+                <td>
+  <button class="btn btn-outline mini" onclick="removeFavorite();">Remove</button>
+</td>
+
+<script>
+  function removeFavorite() {
+    window.location.href = window.location.href;  // إعادة تحميل الصفحة
+  }
+</script>
+
               </tr>
             </tbody>
           </table>
@@ -172,6 +224,12 @@
       </section>
 
     </div>
+      <h2 id="userName"></h2>
+
+<button id="addRecipeBtn" class="btn btn-main">
+  Add New Recipe
+</button>
+
   </main>
 
   <footer class="footer">
@@ -181,6 +239,8 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+<script src="user-page.js"></script>
+
+
 </body>
 </html>

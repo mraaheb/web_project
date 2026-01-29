@@ -1,9 +1,809 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
-*/
-/* 
-    Created on : Jan 21, 2026, 12:47:45 AM
-    Author     : mraah
-*/
+/* ============================
+   RECIPE FORM PAGES (Add & Edit)
+   ============================ */
 
+/* Main Section */
+body .section {
+  min-height: calc(100vh - 180px);
+  padding: 40px 20px;
+  background: 
+    radial-gradient(circle, rgba(39,142,136,.09) 0%, transparent 70%) 15% 20% / 800px 600px no-repeat,
+    radial-gradient(circle, rgba(201,154,34,.08) 0%, transparent 70%) 85% 80% / 700px 500px no-repeat,
+    linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
+}
+
+.section .container {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* Section Header */
+.section-head {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-head .page-title {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  letter-spacing: -.6px;
+  color: var(--text);
+  font-weight: 900;
+}
+
+.section-head .muted {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Main Panel (Form Container) */
+.panel {
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(12,26,30,.12);
+  border-radius: 28px;
+  padding: 40px 35px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+/* Form Grid Layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+
+/* Field Styles */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field span,
+.field label {
+  font-weight: 900;
+  color: rgba(12,26,30,.88);
+  font-size: 0.98rem;
+  letter-spacing: 0.2px;
+}
+
+.field input[type="text"],
+.field input[type="url"],
+.field input[type="file"],
+.field textarea,
+.field select,
+.field .select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--r);
+  border: 1px solid rgba(12,26,30,.16);
+  background: rgba(255,255,255,.98);
+  font: inherit;
+  outline: none;
+  transition: transform .12s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.field input[type="text"]:focus,
+.field input[type="url"]:focus,
+.field textarea:focus,
+.field select:focus,
+.field .select:focus {
+  border-color: rgba(39,142,136,.65);
+  box-shadow: 0 0 0 6px rgba(39,142,136,.14);
+  transform: translateY(-1px);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 90px;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.field small.muted {
+  color: rgba(12,26,30,.58);
+  font-size: 0.87rem;
+  margin-top: -4px;
+}
+
+/* Block Header (for Ingredients & Instructions) */
+.block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(39,142,136,.15);
+}
+
+.block-head h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -.3px;
+}
+
+.block-head .btn.mini {
+  padding: 9px 16px;
+  font-size: 0.9rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid var(--line);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.block-head .btn.mini:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow2);
+}
+
+.block-head .btn.mini:active {
+  transform: translateY(0);
+}
+
+/* Stack (Ingredients & Instructions Lists) */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stack .input {
+  width: 100%;
+  padding: 13px 15px;
+  border-radius: 14px;
+  border: 1px solid rgba(12,26,30,.14);
+  background: rgba(255,255,255,.96);
+  font: inherit;
+  outline: none;
+  transition: transform .12s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.stack .input:focus {
+  border-color: rgba(39,142,136,.60);
+  box-shadow: 0 0 0 5px rgba(39,142,136,.12);
+  transform: translateY(-1px);
+}
+
+.stack textarea.input {
+  resize: vertical;
+  min-height: 75px;
+  line-height: 1.6;
+}
+
+/* Form Message */
+.form-msg {
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(39,142,136,.10);
+  border: 1px solid rgba(39,142,136,.25);
+  color: rgba(12,26,30,.85);
+  font-size: 0.95rem;
+  text-align: center;
+  display: none;
+}
+
+.form-msg.show {
+  display: block;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.form-actions .btn {
+  padding: 15px 28px;
+  border-radius: 18px;
+  font-size: 1.02rem;
+  font-weight: 900;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .15s ease, box-shadow .18s ease;
+  min-width: 180px;
+  cursor: pointer;
+  border: none;
+}
+
+.form-actions .btn-primary {
+  background: linear-gradient(135deg, var(--teal) 0%, rgba(39,142,136,.85) 100%);
+  color: white;
+  box-shadow: 0 20px 50px rgba(39,142,136,.32);
+}
+
+.form-actions .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 60px rgba(39,142,136,.40);
+}
+
+.form-actions .btn-primary:active {
+  transform: translateY(0);
+}
+
+.form-actions .btn-outline {
+  background: rgba(255,255,255,.90);
+  color: var(--text);
+  border: 1px solid rgba(12,26,30,.18);
+  box-shadow: 0 8px 25px rgba(12,26,30,.10);
+}
+
+.form-actions .btn-outline:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(12,26,30,.15);
+}
+
+.form-actions .btn-outline:active {
+  transform: translateY(0);
+}
+
+/* ============================
+   INGREDIENT & STEP FIELDS
+   ============================ */
+
+/* Ingredient Row with Label */
+.ing-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.ing-field label {
+  font-weight: 700;
+  color: rgba(12,26,30,.75);
+  font-size: 0.92rem;
+}
+
+.ing-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ing-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ing-input-wrapper .input-label {
+  font-weight: 600;
+  color: rgba(12,26,30,.70);
+  font-size: 0.88rem;
+  white-space: nowrap;
+  min-width: 70px;
+}
+
+.ing-input-wrapper .input {
+  flex: 1;
+}
+
+.ingredient-row {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.ingredient-row .ing-field {
+  flex: 1;
+}
+
+/* Step Row with Delete Button */
+.step-row {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.step-row .step-field {
+  flex: 1;
+}
+
+/* Step Field */
+.step-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  flex: 1;
+}
+
+.step-field label {
+  font-weight: 700;
+  color: rgba(12,26,30,.75);
+  font-size: 0.92rem;
+}
+
+/* Current File Display */
+.current-file {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  background: rgba(39,142,136,.06);
+  border-radius: 12px;
+  border: 1px solid rgba(39,142,136,.15);
+}
+
+.current-file .muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.file-preview-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(12,26,30,.2);
+  background: white;
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--teal);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.file-preview-btn:hover {
+  background: var(--teal);
+  color: white;
+  border-color: var(--teal);
+}
+
+/* ============================
+   DELETE BUTTON STYLES
+   ============================ */
+
+.delete-btn {
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 28px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(220, 53, 69, 0.08);
+  border: 1.5px solid rgba(220, 53, 69, 0.25);
+  color: #dc3545;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  background: #dc3545;
+  color: white;
+  border-color: #dc3545;
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(220, 53, 69, 0.35);
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
+}
+
+/* For steps - delete button alignment */
+.step-row .delete-btn {
+  margin-top: 28px;
+}
+
+/* Ensure all delete buttons are consistent */
+.ingredient-row .delete-btn,
+.step-row .delete-btn {
+  margin-top: 28px;
+}
+
+/* ============================
+   HEADER (TOPBAR)
+   ============================ */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #c6e7e4;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.topbar .container {
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.topbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+/* ============================
+   BRAND LOGO STYLING
+   ============================ */
+
+/* إخفاء المربع القديم */
+.brand-dot {
+  display: none;
+}
+
+/* تنسيق اللوقو */
+.brand-logo {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Brand Container */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+  transition: opacity 0.3s ease;
+}
+
+.brand:hover {
+  opacity: 0.85;
+}
+
+.brand:hover .brand-logo {
+  transform: scale(1.08) rotate(3deg);
+}
+
+/* Brand Text Container */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-weight: 900;
+  font-size: 1.3rem;
+  letter-spacing: -0.4px;
+  color: var(--text);
+}
+
+.brand-sub {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 700;
+  color: rgba(12, 26, 30, 0.70);
+  padding: 10px 14px;
+  border-radius: 14px;
+  transition: transform 0.15s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  color: var(--teal);
+  background: rgba(39, 142, 136, 0.08);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  color: var(--teal);
+  background: rgba(39, 142, 136, 0.12);
+  font-weight: 900;
+}
+
+/* Auth Buttons */
+.auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.auth .btn-outline {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.auth .btn-outline:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow2);
+}
+
+.auth .btn-outline:active {
+  transform: translateY(0);
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+
+.footer {
+  margin-top: 60px;
+  padding: 32px 0 24px;
+  border-top: 1px solid var(--line);
+  background: #c6e7e4;
+}
+
+.footer .container {
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.footer-row {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer .foot-name {
+  font-weight: 900;
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
+  color: var(--text);
+}
+
+.footer .muted,
+.footer .foot-small {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--teal);
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-links span {
+  color: var(--muted);
+}
+
+.footer .copy {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: rgba(12, 26, 30, 0.55);
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+   ============================ */
+
+@media (max-width: 980px) {
+  .panel {
+    padding: 32px 28px;
+    border-radius: 24px;
+  }
+  
+  .form-grid {
+    gap: 16px;
+  }
+  
+  .topbar-row {
+    padding: 10px 0;
+  }
+  
+  .brand-logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .brand-name {
+    font-size: 1.2rem;
+  }
+  
+  .brand-sub {
+    display: none;
+  }
+  
+  .brand {
+    gap: 10px;
+  }
+  
+  .nav {
+    gap: 6px;
+  }
+  
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section {
+    padding: 30px 16px;
+  }
+  
+  .panel {
+    padding: 28px 22px;
+    border-radius: 20px;
+  }
+  
+  .block-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .block-head .btn.mini {
+    width: 100%;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions .btn {
+    width: 100%;
+  }
+  
+  .ing-inputs {
+    grid-template-columns: 1fr;
+  }
+  
+  .ing-input-wrapper {
+    flex-direction: row;
+  }
+  
+  .ing-input-wrapper .input-label {
+    min-width: 65px;
+  }
+  
+  .delete-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+    margin-top: 8px;
+  }
+  
+  .ingredient-row {
+    flex-direction: column;
+  }
+  
+  .ingredient-row .delete-btn {
+    align-self: flex-end;
+  }
+  
+  /* Header responsive */
+  .topbar-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    padding-top: 10px;
+    border-top: 1px solid rgba(12, 26, 30, 0.08);
+  }
+  
+  /* Footer responsive */
+  .footer-row {
+    gap: 8px;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .section-head .page-title {
+    font-size: 1.7rem;
+  }
+  
+  .panel {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+  
+  .field input[type="text"],
+  .field input[type="url"],
+  .field textarea,
+  .field select,
+  .field .select {
+    padding: 12px 14px;
+  }
+  
+  /* Header responsive */
+  .brand-logo {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .brand-name {
+    font-size: 1.1rem;
+  }
+  
+  .nav {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  
+  .nav-link {
+    padding: 7px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .auth .btn {
+    padding: 8px 12px;
+    font-size: 0.88rem;
+  }
+  
+  /* Footer responsive */
+  .footer {
+    padding: 24px 0 18px;
+  }
+  
+  .footer .foot-name {
+    font-size: 1rem;
+  }
+  
+  .footer .muted,
+  .footer .foot-small {
+    font-size: 0.85rem;
+  }
+}
