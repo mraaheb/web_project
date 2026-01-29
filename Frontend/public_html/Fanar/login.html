@@ -1,48 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VibeBite | Login</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <title>VibeBite | Login</title>
+
+  <link rel="stylesheet" href="../CSS/base.css" >
+  <link rel="stylesheet" href="../CSS/Fanar.css" >
 </head>
 
-<body>
-<div class="auth-bg" style="background-image:url('../images/login.jpg')"></div>
+<body class="auth-page">
+  <main class="auth-layout">
 
-<header class="header">
-  <div class="logo">
-    <img src="../images/logo.png">
-  </div>
-</header>
+    <!-- LEFT: IMAGE -->
+    <section class="auth-photo" aria-hidden="true">
+      <img src="../images/login.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="photo-overlay">
+        <h2>Back for your next mood?</h2>
+        <p>Log in to save favorites and get recipes that match your vibe.</p>
+      </div>
+    </section>
 
-<main class="auth-box">
-  <h1>Welcome back 👋👋 </h1>
-  <p>Log in and match meals to your vibe.</p>
+    <!-- RIGHT: FORM -->
+    <section class="auth-panel">
+      <div class="auth-top">
+        <a class="auth-brand" href="index.html">
+          <img src="../images/logo.png" alt="VibeBite logo" class="auth-logo" >
+        </a>
+      </div>
 
-  <form>
-    <div class="line-field">
-      <label>Email</label>
-      <input type="email" required>
-    </div>
+      <div class="auth-card">
+        <h1 class="auth-title center-title">Welcome back ✨</h1>
+        <p class="auth-sub center-sub">Your mood decides your meal — sign in to see your personalized picks.</p>
 
-    <div class="line-field">
-      <label>Password</label>
-      <input type="password" required>
-    </div>
+        <form class="auth-form" id="loginForm">
+          <div class="field">
+            <label class="field-label" for="loginEmail">Email</label>
+            <input class="field-input" id="loginEmail" name="loginEmail" type="email" placeholder="name@example.com" required >
+          </div>
 
-    <div class="line-actions">
-      <button class="btn btn-main">User Login</button>
-      <button class="btn btn-dark">Admin Login</button>
-    </div>
-  </form>
+          <div class="field">
+            <label class="field-label" for="loginPassword">Password</label>
+            <input class="field-input" id="loginPassword" name="loginPassword" type="password" placeholder="••••••••" required >
+          </div>
 
-  <p>
-    New here?
-    <a href="signup.html" data-slide="right">Create an account</a>
-  </p>
-</main>
+ 
+          <div class="login-actions">
+            <a href="../Jwana/User Page.html" ><button class="btn btn-main" type="button" id="loginUserBtn">Login as User</button></a>
+            <a href="../Maraheb/admin.html" ><button class="btn btn-dark" type="button" id="loginAdminBtn">Login as Admin</button></a>
+          </div>
 
-<script src="script.js"></script>
+          <p class="auth-foot">
+            Don’t have an account?
+            <a href="signup.html">Create one</a>
+          </p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+
+  <script src="script.js"></script>
 </body>
 </html>
