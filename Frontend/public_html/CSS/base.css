@@ -603,3 +603,113 @@ body::before{
 .auth-page .login-actions a {
   text-decoration: none;
 }
+
+/* =========================
+   CREATIVE HEADER
+========================= */
+.creative-header {
+  background: linear-gradient(135deg, #dff5f4, #cceeed);
+  padding: 18px 0;
+  border-radius: 0 0 26px 26px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================
+   LEFT (LOGO)
+========================= */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+
+
+.logo-circle img {
+  width: 80px;
+  height: 80px;
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.brand-sub {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+/* =========================
+   CENTER NAV
+========================= */
+.header-nav {
+  display: flex;
+  gap: 6px;
+  background: #ffffffb8;
+  padding: 5px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+.header-nav a {
+  padding: 10px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #278e88;
+  transition: 0.25s  ease;
+}
+
+.header-nav a:hover {
+  background: rgba(39, 142, 136, 0.12);
+}
+.header-nav a.active {
+  background: #278e88;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(39, 142, 136, 0.35);
+}
+
+/* =========================
+   RIGHT
+========================= */
+.signout-btn {
+  background:#E0E0E0;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+ box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+  transition: 0.25s;
+  
+  
+}
+
+.signout-btn:hover {
+  background: #ffffffb8;
+  color: #7EF4CC ;
+  transform: translateY(-2px);
+}
+
+#signOutBtn{
+     color: #278e88 !important ;
+}
+
+/* Sign Out button size fix */
+.header-right .btn-outline {
+  padding: 15px 16px;      /* ⬅️ يصغر الإطار */
+  font-size: 0.9rem;      /* ⬅️ يصغر النص */
+  border-radius: 999px;   /* يحافظ على الشكل الدائري */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}

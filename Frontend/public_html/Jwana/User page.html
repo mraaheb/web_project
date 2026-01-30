@@ -11,23 +11,36 @@
 
 <body>
             <!-- Navbar -->
-       <header class="topbar">
-          <div class="container topbar-row">
-            <a class="brand" href="../Fanar/index.html">
-              <img src="../images/logo.png" alt="MoodMeals Logo" class="brand-logo">
-              <div class="brand-text">
+       
+  
+ <header class="creative-header">
+  <div class="header-inner container">
 
-                <span class="brand-sub">Easy Healthy Recipes</span>
-              </div>
-            </a>
-            <nav class="nav">
+    <!-- Logo -->
+    <div class="header-left">
+      <div class="logo-circle">
+        <img src="../images/logo.png" alt="Logo">
+      </div>
+      <div class="brand-info">
+        <span class="brand-sub">Easy Healthy Recipes</span>
+      </div>
+    </div>
+
+    <!-- Center Nav -->
+    <nav class="header-nav">
       <a href="../Fanar/index.html">Home</a>
-              <a href="../Fanar/login.html" class="nav-link active">User</a>
+      <a href="User page.html" >User</a>
       <a href="My recipes.html">My Recipes</a>
-            </nav>
+       <a href="../Lujain/Add recipes.html">Add recipe</a>
+       <a href="../Lujain/Edit recipes.html">Edit recipe</a>
+             <a href="../maraheb/View recipes.html">View recipe</a>
 
-            <div class="auth">
-<button class="btn btn-outline" id="signOutBtn">Sign Out</button>
+     
+    </nav>
+
+    <!-- Right -->
+    <div class="header-right">
+          <button class="btn btn-outline" id="signOutBtn"> ⎋ Sign Out</button>
 
 <script>
   const signOutBtn = document.getElementById("signOutBtn");
@@ -36,9 +49,12 @@
     window.location.href = "../Fanar/index.html";  // تغيير المسار إلى صفحة index
   });
 </script>
-            </div>
-          </div>
-        </header>
+
+              </div>
+    </div>
+</header>
+ 
+            
 
   <main class="section">
     <div class="container">
@@ -55,7 +71,7 @@
           <h2>User Information</h2>
           <a class="btn btn-primary small-btn" href="My recipes.html">Go to My Recipes</a>
         </div>
-
+<div class="user-card">
         <div class="user-info">
 <img
   id="userAvatar"
@@ -78,7 +94,7 @@
         <p><strong>Number of Recipes:</strong> <span id="recipeCount">0</span></p>
         <p><strong>Total Likes:</strong> <span id="totalLikes">0</span></p>
       </div>
-    
+    </div>
       </section>
 
       <!-- All Recipes + Filter -->
@@ -232,10 +248,19 @@
 
   </main>
 
+ 
   <footer class="footer">
-    <div class="container footer-row">
-      <div class="muted">©️ 2026 MoodMeals</div>
-      <div class="muted">User Page</div>
+    <div class="footer-center">
+      <div class="foot-name">VibeBite</div>
+      <div class="foot-small">Bites for every vibe.</div>
+
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <span>|</span>
+        <a href="#">Twitter</a>
+      </div>
+
+      <div class="copy">© 2026 VibeBite</div>
     </div>
   </footer>
 

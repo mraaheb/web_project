@@ -13,15 +13,48 @@
   <div class="bg-blobs" aria-hidden="true"></div>
 
   <!-- HEADER  -->
-  <header class="header" id="top">
-    <div class="nav">
-      <a class="brand" href="#" id="logoHome">
-        <div class="logo">
-          <img src="../images/logo.png" alt="VibeBite logo">
-        </div>
-      </a>
+    
+ <header class="creative-header">
+  <div class="header-inner container">
+
+    <!-- Logo -->
+    <div class="header-left">
+      <div class="logo-circle">
+        <img src="../images/logo.png" alt="Logo">
+      </div>
+      <div class="brand-info">
+        <span class="brand-sub">Easy Healthy Recipes</span>
+      </div>
     </div>
-  </header>
+
+    <!-- Center Nav -->
+    <nav class="header-nav">
+      <a href="../Fanar/index.html">Home</a>
+      <a href="User page.html" >User</a>
+      <a href="My recipes.html">My Recipes</a>
+       <a href="../Lujain/Add recipes.html">Add recipe</a>
+       <a href="../Lujain/Edit recipes.html">Edit recipe</a>
+             <a href="../maraheb/View recipes.html">View recipe</a>
+
+     
+    </nav>
+
+    <!-- Right -->
+    <div class="header-right">
+          <button class="btn btn-outline" id="signOutBtn"> ⎋ Sign Out</button>
+
+<script>
+  const signOutBtn = document.getElementById("signOutBtn");
+
+  signOutBtn.addEventListener("click", function() {
+    window.location.href = "../Fanar/index.html";  // تغيير المسار إلى صفحة index
+  });
+</script>
+
+              </div>
+    </div>
+</header>
+
 
   <!-- MAIN -->
   <main class="vr-wrap">

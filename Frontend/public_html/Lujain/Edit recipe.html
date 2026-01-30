@@ -9,25 +9,48 @@
 </head>
 <body>
   <!-- Navbar -->
-  <header class="topbar">
-    <div class="container topbar-row">
-      <a class="brand" href="../Fanar/index.html">
-        <img src="../images/logo.png" alt="MoodMeals Logo" class="brand-logo">
-        <div class="brand-text">
-          <span class="brand-name">MoodMeals</span>
-          <span class="brand-sub">Easy Healthy Recipes</span>
-        </div>
-      </a>
-      <nav class="nav">
-        <a href="../Fanar/index.html" class="nav-link">Home</a>
-        <a href="../Jwana/user page.html" class="nav-link">User</a>
-        <a href="../Jwana/My recipes.html" class="nav-link active">My Recipes</a>
-      </nav>
-      <div class="auth">
-        <button class="btn btn-outline" id="signOutBtn">Sign Out</button>
+    
+ <header class="creative-header">
+  <div class="header-inner container">
+
+    <!-- Logo -->
+    <div class="header-left">
+      <div class="logo-circle">
+        <img src="../images/logo.png" alt="Logo">
+      </div>
+      <div class="brand-info">
+        <span class="brand-sub">Easy Healthy Recipes</span>
       </div>
     </div>
-  </header>
+
+    <!-- Center Nav -->
+    <nav class="header-nav">
+      <a href="../Fanar/index.html">Home</a>
+      <a href="User page.html" >User</a>
+      <a href="My recipes.html">My Recipes</a>
+       <a href="../Lujain/Add recipes.html">Add recipe</a>
+       <a href="../Lujain/Edit recipes.html">Edit recipe</a>
+             <a href="../maraheb/View recipes.html">View recipe</a>
+
+     
+    </nav>
+
+    <!-- Right -->
+    <div class="header-right">
+          <button class="btn btn-outline" id="signOutBtn"> ⎋ Sign Out</button>
+
+<script>
+  const signOutBtn = document.getElementById("signOutBtn");
+
+  signOutBtn.addEventListener("click", function() {
+    window.location.href = "../Fanar/index.html";  // تغيير المسار إلى صفحة index
+  });
+</script>
+
+              </div>
+    </div>
+</header>
+
   
   <main class="section">
     <div class="container">
