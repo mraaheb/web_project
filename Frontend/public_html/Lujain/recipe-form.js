@@ -186,125 +186,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* ===== EDIT RECIPE: dynamic fields + submit demo ===== */
+  /* ===== EDIT RECIPE: NO ADD BUTTONS - EDIT ONLY ===== */
   var editRecipeForm = document.getElementById("editRecipeForm");
   if (editRecipeForm) {
-    var addIngBtn2 = document.getElementById("editAddIngredientBtn");
-    var addStepBtn2 = document.getElementById("editAddStepBtn");
     var ingList2 = document.getElementById("editIngredientsList");
     var stepsList2 = document.getElementById("editStepsList");
     var msgEdit = document.getElementById("editRecipeMsg");
 
-    // إضافة مكون جديد مع Label
-    if (addIngBtn2 && ingList2) {
-      addIngBtn2.addEventListener("click", function () {
-        var wrapper = document.createElement("div");
-        wrapper.className = "ingredient-row";
-        
-        var fieldDiv = document.createElement("div");
-        fieldDiv.className = "ing-field";
-        
-        var label = document.createElement("label");
-        label.textContent = "Ingredient:";
-        
-        var inputsDiv = document.createElement("div");
-        inputsDiv.className = "ing-inputs";
-        
-        // Name wrapper
-        var nameWrapper = document.createElement("div");
-        nameWrapper.className = "ing-input-wrapper";
-        
-        var nameLabel = document.createElement("span");
-        nameLabel.className = "input-label";
-        nameLabel.textContent = "Name:";
-        
-        var inpName = document.createElement("input");
-        inpName.type = "text";
-        inpName.name = "ingredient-name";
-        inpName.placeholder = "e.g., Chicken";
-        inpName.className = "input";
-        inpName.required = true;
-        
-        nameWrapper.appendChild(nameLabel);
-        nameWrapper.appendChild(inpName);
-        
-        // Quantity wrapper
-        var qtyWrapper = document.createElement("div");
-        qtyWrapper.className = "ing-input-wrapper";
-        
-        var qtyLabel = document.createElement("span");
-        qtyLabel.className = "input-label";
-        qtyLabel.textContent = "Quantity:";
-        
-        var inpQty = document.createElement("input");
-        inpQty.type = "text";
-        inpQty.name = "ingredient-quantity";
-        inpQty.placeholder = "e.g., 200g";
-        inpQty.className = "input";
-        inpQty.required = true;
-        
-        qtyWrapper.appendChild(qtyLabel);
-        qtyWrapper.appendChild(inpQty);
-        
-        inputsDiv.appendChild(nameWrapper);
-        inputsDiv.appendChild(qtyWrapper);
-        
-        var deleteBtn = document.createElement("button");
-        deleteBtn.type = "button";
-        deleteBtn.textContent = "×";
-        deleteBtn.className = "delete-btn";
-        deleteBtn.onclick = function() { 
-          wrapper.remove();
-          updateEditIngLabels();
-        };
-        
-        fieldDiv.appendChild(label);
-        fieldDiv.appendChild(inputsDiv);
-        wrapper.appendChild(fieldDiv);
-        wrapper.appendChild(deleteBtn);
-        ingList2.appendChild(wrapper);
-        
-        updateEditIngLabels();
-      });
-    }
-
-    // إضافة خطوة تعليمات جديدة مع Label
-    if (addStepBtn2 && stepsList2) {
-      addStepBtn2.addEventListener("click", function () {
-        var wrapper = document.createElement("div");
-        wrapper.className = "step-row";
-        
-        var fieldDiv = document.createElement("div");
-        fieldDiv.className = "step-field";
-        
-        var label = document.createElement("label");
-        label.textContent = "Step:";
-        
-        var ta = document.createElement("textarea");
-        ta.name = "step";
-        ta.rows = 2;
-        ta.placeholder = "Next step...";
-        ta.className = "input";
-        ta.required = true;
-        
-        var deleteBtn = document.createElement("button");
-        deleteBtn.type = "button";
-        deleteBtn.textContent = "×";
-        deleteBtn.className = "delete-btn";
-        deleteBtn.onclick = function() { 
-          wrapper.remove();
-          updateEditStepLabels();
-        };
-        
-        fieldDiv.appendChild(label);
-        fieldDiv.appendChild(ta);
-        wrapper.appendChild(fieldDiv);
-        wrapper.appendChild(deleteBtn);
-        stepsList2.appendChild(wrapper);
-        
-        updateEditStepLabels();
-      });
-    }
+    // NO ADD BUTTONS IN EDIT PAGE - ONLY DELETE FUNCTIONALITY
 
     function updateEditIngLabels() {
       var labels = ingList2.querySelectorAll(".ing-field label");
