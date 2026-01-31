@@ -82,19 +82,18 @@
       
       <div class="section-head">
         <h1 class="page-title">Edit Recipe</h1>
-        <p class="muted">Update the recipe info (Phase 1 demo).</p>
       </div>
       
       <section class="panel">
         <form id="editRecipeForm" class="form-grid">
           
           <label class="field">
-            <span>Recipe Name</span>
+            <span>Recipe Name <span class="required">*</span></span>
             <input type="text" id="editRecipeName" value="High-Protein Snack" required>
           </label>
           
           <label class="field">
-            <span>Category</span>
+            <span>Category <span class="required">*</span></span>
             <select id="editRecipeCategory" class="select" required>
               <option value="">Select...</option>
               <option value="breakfast">Breakfast</option>
@@ -105,26 +104,38 @@
             </select>
           </label>
           
+          <label class="field">
+            <span>Mood <span class="required">*</span></span>
+            <select id="editRecipeMood" class="select" required>
+              <option value="">Select mood...</option>
+              <option value="focus">🎯 Focus</option>
+              <option value="calm">🌿 Calm</option>
+              <option value="energy" selected>⚡ Energy</option>
+              <option value="comfort">💜 Comfort</option>
+              <option value="light">🥗 Light</option>
+              <option value="night">🌙 Night</option>
+            </select>
+          </label>
+          
           <label class="field full">
-            <span>Description</span>
+            <span>Description <span class="required">*</span></span>
             <textarea id="editRecipeDesc" rows="3" required>This recipe is healthy and delicious and you can eat it as a snack during the day. It has high protein while low in carbs.</textarea>
           </label>
           
           <label class="field full">
-            <span>Upload Recipe Photo:</span>
+            <span>Upload Recipe Photo: <span class="required">*</span></span>
             <div class="current-file">
               <span class="muted">Current Photo:</span>
               <button type="button" class="file-preview-btn">[photo]</button>
             </div>
             <input type="file" id="editRecipePhoto" accept="image/*">
-            <small class="muted">Optional in Phase 1 (UI only).</small>
+            <small class="muted">Optional - only upload if you want to change the photo.</small>
           </label>
           
           <!-- Ingredients -->
           <div class="full">
-            <div class="block-head">
-              <h3>Ingredients</h3>
-              <button type="button" class="btn mini" id="editAddIngredientBtn">+ Add Ingredient</button>
+            <div class="block-head-edit">
+              <h3>Ingredients <span class="required">*</span></h3>
             </div>
             
             <div id="editIngredientsList" class="stack">
@@ -168,9 +179,8 @@
           
           <!-- Instructions -->
           <div class="full">
-            <div class="block-head">
-              <h3>Instructions</h3>
-              <button type="button" class="btn mini" id="editAddStepBtn">+ Add Step</button>
+            <div class="block-head-edit">
+              <h3>Instructions <span class="required">*</span></h3>
             </div>
             
             <div id="editStepsList" class="stack">
@@ -197,7 +207,7 @@
           <!-- Video or URL -->
           <div class="full">
             <label class="field">
-              <span>Video or URL:</span>
+              <span>Video or URL (Optional):</span>
               <div class="current-file">
                 <span class="muted">Current Video:</span>
                 <button type="button" class="file-preview-btn">[video]</button>
@@ -207,7 +217,7 @@
             </label>
             
             <label class="field">
-              <span>Video URL:</span>
+              <span>Video URL (Optional):</span>
               <input type="url" id="editRecipeVideo" placeholder="https://youtube.com/...">
             </label>
           </div>
