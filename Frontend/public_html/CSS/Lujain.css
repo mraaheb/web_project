@@ -51,7 +51,7 @@ body .section {
 /* Form Grid Layout */
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   align-items: start;
 }
@@ -73,6 +73,13 @@ body .section {
   color: rgba(12,26,30,.88);
   font-size: 0.98rem;
   letter-spacing: 0.2px;
+}
+
+/* Required Asterisk Styling */
+.required {
+  color: #dc3545;
+  font-weight: 900;
+  margin-left: 2px;
 }
 
 .field input[type="text"],
@@ -114,7 +121,7 @@ body .section {
   margin-top: -4px;
 }
 
-/* Block Header (for Ingredients & Instructions) */
+/* Block Header (for Ingredients & Instructions) - FOR ADD PAGE */
 .block-head {
   display: flex;
   align-items: center;
@@ -151,6 +158,21 @@ body .section {
 
 .block-head .btn.mini:active {
   transform: translateY(0);
+}
+
+/* Block Header for EDIT PAGE - NO ADD BUTTON */
+.block-head-edit {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(39,142,136,.15);
+}
+
+.block-head-edit h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -.3px;
 }
 
 /* Stack (Ingredients & Instructions Lists) */
@@ -632,6 +654,7 @@ body .section {
   }
   
   .form-grid {
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
   
@@ -680,7 +703,8 @@ body .section {
     border-radius: 20px;
   }
   
-  .block-head {
+  .block-head,
+  .block-head-edit {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
