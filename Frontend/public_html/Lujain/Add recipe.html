@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MoodMeals | Add Recipe</title>
+  <title>VibeBite | Add Recipe</title>
   <link rel="stylesheet" href="../CSS/base.css">
   <link rel="stylesheet" href="../CSS/Lujain.css" />
 </head>
@@ -72,7 +72,6 @@
 </script>
 
               </div>
-    </div>
 </header>
 
 
@@ -81,19 +80,18 @@
     <div class="container">
       <div class="section-head">
         <h1 class="page-title">Add New Recipe</h1>
-        <p class="muted">Fill the form below (Phase 1 demo).</p>
       </div>
       
       <section class="panel">
         <form id="addRecipeForm" class="form-grid">
           
           <label class="field">
-            <span>Recipe Name</span>
+            <span>Recipe Name <span class="required">*</span></span>
             <input type="text" id="recipeName" placeholder="e.g., Chicken Wrap" required>
           </label>
           
           <label class="field">
-            <span>Category</span>
+            <span>Category <span class="required">*</span></span>
             <select id="recipeCategory" class="select" required>
               <option value="">Select...</option>
               <option value="breakfast">Breakfast</option>
@@ -104,13 +102,26 @@
             </select>
           </label>
           
+          <label class="field">
+            <span>Mood <span class="required">*</span></span>
+            <select id="recipeMood" class="select" required>
+              <option value="">Select mood...</option>
+              <option value="focus">🎯 Focus</option>
+              <option value="calm">🌿 Calm</option>
+              <option value="energy">⚡ Energy</option>
+              <option value="comfort">💜 Comfort</option>
+              <option value="light">🥗 Light</option>
+              <option value="night">🌙 Night</option>
+            </select>
+          </label>
+          
           <label class="field full">
-            <span>Description</span>
+            <span>Description <span class="required">*</span></span>
             <textarea id="recipeDesc" rows="3" placeholder="Write a short description..." required></textarea>
           </label>
           
           <label class="field full">
-            <span>Upload Recipe Photo</span>
+            <span>Upload Recipe Photo <span class="required">*</span></span>
             <input type="file" id="recipePhoto" accept="image/*" required>
             <small class="muted">Required - upload an image of your recipe.</small>
           </label>
@@ -118,7 +129,7 @@
           <!-- Ingredients -->
           <div class="full">
             <div class="block-head">
-              <h3>Ingredients</h3>
+              <h3>Ingredients <span class="required">*</span></h3>
               <button type="button" class="btn mini" id="addIngredientBtn">+ Add Ingredient</button>
             </div>
             
@@ -145,7 +156,7 @@
           <!-- Instructions -->
           <div class="full">
             <div class="block-head">
-              <h3>Instructions</h3>
+              <h3>Instructions <span class="required">*</span></h3>
               <button type="button" class="btn mini" id="addStepBtn">+ Add Step</button>
             </div>
             
@@ -186,11 +197,18 @@
     </div>
   </main>
   
-  <footer class="footer">
-    <div class="container footer-row">
-      <div class="foot-name">MoodMeals</div>
-      <div class="muted">Add Recipe Page</div>
-      <div class="copy">© 2026 MoodMeals. All rights reserved.</div>
+ <footer class="footer">
+    <div class="footer-center">
+      <div class="foot-name">VibeBite</div>
+      <div class="foot-small">Bites for every vibe.</div>
+
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <span>|</span>
+        <a href="#">Twitter</a>
+      </div>
+
+      <div class="copy">© 2026 VibeBite</div>
     </div>
   </footer>
   
