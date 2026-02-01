@@ -9,25 +9,74 @@
 </head>
 <body>
   <!-- Navbar -->
-  <header class="topbar">
-    <div class="container topbar-row">
-      <a class="brand" href="../Fanar/index.html">
-        <img src="../images/logo.png" alt="MoodMeals Logo" class="brand-logo">
-        <div class="brand-text">
-          <span class="brand-name">MoodMeals</span>
-          <span class="brand-sub">Easy Healthy Recipes</span>
-        </div>
-      </a>
-      <nav class="nav">
-        <a href="../Fanar/index.html" class="nav-link">Home</a>
-        <a href="../Jwana/user page.html" class="nav-link">User</a>
-        <a href="../Jwana/My recipes.html" class="nav-link active">My Recipes</a>
-      </nav>
-      <div class="auth">
-        <button class="btn btn-outline" id="signOutBtn">Sign Out</button>
+    
+  <header class="creative-header">
+  <div class="header-inner container">
+
+    <!-- Logo -->
+    <div class="header-left">
+      <div class="logo-circle">
+        <img src="../images/logo.png" alt="Logo">
+      </div>
+      <div class="brand-info">
+        <span class="brand-sub">Easy Healthy Recipes</span>
       </div>
     </div>
-  </header>
+
+ <nav class="header-nav icons-nav">
+
+  <a href="../Fanar/index.html" class="nav-item">
+    <img src="../images/home.png" alt="Home">
+    <span>Home</span>
+  </a>
+
+  <a href="../Jwana/User page.html" class="nav-item">
+    <img src="../images/user.png" alt="User">
+    <span>User</span>
+  </a>
+
+  <a href="../Jwana/My recipes.html" class="nav-item">
+    <img src="../images/my rec.png" alt="My Recipes">
+    <span>My Recipes</span>
+  </a>
+
+  <a href="Add recipes.html" class="nav-item">
+    <img src="../images/add rec.png" alt="Add Recipe">
+    <span>Add recipe</span>
+  </a>
+
+  <a href="Edit recipes.html" class="nav-item">
+    <img src="../images/edit rec.png" alt="Edit Recipe">
+    <span>Edit recipe</span>
+  </a>
+
+  <a href="../maraheb/View recipes.html" class="nav-item">
+    <img src="../images/view rec.png" alt="View Recipe">
+    <span>View recipe</span>
+  </a>
+
+</nav>
+
+    <!-- Right -->
+<button class="btn btn-outline signout-btn" id="signOutBtn">
+  <img src="../images/ssiiggnn.png" alt="Sign Out" class="signout-icon">
+  <span>Sign Out</span>
+</button>
+
+<script>
+  const signOutBtn = document.getElementById("signOutBtn");
+
+  signOutBtn.addEventListener("click", function() {
+    window.location.href = "../Fanar/index.html";  // تغيير المسار إلى صفحة index
+  });
+</script>
+
+              </div>
+    </div>
+</header>
+
+
+
   
   <main class="section">
     <div class="container">

@@ -13,18 +13,73 @@
   <div class="bg-blobs" aria-hidden="true"></div>
 
   <!-- HEADER  -->
-  <header class="header" id="top">
-    <div class="nav">
-      <a class="brand" href="#" id="logoHome">
-        <div class="logo">
-          <img src="../images/logo.png" alt="VibeBite logo">
-        </div>
-      </a>
+    
+ <header class="creative-header">
+  <div class="header-inner container">
 
-      <!-- Sign-out  -->
-      <a class="ad-signout" href="../Fanar/index.html" id="signOut">Sign-out</a>
+    <!-- Logo -->
+    <div class="header-left">
+      <div class="logo-circle">
+        <img src="../images/logo.png" alt="Logo">
+      </div>
+      <div class="brand-info">
+        <span class="brand-sub">Easy Healthy Recipes</span>
+      </div>
     </div>
-  </header>
+
+ <nav class="header-nav icons-nav">
+
+  <a href="../Fanar/index.html" class="nav-item">
+    <img src="../images/home.png" alt="Home">
+    <span>Home</span>
+  </a>
+
+  <a href="User page.html" class="nav-item">
+    <img src="../images/user.png" alt="User">
+    <span>User</span>
+  </a>
+
+  <a href="My recipes.html" class="nav-item">
+    <img src="../images/my rec.png" alt="My Recipes">
+    <span>My Recipes</span>
+  </a>
+
+  <a href="../Lujain/Add recipe.html" class="nav-item">
+    <img src="../images/add rec.png" alt="Add Recipe">
+    <span>Add recipe</span>
+  </a>
+
+  <a href="../Lujain/Edit recipe.html" class="nav-item">
+    <img src="../images/edit rec.png" alt="Edit Recipe">
+    <span>Edit recipe</span>
+  </a>
+
+  <a href="../maraheb/View recipe.html" class="nav-item">
+    <img src="../images/view rec.png" alt="View Recipe">
+    <span>View recipe</span>
+  </a>
+
+</nav>
+
+    <!-- Right -->
+<button class="btn btn-outline signout-btn" id="signOutBtn">
+  <img src="../images/ssiiggnn.png" alt="Sign Out" class="signout-icon">
+  <span>Sign Out</span>
+</button>
+
+<script>
+  const signOutBtn = document.getElementById("signOutBtn");
+
+  signOutBtn.addEventListener("click", function() {
+    window.location.href = "../Fanar/index.html";  // تغيير المسار إلى صفحة index
+  });
+</script>
+
+              </div>
+ 
+</header>
+
+
 
   <main class="ad-wrap">
 

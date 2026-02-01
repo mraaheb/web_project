@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodMeals | My Recipes</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="topbar">
+    <div class="container topbar-row">
+      <a class="brand" href="index.html">
+        <span class="brand-dot"></span>
+        <span class="brand-name">MoodMeals</span>
+        <span class="brand-sub">Easy Healthy Recipes</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="user.html" class="nav-link">User</a>
+        <a href="my-recipes.html" class="nav-link active">My Recipes</a>
+      </nav>
+
+      <div class="auth">
+        <button class="btn btn-outline" id="signOutBtn">Sign Out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+
+      <div class="recipes-head">
+        <div>
+          <h1 class="page-title">My Recipes</h1>
+          <p class="muted">Manage your own recipes here (Phase 1 demo).</p>
+        </div>
+
+        <a class="btn btn-primary" href="add-recipe.html">+ Add New Recipe</a>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>My Recipes Table</h2>
+          <p class="muted">Sample data for Phase 1.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table" id="myRecipesTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Recipe Name</th>
+                <th>Category</th>
+                <th>Last Update</th>
+                <th>Description</th>
+                <th>Ingredients</th>
+                <th>Instructions</th>
+                <th>Video</th>
+                <th>Total Likes</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <!-- SAMPLE USER RECIPES -->
+              <tr>
+                <td>1</td>
+                <td><a href="view-recipe.html?id=10">Chicken Wrap</a></td>
+                <td>Lunch</td>
+                <td>2026-01-19</td>
+                <td>Quick wrap for busy days.</td>
+                <td>Chicken, tortilla, lettuce</td>
+                <td>Mix + wrap + eat</td>
+                <td><a href="https://youtube.com/recipe-video" target="_blank">Watch Video</a></td> <!-- Example of Video -->
+                <td>45</td> <!-- Example Total Likes -->
+                <td class="actions">
+                  <a class="btn btn-primary mini" href="view-recipe.html?id=10">View</a>
+                  <a class="btn btn-outline mini" href="edit-recipe.html?id=10">Edit</a>
+                  <button class="btn btn-outline mini" disabled>Delete</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td><a href="view-recipe.html?id=11">Overnight Oats</a></td>
+                <td>Breakfast</td>
+                <td>2026-01-18</td>
+                <td>Easy oats for students.</td>
+                <td>Oats, milk, honey</td>
+                <td>Mix and chill overnight</td>
+                <td>No video for recipe</td> <!-- No video -->
+                <td>30</td>
+                <td class="actions">
+                  <a class="btn btn-primary mini" href="view-recipe.html?id=11">View</a>
+                  <a class="btn btn-outline mini" href="edit-recipe.html?id=11">Edit</a>
+                  <button class="btn btn-outline mini" disabled>Delete</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+                <td><a href="view-recipe.html?id=12">Fruit Smoothie</a></td>
+                <td>Drink</td>
+                <td>2026-01-17</td>
+                <td>Fast smoothie in 5 minutes.</td>
+                <td>Banana, berries, yogurt</td>
+                <td>Blend everything</td>
+                <td><a href="https://youtube.com/smoothie-video" target="_blank">Watch Video</a></td> <!-- Example of Video -->
+                <td>25</td> <!-- Example Total Likes -->
+                <td class="actions">
+                  <a class="btn btn-primary mini" href="view-recipe.html?id=12">View</a>
+                  <a class="btn btn-outline mini" href="edit-recipe.html?id=12">Edit</a>
+                  <button class="btn btn-outline mini" disabled>Delete</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <p class="muted note">
+          * Delete is disabled in Phase 1 (no backend).
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div class="muted">©️ 2026 MoodMeals</div>
+      <div class="muted">My Recipes Page</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
