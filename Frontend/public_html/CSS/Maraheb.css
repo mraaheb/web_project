@@ -841,3 +841,28 @@
   .ad-grid{ grid-template-columns: 1fr; }
   .ad-table{ min-width: 680px; }
 }
+/* =========================
+   ADMIN FIX: hide user icon nav in admin only
+========================= */
+.page-admin .icons-nav,
+.page-admin .header-nav{
+  display: none !important;
+}
+
+/* خلّي الهيدر مرتب: لوغو يسار + زر ساين اوت يمين */
+.page-admin .creative-header .header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+/* تأكيد إن زر Sign Out يثبت يمين */
+.page-admin #signOutBtn{
+  margin-left: auto;
+}
+
+/* (اختياري) لو تبين الهيدر أخف بالأدمن */
+.page-admin .creative-header{
+  padding: 12px 0;
+}
