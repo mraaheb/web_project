@@ -1,226 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-  <title>VibeBite | Home</title>
-  <link rel="stylesheet" href="../CSS/base.css">
-  
+    <head>
+      <meta charset="UTF-8" >
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+      <title> VibeBite | Home</title>
+      <link rel="stylesheet" href="../CSS/base.css">
 
-</head>
 
-<body>
-  <div class="bg-blobs" aria-hidden="true"></div>
+    </head>
 
-  <header class="header" id="top">
-    <div class="nav">
-      <a class="brand" href="index.html">
-        <div class="logo">
-          <img src="../images/logo.png" alt="VibeBite logo" >
-        </div>
-      </a>
+    <body id="page-home">
+        <div class="bg-blobs" aria-hidden="true"></div>
 
-      <div class="nav-actions">
-        <a class="btn btn-ghost" href="login.html">Login</a>
-        <a class="btn btn-main" href="signup.html">Sign up</a>
-      </div>
-    </div>
-  </header>
 
-  <section class="hero">
-    <div class="hero-box">
-      <h1>How do you feel today?</h1>
-      <p>
-        Not sure what to eat? Start with how you feel.
-        Choose a mood and explore quick, healthy recipes made for students.
-      </p>
-
-      <div class="hero-buttons">
-        <a class="btn btn-main" href="#moods">Choose a Mood</a>
-        <a class="btn btn-dark" href="#picks">Quick Picks</a>
-      </div>
-    </div>
-
-    <div class="hero-img">
-      <img src="../images/hero.png" alt="Healthy bowl">
-
-      <div class="hero-float f1">
-        <div class="float-icon" aria-hidden="true">🍽️</div>
-        <div class="float-text">
-          <div class="float-num">200+</div>
-          <div class="float-sub">recipes</div>
-        </div>
-      </div>
-
-      <div class="hero-float f2">
-        <div class="float-icon" aria-hidden="true">🥬</div>
-        <div class="float-text">
-          <div class="float-num">Healthy</div>
-          <div class="float-sub">quick choices</div>
-        </div>
-      </div>
-
-      <div class="hero-float f3">
-        <div class="float-icon" aria-hidden="true">❤️</div>
-        <div class="float-text">
-          <div class="float-num">14.5K</div>
-          <div class="float-sub">loved recipes</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="moods">
-    <div class="container">
-      <div class="section-title">
-        <h2>Choose Your Mood</h2>
-        <p>Select your mood to explore matching recipe categories.</p>
-      </div>
-
-      <div class="mood-grid">
-        <a class="mood focus" href="#picks"><div class="mood-emoji">🎯</div><div class="mood-name">Focus</div></a>
-        <a class="mood calm" href="#picks"><div class="mood-emoji">🌿</div><div class="mood-name">Calm</div></a>
-        <a class="mood energy" href="#picks"><div class="mood-emoji">⚡</div><div class="mood-name">Energy</div></a>
-        <a class="mood comfort" href="#picks"><div class="mood-emoji">🤍</div><div class="mood-name">Comfort</div></a>
-        <a class="mood light" href="#picks"><div class="mood-emoji">🥗</div><div class="mood-name">Light</div></a>
-        <a class="mood night" href="#picks"><div class="mood-emoji">🌙</div><div class="mood-name">Night</div></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt" id="picks">
-    <div class="container">
-      <div class="section-title">
-        <h2>Bites for every vibe</h2>
-      </div>
-
-      <div class="picks-wrap">
-        <button class="p-arrow" id="picksLeft" type="button" aria-label="Previous">
-          <span class="arr">‹</span>
-        </button>
-
-        <div class="picks-viewport" aria-label="Quick Picks slider">
-          <div class="pick-track" id="pickTrack">
-            <a class="pick" href="../Maraheb/View recipe.html">
-              <div class="pick-overlay">
-                <span class="pick-badge light">Light</span>
-                <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
-              </div>
-              <img src="../images/Lemon Chicken Salad.png" alt="Lemon Chicken Salad">
-              <div class="pick-info">
-                <div class="pick-name">Lemon Chicken Salad</div>
-                <div class="pick-meta">15 min • high protein • fresh <br>⭐⭐⭐⭐⭐</div>
+        <!-- HEADER   -->
+        <header class="header" id="guestHeader">
+          <div class="nav">
+            <a class="brand" href="index.html">
+              <div class="logo">
+                <img src="../images/logo.png" alt="VibeBite logo">
               </div>
             </a>
 
-            <a class="pick" href="../Maraheb/View recipe.html">
-              <div class="pick-overlay">
-                <span class="pick-badge energy">Energy</span>
-                <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
-              </div>
-              <img src="../images/Energy Wrap.jpg" alt="Energy Wrap">
-              <div class="pick-info">
-                <div class="pick-name">Energy Wrap</div>
-                <div class="pick-meta">10 min • no oven • veggies <br>⭐⭐⭐⭐</div>
-              </div>
-            </a>
-
-            <a class="pick" href="../Maraheb/View recipe.html">
-              <div class="pick-overlay">
-                <span class="pick-badge comfort">Comfort</span>
-                <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
-              </div>
-              <img src="../images/Comfort Pasta Bowl.png" alt="Comfort Pasta Bowl">
-              <div class="pick-info">
-                <div class="pick-name">Comfort Pasta Bowl</div>
-                <div class="pick-meta">20 min • cozy • easy <br>⭐⭐⭐⭐</div>
-              </div>
-            </a>
-
-            <a class="pick" href="../Maraheb/View recipe.html">
-              <div class="pick-overlay">
-                <span class="pick-badge focus">Focus</span>
-                <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
-              </div>
-              <img src="../images/Rice Bowl.JPG" alt="Focus Rice Bowl">
-              <div class="pick-info">
-                <div class="pick-name">Focus Rice Bowl</div>
-                <div class="pick-meta">18 min • study friendly <br>⭐⭐⭐</div>
-              </div>
-            </a>
-
-            <a class="pick" href="../Maraheb/View recipe.html">
-              <div class="pick-overlay">
-                <span class="pick-badge calm">Calm</span>
-                <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
-              </div>
-              <img src="../images/Calm Soup.WEBP" alt="Calm Soup">
-              <div class="pick-info">
-                <div class="pick-name">Calm Soup</div>
-                <div class="pick-meta">15 min • warm • relaxing <br>⭐⭐</div>
-              </div>
-            </a>
-
-            <a class="pick" href="../Maraheb/View recipe.html">
-              <div class="pick-overlay">
-                <span class="pick-badge night">Night</span>
-                <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
-              </div>
-              <img src="../images/Slow Night Snack.AVIF" alt="Slow Night Snack">
-              <div class="pick-info">
-                <div class="pick-name">Slow Night Snack</div>
-                <div class="pick-meta">8 min • light • chill <br>⭐⭐⭐⭐</div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <button class="p-arrow" id="picksRight" type="button" aria-label="Next">
-          <span class="arr">›</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section class="section challenge-cta reveal" id="challenge">
-    <div class="container">
-      <div class="challenge-float">
-        <div class="challenge-glow" aria-hidden="true"></div>
-
-        <div class="challenge-card" data-bg="../images/food.AVIF">
-          <div class="challenge-content">
-            <h2>30-Day Healthy Mood Challenge</h2>
-            <p>
-              A one-month demo that shows how VibeBite suggests meals
-              based on your daily mood — quick, simple, and healthy.
-            </p>
-            <br>
-
-            <div class="challenge-actions">
-              <a href="login.html" class="btn btn-main">Join the Challenge</a>
+            <div class="nav-actions">
+              <a class="btn btn-ghost" href="login.html">Login</a>
+              <a class="btn btn-main" href="signup.html">Sign up</a>
             </div>
           </div>
+        </header>
+
+
+        <section class="hero">
+            <div class="hero-box">
+              <h1>How do you feel today?</h1>
+              <p>
+                Not sure what to eat? Start with how you feel.
+                Choose a mood and explore quick, healthy recipes made for students.
+              </p>
+
+              <div class="hero-buttons">
+                <a class="btn btn-main" href="#moods">Choose a Mood</a>
+                <a class="btn btn-dark" href="#picks">Quick Picks</a>
+              </div>
+            </div>
+
+            <div class="hero-img">
+                <img src="../images/hero.png" alt="Healthy bowl">
+
+                <div class="hero-float f1">
+                  <div class="float-icon" aria-hidden="true">🍽️</div>
+                  <div class="float-text">
+                    <div class="float-num">200+</div>
+                    <div class="float-sub">recipes</div>
+                  </div>
+                </div>
+
+                <div class="hero-float f2">
+                  <div class="float-icon" aria-hidden="true">🥬</div>
+                  <div class="float-text">
+                    <div class="float-num">Healthy</div>
+                    <div class="float-sub">quick choices</div>
+                  </div>
+                </div>
+
+                <div class="hero-float f3">
+                  <div class="float-icon" aria-hidden="true">❤️</div>
+                  <div class="float-text">
+                    <div class="float-num">14.5K</div>
+                    <div class="float-sub">loved recipes</div>
+                  </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="moods">
+            <div class="container">
+                <div class="section-title">
+                  <h2>Choose Your Mood</h2>
+                  <p>Select your mood to explore matching recipe categories.</p>
+                </div>
+
+                <div class="mood-grid">
+                    <a class="mood focus" href="#picks"><div class="mood-emoji">🎯</div><div class="mood-name">Focus</div></a>
+                    <a class="mood calm" href="#picks"><div class="mood-emoji">🌿</div><div class="mood-name">Calm</div></a>
+                    <a class="mood energy" href="#picks"><div class="mood-emoji">⚡</div><div class="mood-name">Energy</div></a>
+                    <a class="mood comfort" href="#picks"><div class="mood-emoji">🤍</div><div class="mood-name">Comfort</div></a>
+                    <a class="mood light" href="#picks"><div class="mood-emoji">🥗</div><div class="mood-name">Light</div></a>
+                    <a class="mood night" href="#picks"><div class="mood-emoji">🌙</div><div class="mood-name">Night</div></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section alt" id="picks">
+            <div class="container">
+                <div class="section-title">
+                  <h2>Bites for every vibe</h2>
+                </div>
+
+                <div class="picks-wrap">
+                    <button class="p-arrow" id="picksLeft" type="button" aria-label="Previous">
+                      <span class="arr">‹</span>
+                    </button>
+
+                    <div class="picks-viewport" aria-label="Quick Picks slider">
+                        <div class="pick-track" id="pickTrack">
+                            <a class="pick" href="../Maraheb/View recipe.html">
+                                <div class="pick-overlay">
+                                    <span class="pick-badge light">Light</span>
+                                    <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
+                                </div>
+                                <img src="../images/Lemon Chicken Salad.png" alt="Lemon Chicken Salad">
+                                <div class="pick-info">
+                                    <div class="pick-name">Lemon Chicken Salad</div>
+                                    <div class="pick-meta">15 min • high protein • fresh <br>⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </a>
+
+                            <a class="pick" href="../Maraheb/View recipe.html">
+                                <div class="pick-overlay">
+                                  <span class="pick-badge energy">Energy</span>
+                                  <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
+                                </div>
+                                <img src="../images/Energy Wrap.jpg" alt="Energy Wrap">
+                                <div class="pick-info">
+                                    <div class="pick-name">Energy Wrap</div>
+                                    <div class="pick-meta">10 min • no oven • veggies <br>⭐⭐⭐⭐</div>
+                                </div>
+                            </a>
+
+                            <a class="pick" href="../Maraheb/View recipe.html">
+                                <div class="pick-overlay">
+                                    <span class="pick-badge comfort">Comfort</span>
+                                    <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
+                                </div>
+                                <img src="../images/Comfort Pasta Bowl.png" alt="Comfort Pasta Bowl">
+                                <div class="pick-info">
+                                    <div class="pick-name">Comfort Pasta Bowl</div>
+                                    <div class="pick-meta">20 min • cozy • easy <br>⭐⭐⭐⭐</div>
+                                </div>
+                            </a>
+
+                            <a class="pick" href="../Maraheb/View recipe.html">
+                                <div class="pick-overlay">
+                                    <span class="pick-badge focus">Focus</span>
+                                    <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
+                                </div>
+                                <img src="../images/Rice Bowl.JPG" alt="Focus Rice Bowl">
+                                <div class="pick-info">
+                                    <div class="pick-name">Focus Rice Bowl</div>
+                                    <div class="pick-meta">18 min • study friendly <br>⭐⭐⭐</div>
+                                </div>
+                            </a>
+
+                            <a class="pick" href="../Maraheb/View recipe.html">
+                                  <div class="pick-overlay">
+                                      <span class="pick-badge calm">Calm</span>
+                                      <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
+                                  </div>
+                                  <img src="../images/Calm Soup.WEBP" alt="Calm Soup">
+                                  <div class="pick-info">
+                                      <div class="pick-name">Calm Soup</div>
+                                      <div class="pick-meta">15 min • warm • relaxing <br>⭐⭐</div>
+                                  </div>
+                            </a>
+
+                            <a class="pick" href="../Maraheb/View recipe.html">
+                                <div class="pick-overlay">
+                                    <span class="pick-badge night">Night</span>
+                                    <button class="fav-btn" type="button" aria-label="Add to favorites">❤️</button>
+                                </div>
+                                <img src="../images/Slow Night Snack.AVIF" alt="Slow Night Snack">
+                                <div class="pick-info">
+                                    <div class="pick-name">Slow Night Snack</div>
+                                    <div class="pick-meta">8 min • light • chill <br>⭐⭐⭐⭐</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <button class="p-arrow" id="picksRight" type="button" aria-label="Next">
+                      <span class="arr">›</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section challenge-cta reveal" id="challenge">
+            <div class="container">
+                <div class="challenge-float">
+                    <div class="challenge-glow" aria-hidden="true"></div>
+
+                    <div class="challenge-card" data-bg="../images/food.AVIF">
+                        <div class="challenge-content">
+                            <h2>30-Day Healthy Mood Challenge</h2>
+                            <p>
+                              A one-month demo that shows how VibeBite suggests meals
+                              based on your daily mood — quick, simple, and healthy.
+                            </p>
+                            <br>
+
+                            <div class="challenge-actions">
+                              <a href="login.html" class="btn btn-main">Join the Challenge</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+          </div>
+        </section>
+
+    <footer class="footer">
+        <div class="footer-center">
+            <div class="foot-name">VibeBite</div>
+            <div class="foot-small">Bites for every vibe.</div>
+
+            <div class="footer-links">
+                <a href="#">Instagram</a>
+                <span>|</span>
+                <a href="#">Twitter</a>
+            </div>
+
+          <div class="copy">© 2026 VibeBite</div>
         </div>
+    </footer>
 
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-center">
-      <div class="foot-name">VibeBite</div>
-      <div class="foot-small">Bites for every vibe.</div>
-
-      <div class="footer-links">
-        <a href="#">Instagram</a>
-        <span>|</span>
-        <a href="#">Twitter</a>
-      </div>
-
-      <div class="copy">© 2026 VibeBite</div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+    </body>
 </html>

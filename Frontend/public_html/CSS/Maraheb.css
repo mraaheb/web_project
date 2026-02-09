@@ -1,5 +1,5 @@
 /* ========== View Recipe (Scoped) ========== */
-/* مهم: كل الستايل شغال فقط داخل body.page-view-recipe عشان ما يأثر على admin */
+
 
 .page-view-recipe{
   --vr-bg: rgba(255,255,255,.72);

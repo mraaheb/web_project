@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
   /* =========================
      1. Welcome user name
      ========================= */
-  const userNameText = document.getElementById("userNameText");
-  if (userNameText) {
-    userNameText.textContent = "Jwana"; // static demo
-  }
+    const userNameText = document.getElementById("userNameText");
+    if (userNameText) {
+      userNameText.textContent = "Jwana Alothman "; // static demo
+    }
 
   /* =========================
      2. Like button (UI only)
@@ -86,3 +86,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+
+
+
+
+

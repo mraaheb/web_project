@@ -1,6 +1,4 @@
-
-
-/* HOME: Quick Picks Slider*/
+/* HOME: Quick Picks Slider */
 (() => {
   const track = document.getElementById("pickTrack");
   const btnLeft = document.getElementById("picksLeft");
@@ -69,7 +67,9 @@
   const io = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
       });
     },
     { threshold: 0.15 }
@@ -78,23 +78,43 @@
   reveals.forEach(el => io.observe(el));
 })();
 
-/*SIGNUP Image-only upload*/
-(() => {
-  const form = document.getElementById("signupForm");
-  if (!form) return;
+/* SIGN UP → USER PAGE */
+function goToUserPage() {
+  var form = document.getElementById("signupForm");
+  var imgInput = document.getElementById("profileImg");
 
-  const imgInput = document.getElementById("profileImg");
-
-  function isImage(file) {
-    return file && file.type && file.type.startsWith("image/");
+  if (!form || !form.checkValidity()) {
+    if (form) form.reportValidity();
+    return false;
   }
 
-  form.addEventListener("submit", (e) => {
-    const file = imgInput?.files?.[0];
-    if (file && !isImage(file)) {
-      e.preventDefault();
-      alert("Forms accept only image files to upload.");
+  var profileImage = "../images/default-user.png";
+
+  if (imgInput && imgInput.files.length > 0) {
+    var file = imgInput.files[0];
+
+    if (!file.type.startsWith("image/")) {
+      alert("Only image files are allowed.");
       imgInput.value = "";
+      return false;
     }
-  });
-})();
+
+    profileImage = "../uploads/" + file.name;
+  }
+
+  // save user data
+  localStorage.setItem("vb_profile_image", profileImage);
+  localStorage.setItem("vb_logged_in", "true");
+
+  // redirect to user page
+  window.location.href = "../Jwana/User page.html";
+  return false;
+}
+
+
+
+/* SIGN OUT */
+function signOut() {
+  localStorage.removeItem("vb_logged_in");
+  window.location.href = "../Fanar/index.html";
+}

@@ -178,3 +178,15 @@ initial.forEach(renderComment);
 setCount();
 commentsList.scrollTop = commentsList.scrollHeight;
 
+
+
+
+
+/* ===== SIGN OUT (for both pages) ===== */
+  var signOutBtn = document.getElementById("signOutBtn");
+  if (signOutBtn) {
+    signOutBtn.addEventListener("click", function () {
+      localStorage.removeItem("user");
+      window.location.href = "../Fanar/index.html";
+    });
+  }

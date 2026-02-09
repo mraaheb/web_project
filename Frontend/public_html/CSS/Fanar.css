@@ -243,7 +243,7 @@ body.auth-page .field-hint{
   font-size: .88rem;
 }
 
-/* submit button (use base .btn) */
+/* submit button  */
 body.auth-page .btn.btn-main {
   width:100%;
   border-radius:18px;
@@ -325,3 +325,7 @@ body.auth-page .auth-foot a{
     grid-template-columns: 1fr !important;
   }
 }
+
+
+
+
