@@ -92,9 +92,25 @@ document.querySelectorAll('form[data-form="reportAction"]').forEach((form) => {
       return;
     }
   });
+  
+  
+  
+  
+  
 });
 
 // Initial counts
 refreshCounts();
+
+
+  /* =========================
+     5. Sign out button
+     ========================= */
+  const signOutBtn = document.getElementById("signOutBtn");
+  if (signOutBtn) {
+    signOutBtn.addEventListener("click", function () {
+      window.location.href = "../Fanar/index.html";
+    });
+  }
 
 
