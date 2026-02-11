@@ -8,6 +8,7 @@
   --radius:18px;
   --shadow:0 16px 40px rgba(0,0,0,.12);
 }
+
 /* =========================
    CONTAINER
 ========================= */
@@ -16,19 +17,23 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+
 /* =========================
    SECTIONS
 ========================= */
 .section-head {
   margin: 30px 0;
 }
+
 .page-title {
   font-size: 2rem;
   font-weight: 900;
 }
+
 .muted {
   color: var(--muted);
 }
+
 /* =========================
    USER INFO
 ========================= */
@@ -41,6 +46,7 @@
   width: fit-content;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
+
 .user-stats {
   display: flex;
   gap: 20px;
@@ -48,6 +54,7 @@
   padding-top: 12px;
   border-top: 1px solid rgba(0,0,0,0.08);
 }
+
 .user-stats p {
   margin-bottom: 8px;
   font-size: 0.95rem;
@@ -56,15 +63,18 @@
   border-radius: 12px;
   font-weight: 700;
 }
+
 .user-info {
   display: flex;
   align-items: center;
   gap: 16px;
 }
+
 .user-name {
   font-weight: 800;
   font-size: 1.1rem;
 }
+
 #userAvatar {
   width: 80px;
   height: 80px;
@@ -72,6 +82,7 @@
   object-fit: cover;
   border: 2px solid #ddd;
 }
+
 /* =========================
    IMAGES
 ========================= */
@@ -81,6 +92,7 @@
   object-fit: cover;
   border-radius: 10px;
 }
+
 .creator-photo {
   width: 40px;
   height: 40px;
@@ -89,6 +101,7 @@
   margin-right: 8px;
   vertical-align: middle;
 }
+
 /* =========================
    TABLE STYLING
 ========================= */
@@ -99,33 +112,40 @@
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.06);
 }
+
 .table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
 }
+
 .table thead th {
   background: #f0f7f7;
   font-weight: 800;
   padding: 14px 12px;
   border-bottom: 1px solid rgba(0,0,0,0.12);
 }
+
 .table td {
   padding: 14px 12px;
   border-bottom: 1px solid rgba(0,0,0,0.08);
   vertical-align: middle;
 }
+
 .table tbody tr:last-child td {
   border-bottom: none;
 }
+
 .table tbody tr:hover {
   background: rgba(39,142,136,0.06);
 }
+
 .table th:first-child,
 .table td:first-child {
   width: 40px;
   text-align: center;
 }
+
 /* =========================
    FILTER + SORT
 ========================= */
@@ -135,11 +155,13 @@
   align-items: center;
   margin-bottom: 20px;
 }
+
 .filter-row{
   display: flex;
   gap: 12px;
   align-items: center;
 }
+
 .select{
   padding: 10px 16px;
   border-radius: 12px;
@@ -148,6 +170,7 @@
   background: #fff;
   cursor: pointer;
 }
+
 .filter-btn{
   background: var(--main);
   color: white;
@@ -158,9 +181,11 @@
   cursor: pointer;
   transition: 0.2s;
 }
+
 .filter-btn:hover{
   background: #1f6f6a;
 }
+
 /* =========================
    ACTION BUTTONS
 ========================= */
@@ -169,6 +194,7 @@
   gap: 10px;
   flex-wrap: wrap;
 }
+
 /* =========================
    ADD RECIPE BUTTON
 ========================= */
