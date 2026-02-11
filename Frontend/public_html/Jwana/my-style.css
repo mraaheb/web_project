@@ -158,6 +158,49 @@ body{
   width: 40px;
   text-align: center;
 }
+/* =========================
+   FILTER + SORT
+========================= */
+/* يخلي العنوان والفلتر بنفس السطر */
+.filter-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* صف الفلتر */
+.filter-row{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* شكل الدروب داون */
+.select{
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.15);
+  font-weight: 600;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* زر الفلتر بلون الموقع */
+.filter-btn{
+  background: var(--main);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-btn:hover{
+  background: #1f6f6a;
+}
 
 /* =========================
    ACTION BUTTONS
@@ -297,7 +340,3 @@ body{
     grid-template-columns: 1fr;
   }
 }
-
-
-
-

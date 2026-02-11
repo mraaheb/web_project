@@ -123,24 +123,34 @@
         </div>
       </section>
 
-      <!-- All Recipes + Filter -->
-      <section class="panel">
-        <div class="panel-head">
-          <h2>All Available Recipes</h2>
+                <!-- All Recipes + Filter -->
+              <section class="panel">
+  <div class="panel-head filter-head">
 
-          <div class="filter-row">
-            <label class="muted" for="categoryFilter">Filter by category:</label>
-            <select id="categoryFilter" class="select">
-              <option value="all">All</option>
-              <option value="breakfast">Breakfast</option>
-              <option value="lunch">Lunch</option>
-              <option value="dinner">Dinner</option>
-              <option value="snack">Snack</option>
-              <option value="drink">Drink</option>
-            </select>
-          </div>
-        </div>
+    <h2>All Available Recipes</h2>
 
+    <div class="filter-row">
+      <select id="categoryFilter" class="select">
+        <option value="all">All Categories</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+        <option value="snack">Snack</option>
+        <option value="drink">Drink</option>
+      </select>
+
+      <button class="filter-btn" onclick="applyFilter()">
+        Filter
+      </button>
+    </div>
+
+  </div>
+
+
+
+          
+          
+          
         <div class="table-wrap">
           <table class="table" id="allRecipesTable">
             <thead>
