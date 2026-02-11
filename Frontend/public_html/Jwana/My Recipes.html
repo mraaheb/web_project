@@ -1,34 +1,76 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MoodMeals | My Recipes</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+  <title> VibeBite | My Recipes</title>
+   <link rel="stylesheet" href="../CSS/base.css">
+   <link rel="stylesheet" href="my-style.css">
 
-<body>
+
+<body id="page-recipes">
 
   <!-- Navbar -->
-  <header class="topbar">
-    <div class="container topbar-row">
-      <a class="brand" href="index.html">
-        <span class="brand-dot"></span>
-        <span class="brand-name">MoodMeals</span>
-        <span class="brand-sub">Easy Healthy Recipes</span>
-      </a>
+    <header class="creative-header">
+        <div class="header-inner container">
 
-      <nav class="nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="user.html" class="nav-link">User</a>
-        <a href="my-recipes.html" class="nav-link active">My Recipes</a>
-      </nav>
+            <!-- Logo -->
+            <div class="header-left">
+              <div class="logo-circle">
+                <a class="auth-brand" href="../Fanar/index.html">
+                    <img src="../images/logo.png" alt="VibeBite logo" class="auth-logo" >
+                </a>
+              </div>
 
-      <div class="auth">
-        <button class="btn btn-outline" id="signOutBtn">Sign Out</button>
-      </div>
-    </div>
-  </header>
+            </div>
+
+            <nav class="header-nav icons-nav">
+
+                
+
+                <a href="../Jwana/User page.html" class="nav-item nav-user">
+                  <img src="../images/userr.png" alt="User">
+                  <span>User</span>
+                </a>
+
+                <a href="../Jwana/My recipes.html" class="nav-item nav-recipes">
+                  <img src="../images/book.png" alt="My Recipes">
+                  <span>My Recipes</span>
+                </a>
+
+                <a href="../Lujain/Add recipe.html" class="nav-item nav-add">
+                  <img src="../images/add.png" alt="Add Recipe">
+                  <span>Add recipe</span>
+                </a>
+
+                <a href="../Lujain/Edit recipe.html" class="nav-item nav-edit">
+                  <img src="../images/edit.png" alt="Edit Recipe">
+                  <span>Edit recipe</span>
+                </a>
+
+                <a href="../Maraheb/View recipe.html" class="nav-item nav-view">
+                  <img src="../images/view.png" alt="View Recipe">
+                  <span>View recipe</span>
+                </a>
+
+            </nav>
+
+            <!-- Right -->
+            <button class="btn btn-outline signout-btn" id="signOutBtn">
+              <img src="../images/exit.png" alt="Sign Out" class="signout-icon">
+              <span>Sign Out</span>
+            </button>
+
+            
+
+        </div>
+    </header>
+  
+
+
+   
+
 
   <main class="section">
     <div class="container">
@@ -36,16 +78,16 @@
       <div class="recipes-head">
         <div>
           <h1 class="page-title">My Recipes</h1>
-          <p class="muted">Manage your own recipes here (Phase 1 demo).</p>
+          <p class="muted"> Manage your own recipes here .</p>
         </div>
 
-        <a class="btn btn-primary" href="add-recipe.html">+ Add New Recipe</a>
+        <a class="btn btn-primary btn-main" href="../Lujain/Add recipe.html">+ Add New Recipe</a>
       </div>
 
       <section class="panel">
         <div class="panel-head">
           <h2>My Recipes Table</h2>
-          <p class="muted">Sample data for Phase 1.</p>
+          <p class="muted"></p>
         </div>
 
         <div class="table-wrap">
@@ -67,76 +109,148 @@
 
             <tbody>
               <!-- SAMPLE USER RECIPES -->
-              <tr>
-                <td>1</td>
-                <td><a href="view-recipe.html?id=10">Chicken Wrap</a></td>
-                <td>Lunch</td>
-                <td>2026-01-19</td>
-                <td>Quick wrap for busy days.</td>
-                <td>Chicken, tortilla, lettuce</td>
-                <td>Mix + wrap + eat</td>
-                <td><a href="https://youtube.com/recipe-video" target="_blank">Watch Video</a></td> <!-- Example of Video -->
-                <td>45</td> <!-- Example Total Likes -->
-                <td class="actions">
-                  <a class="btn btn-primary mini" href="view-recipe.html?id=10">View</a>
-                  <a class="btn btn-outline mini" href="edit-recipe.html?id=10">Edit</a>
-                  <button class="btn btn-outline mini" disabled>Delete</button>
-                </td>
-              </tr>
+                <tr>
+            <td>1</td>
+            <td>
+              <a href="../Maraheb/View recipe.html?id=10">
+                <img src="../images/chicken-wrap.jpg" alt="Chicken Wrap" class="recipe-photo" />
+                Chicken Wrap
+              </a>
+            </td>
+            <td>Lunch</td>
+            <td>2026-01-19</td>
+            <td>Quick wrap for busy days.</td>
+            <td>1 Chicken,1 tortilla, 2 lettuce</td>
+            <td>Mix + wrap + eat</td>
+            <td><a href="https://youtube.com/shorts/gHTDeL6PEiA?si=W0KCJhzE87DtQV9b" target="_blank">Watch Video</a></td> 
+            <td>45</td>
+            <td class="actions">
+              <a class="btn btn-primary mini" href="../Maraheb/View recipe.html?id=10">View</a>
+              <a class="btn btn-outline mini" href="../Lujain/Edit recipe.html?id=10">Edit</a>
+              <button class="btn btn-outline mini" onclick="deleteRecipe();">Delete</button>
+<script>
+  function deleteRecipe() {
+  
+    console.log('Deleting recipe...');
+    
+    // بعد عملية الحذف، يتم إعادة تحميل الصفحة
+    window.location.href = window.location.href; // إعادة تحميل نفس الصفحة
+  }
+</script>
 
-              <tr>
-                <td>2</td>
-                <td><a href="view-recipe.html?id=11">Overnight Oats</a></td>
-                <td>Breakfast</td>
-                <td>2026-01-18</td>
-                <td>Easy oats for students.</td>
-                <td>Oats, milk, honey</td>
-                <td>Mix and chill overnight</td>
-                <td>No video for recipe</td> <!-- No video -->
-                <td>30</td>
-                <td class="actions">
-                  <a class="btn btn-primary mini" href="view-recipe.html?id=11">View</a>
-                  <a class="btn btn-outline mini" href="edit-recipe.html?id=11">Edit</a>
-                  <button class="btn btn-outline mini" disabled>Delete</button>
-                </td>
-              </tr>
+         
+              
+              
+            </td>
+          </tr>
 
-              <tr>
-                <td>3</td>
-                <td><a href="view-recipe.html?id=12">Fruit Smoothie</a></td>
-                <td>Drink</td>
-                <td>2026-01-17</td>
-                <td>Fast smoothie in 5 minutes.</td>
-                <td>Banana, berries, yogurt</td>
-                <td>Blend everything</td>
-                <td><a href="https://youtube.com/smoothie-video" target="_blank">Watch Video</a></td> <!-- Example of Video -->
-                <td>25</td> <!-- Example Total Likes -->
-                <td class="actions">
-                  <a class="btn btn-primary mini" href="view-recipe.html?id=12">View</a>
-                  <a class="btn btn-outline mini" href="edit-recipe.html?id=12">Edit</a>
-                  <button class="btn btn-outline mini" disabled>Delete</button>
-                </td>
-              </tr>
+          <tr>
+            <td>2</td>
+            <td>
+              <a href="../Maraheb/View recipe.html?id=11">
+                <img src="../images/overnight-oats.jpg" alt="Overnight Oats" class="recipe-photo" />
+                Overnight Oats
+              </a>
+            </td>
+            <td>Breakfast</td>
+            <td>2026-01-18</td>
+            <td>Easy oats for students.</td>
+            <td>3 Oats, cup of milk, 5g honey</td>
+            <td>Mix and chill overnight</td>
+            <td>No video for recipe</td> 
+            <td>30</td>
+            <td class="actions">
+              <a class="btn btn-primary mini" href="../Maraheb/View recipe.html?id=11">View</a>
+              <a class="btn btn-outline mini" href="../Lujain/Edit recipe.html?id=11">Edit</a>
+              <button class="btn btn-outline mini" onclick="deleteRecipe();">Delete</button>
+
+
+<script>
+  function deleteRecipe() {
+
+    console.log('Deleting recipe...');
+    
+    // بعد عملية الحذف، يتم إعادة تحميل الصفحة
+    window.location.href = window.location.href; // إعادة تحميل نفس الصفحة
+  }
+</script>
+
+         
+            </td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>
+              <a href="../Maraheb/View recipe.html?id=12">
+                <img src="../images/fruit-smoothie.jpg" alt="Fruit Smoothie" class="recipe-photo" />
+                Fruit Smoothie
+              </a>
+            </td>
+            <td>Drink</td>
+            <td>2026-01-17</td>
+            <td>Fast smoothie in 5 minutes.</td>
+            <td>5g Chia seeds, 5 strawberry,10g yogurt</td>
+            <td>Blend everything</td>
+            <td><a href="https://youtube.com/shorts/fUVKDKUd15s?si=f0fSiW_UNMZVImTv" target="_blank">Watch Video</a></td> 
+            <td>25</td>
+            <td class="actions">
+              <a class="btn btn-primary mini" href="../Maraheb/View recipe.html?id=12">View</a>
+              <a class="btn btn-outline mini" href="../Lujain/Edit recipe.html?id=12">Edit</a>
+          
+
+
+<button class="btn btn-outline mini delete-btn">Delete</button>
+
+         
+              
+            </td>
+          </tr>
+
 
             </tbody>
           </table>
         </div>
 
         <p class="muted note">
-          * Delete is disabled in Phase 1 (no backend).
+         
         </p>
       </section>
 
     </div>
+   
+
   </main>
 
+  
   <footer class="footer">
-    <div class="container footer-row">
-      <div class="muted">©️ 2026 MoodMeals</div>
-      <div class="muted">My Recipes Page</div>
+    <div class="footer-center">
+      <div class="foot-name">VibeBite</div>
+      <div class="foot-small">Bites for every vibe.</div>
+
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <span>|</span>
+        <a href="#">Twitter</a>
+      </div>
+
+      <div class="copy">© 2026 VibeBite</div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+<script src="my-recipes.js"></script>
+
+<script>
+  const links = document.querySelectorAll(".header-nav a");
+  const currentPage = window.location.pathname.split("/").pop();
+
+  links.forEach(link => {
+    const linkPage = link.getAttribute("href").split("/").pop();
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
 </body>
 </html>
