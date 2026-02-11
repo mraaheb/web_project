@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -28,8 +27,6 @@
             </div>
 
             <nav class="header-nav icons-nav">
-
-                
 
                 <a href="../Jwana/User page.html" class="nav-item nav-user">
                   <img src="../images/userr.png" alt="User">
@@ -64,8 +61,6 @@
               <span>Sign Out</span>
             </button>
 
-            
-
         </div>
     </header>
    
@@ -82,25 +77,17 @@
         <p class="muted">View and manage your favorite recipes.</p>
       </div>
 
-           <!-- User Info -->
+      <!-- User Info -->
       <section class="panel">
-
         <div class="user-card">
           <div class="user-info">
             <img
               id="userAvatar"
               src="../images/default-user.png"
               alt="User profile"
-              style="
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                object-fit: cover;
-                border: 2px solid #ddd;
-              "
             >
             <div>
-              <div class="user-name" id="userFullName">Jwana Alothman </div>
+              <div class="user-name" id="userFullName">Jwana Alothman</div>
               <div class="muted" id="userEmail">Jwana@email.com</div>
             </div>
           </div>
@@ -116,45 +103,40 @@
             </p>
           </div>
         </div>
-          
       </section>
 
       <!-- Action Buttons -->
       <div class="user-page-actions">
-        <a class="btn btn-primary btn-main" href="My recipes.html">
+        <a class="btn btn-main" href="My recipes.html">
           Go to My Recipes
         </a>
-        <button id="addRecipeBtn" class="btn btn-main">
+        <a class="btn btn-main" href="../Lujain/Add recipe.html">
           Add New Recipe
-        </button>
+        </a>
       </div>
-                <!-- All Recipes + Filter -->
-              <section class="panel">
-  <div class="panel-head filter-head">
 
-    <h2>All Available Recipes</h2>
+      <!-- All Recipes + Filter -->
+      <section class="panel">
+        <div class="panel-head filter-head">
 
-    <div class="filter-row">
-      <select id="categoryFilter" class="select">
-        <option value="all">All Categories</option>
-        <option value="breakfast">Breakfast</option>
-        <option value="lunch">Lunch</option>
-        <option value="dinner">Dinner</option>
-        <option value="snack">Snack</option>
-        <option value="drink">Drink</option>
-      </select>
+          <h2>All Available Recipes</h2>
 
-      <button class="filter-btn" onclick="applyFilter()">
-        Filter
-      </button>
-    </div>
+          <div class="filter-row">
+            <select id="categoryFilter" class="select">
+              <option value="all">All Categories</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+              <option value="snack">Snack</option>
+              <option value="drink">Drink</option>
+            </select>
 
-  </div>
+            <button class="filter-btn" onclick="applyFilter()">
+              Filter
+            </button>
+          </div>
 
-
-
-          
-          
+        </div>
           
         <div class="table-wrap">
           <table class="table" id="allRecipesTable">
@@ -248,7 +230,7 @@
       <section class="panel">
         <div class="panel-head">
           <h2>My Favorite Recipes</h2>
-          <p class="muted">.</p>
+          <p class="muted">Your saved favorites</p>
         </div>
 
         <div class="table-wrap">
@@ -279,18 +261,13 @@
                   Alice Smith
                 </td>
                 <td>
-                 <button class="btn btn-outline mini remove-btn"> Remove </button>
-
+                  <button class="btn remove-btn mini">Remove</button>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-
-      <button id="addRecipeBtn" class="btn btn-main">
-        Add New Recipe
-      </button>
 
     </div>
   </main>
