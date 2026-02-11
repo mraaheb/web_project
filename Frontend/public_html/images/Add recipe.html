@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VibeBite | Add Recipe</title>
+  <link rel="stylesheet" href="../CSS/base.css">
+  <link rel="stylesheet" href="../CSS/Lujain.css" />
+</head>
+<body id="page-add">
+  <!-- Navbar -->
+  <header class="creative-header">
+        <div class="header-inner container">
+
+            <!-- Logo -->
+            <div class="header-left">
+              <div class="logo-circle">
+                <a class="auth-brand" href="../Fanar/index.html">
+                    <img src="../images/logo.png" alt="VibeBite logo" class="auth-logo" >
+                </a>
+              </div>
+
+            </div>
+
+            <nav class="header-nav icons-nav">
+
+               
+
+                <a href="../Jwana/User page.html" class="nav-item nav-user">
+                  <img src="../images/userr.png" alt="User">
+                  <span>User</span>
+                </a>
+
+                <a href="../Jwana/My recipes.html" class="nav-item nav-recipes">
+                  <img src="../images/book.png" alt="My Recipes">
+                  <span>My Recipes</span>
+                </a>
+
+                <a href="../Lujain/Add recipe.html" class="nav-item nav-add">
+                  <img src="../images/add.png" alt="Add Recipe">
+                  <span>Add recipe</span>
+                </a>
+
+                <a href="../Lujain/Edit recipe.html" class="nav-item nav-edit">
+                  <img src="../images/edit.png" alt="Edit Recipe">
+                  <span>Edit recipe</span>
+                </a>
+
+                <a href="../Maraheb/View recipe.html" class="nav-item nav-view">
+                  <img src="../images/view.png" alt="View Recipe">
+                  <span>View recipe</span>
+                </a>
+
+            </nav>
+
+            <!-- Right -->
+            <button class="btn btn-outline signout-btn" id="signOutBtn">
+              <img src="../images/exit.png" alt="Sign Out" class="signout-icon">
+              <span>Sign Out</span>
+            </button>
+
+            
+
+        </div>
+    </header>
+   
+
+
+
+
+  
+  <main class="section">
+    <div class="container">
+      <div class="section-head">
+        <h1 class="page-title">Add New Recipe</h1>
+      </div>
+      
+      <section class="panel">
+        <form id="addRecipeForm" class="form-grid">
+          
+          <label class="field">
+            <span>Recipe Name <span class="required">*</span></span>
+            <input type="text" id="recipeName" placeholder="e.g., Chicken Wrap" required>
+          </label>
+          
+          <label class="field">
+            <span>Category <span class="required">*</span></span>
+            <select id="recipeCategory" class="select" required>
+              <option value="">Select...</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+              <option value="snack">Snack</option>
+              <option value="drink">Drink</option>
+            </select>
+          </label>
+          
+          <label class="field">
+            <span>Mood <span class="required">*</span></span>
+            <select id="recipeMood" class="select" required>
+              <option value="">Select mood...</option>
+              <option value="focus">🎯 Focus</option>
+              <option value="calm">🌿 Calm</option>
+              <option value="energy">⚡ Energy</option>
+              <option value="comfort">💜 Comfort</option>
+              <option value="light">🥗 Light</option>
+              <option value="night">🌙 Night</option>
+            </select>
+          </label>
+          
+          <label class="field full">
+            <span>Description <span class="required">*</span></span>
+            <textarea id="recipeDesc" rows="3" placeholder="Write a short description..." required></textarea>
+          </label>
+          
+          <label class="field full">
+            <span>Upload Recipe Photo <span class="required">*</span></span>
+            <input type="file" id="recipePhoto" accept="image/*" required>
+            
+          </label>
+          
+          <!-- Ingredients -->
+          <div class="full">
+            <div class="block-head">
+              <h3>Ingredients <span class="required">*</span></h3>
+              <button type="button" class="btn mini" id="addIngredientBtn">+ Add Ingredient</button>
+            </div>
+            
+            <div id="ingredientsList" class="stack">
+              <div class="ingredient-row">
+                <div class="ing-field">
+                  <label>Ingredient 1:</label>
+                  <div class="ing-inputs">
+                    <div class="ing-input-wrapper">
+                      <span class="input-label">Name:</span>
+                      <input class="input" type="text" name="ingredient-name" placeholder="e.g., Chicken" required>
+                    </div>
+                    <div class="ing-input-wrapper">
+                      <span class="input-label">Quantity:</span>
+                      <input class="input" type="text" name="ingredient-quantity" placeholder="e.g., 200g" required>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="delete-btn">×</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Instructions -->
+          <div class="full">
+            <div class="block-head">
+              <h3>Instructions <span class="required">*</span></h3>
+              <button type="button" class="btn mini" id="addStepBtn">+ Add Step</button>
+            </div>
+            
+            <div id="stepsList" class="stack">
+              <div class="step-row">
+                <div class="step-field">
+                  <label>Step 1:</label>
+                  <textarea class="input" name="step" rows="2" placeholder="Describe this step..." required></textarea>
+                </div>
+                <button type="button" class="delete-btn">×</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Upload Video or URL -->
+          <div class="full">
+            <label class="field">
+              <small class="muted">provide a YouTube URL  or Video</small>
+              <span>Upload Video (Optional):</span>
+              <input type="file" id="recipeVideoFile" accept="video/*">
+              <br>
+            </label>
+            
+            <label class="field">
+              <span>Video URL (Optional):</span>
+              <input type="url" id="recipeVideo" placeholder="https://youtube.com/...">
+            </label>
+          </div>
+          
+          <p id="addRecipeMsg" class="form-msg full"></p>
+          
+          <div class="full form-actions">
+            <button type="submit" class="btn btn-primary">Add Recipe</button>
+            <a href="../Jwana/My recipes.html" class="btn btn-outline">Cancel</a>
+          </div>
+          
+        </form>
+      </section>
+    </div>
+  </main>
+  
+ <footer class="footer">
+    <div class="footer-center">
+      <div class="foot-name">VibeBite</div>
+      <div class="foot-small">Bites for every vibe.</div>
+
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <span>|</span>
+        <a href="#">Twitter</a>
+      </div>
+
+      <div class="copy">© 2026 VibeBite</div>
+    </div>
+  </footer>
+  
+  <script src="recipe-form.js"></script>
+</body>
+</html>
