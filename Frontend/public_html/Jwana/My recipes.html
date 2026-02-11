@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -80,7 +81,7 @@
           <p class="muted"> Manage your own recipes here .</p>
         </div>
 
-        <a class="btn btn-primary" href="../Lujain/Add recipe.html">+ Add New Recipe</a>
+        <a class="btn btn-primary btn-main" href="../Lujain/Add recipe.html">+ Add New Recipe</a>
       </div>
 
       <section class="panel">
@@ -196,18 +197,10 @@
             <td class="actions">
               <a class="btn btn-primary mini" href="../Maraheb/View recipe.html?id=12">View</a>
               <a class="btn btn-outline mini" href="../Lujain/Edit recipe.html?id=12">Edit</a>
-             <button class="btn btn-outline mini" onclick="deleteRecipe();">Delete</button>
+          
 
 
-<script>
-  function deleteRecipe() {
-    
-    console.log('Deleting recipe...');
-    
-    // بعد عملية الحذف، يتم إعادة تحميل الصفحة
-    window.location.href = window.location.href; // إعادة تحميل نفس الصفحة
-  }
-</script>
+<button class="btn btn-outline mini delete-btn">Delete</button>
 
          
               

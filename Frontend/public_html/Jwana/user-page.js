@@ -50,6 +50,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+// =========================
+// Remove Favorite Button
+// =========================
+const removeButtons = document.querySelectorAll(".remove-btn");
+
+removeButtons.forEach(btn => {
+  btn.addEventListener("click", function () {
+
+    // يرجع لنفس صفحة اليوزر بدون أي رسالة
+    window.location.reload();
+
+  });
+});
+
 
 // =========================
 // FILTER FUNCTION (خليها خارج DOMContentLoaded)
