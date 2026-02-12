@@ -1,4 +1,4 @@
-// ========== View Recipe Interactions (Clean) ==========
+// View Recipe Interactions 
 
 const toastEl = document.getElementById("toast");
 function toast(msg){
@@ -72,13 +72,13 @@ btnSubmitReport?.addEventListener("click", () => {
   closeReport();
 });
 
-// ===== Comments (add + delete your own) =====
+//  Comments (add + delete your own) 
 const commentsList = document.getElementById("commentsList");
 const commentsCount = document.getElementById("commentsCount");
 const commentInput = document.getElementById("commentInput");
 const btnAddComment = document.getElementById("btnAddComment");
 
-// Fake logged-in user (Phase 1)
+// Fake logged-in user 
 const currentUser = {
   name: "You",
   avatar: "../images/default-user.png"
@@ -182,7 +182,7 @@ commentsList.scrollTop = commentsList.scrollHeight;
 
 
 
-/* ===== SIGN OUT (for both pages) ===== */
+/* SIGN OUT */
   var signOutBtn = document.getElementById("signOutBtn");
   if (signOutBtn) {
     signOutBtn.addEventListener("click", function () {

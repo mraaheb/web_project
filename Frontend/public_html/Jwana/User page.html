@@ -1,292 +1,277 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VibeBite | User</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>VibeBite | User</title>
+        <link rel="stylesheet" href="../CSS/base.css">
+        <link rel="stylesheet" href="../CSS/Jwana.css">
+    </head>
 
-  <link rel="stylesheet" href="../CSS/base.css">
-  <link rel="stylesheet" href="my-style.css">
-</head>
+    <body id="page-user" >
 
-<body id="page-user" >
+      <!-- Navbar -->
+        <header class="creative-header">
+            <div class="header-inner container">
+                <!-- Logo -->
+                <div class="header-left">
+                    <div class="logo-circle">
+                        <a class="auth-brand" href="../Fanar/index.html">
+                            <img src="../images/logo.png" alt="VibeBite logo" class="auth-logo" >
+                        </a>
+                    </div>
+                </div>
+                <nav class="header-nav icons-nav">
+                    <a href="../Jwana/User page.html" class="nav-item nav-user">
+                        <img src="../images/userr.png" alt="User">
+                        <span>User</span>
+                    </a>
+                    <a href="../Jwana/My recipes.html" class="nav-item nav-recipes">
+                        <img src="../images/book.png" alt="My Recipes">
+                        <span>My Recipes</span>
+                    </a>
+                    <a href="../Lujain/Add recipe.html" class="nav-item nav-add">
+                        <img src="../images/add.png" alt="Add Recipe">
+                        <span>Add recipe</span>
+                    </a>
+                    <a href="../Lujain/Edit recipe.html" class="nav-item nav-edit">
+                        <img src="../images/edit.png" alt="Edit Recipe">
+                        <span>Edit recipe</span>
+                    </a>
+                    <a href="../Maraheb/View recipe.html" class="nav-item nav-view">
+                        <img src="../images/view.png" alt="View Recipe">
+                        <span>View recipe</span>
+                    </a>
+                </nav>
+                <!-- Right -->
+                <button class="btn btn-outline signout-btn" id="signOutBtn">
+                    <img src="../images/exit.png" alt="Sign Out" class="signout-icon">
+                    <span>Sign Out</span>
+                </button>
+            </div>
+        </header>
+        <main class="section">
+            <div class="container">
 
-  <!-- Navbar -->
-  <header class="creative-header">
-        <div class="header-inner container">
+                <!-- Welcome -->
+                <div class="section-head">
+                    <h1 class="page-title">
+                      Welcome, <span id="userNameText">User name</span> 👋
+                    </h1>
+                    <p class="muted">View and manage your favorite recipes.</p>
+                </div>
 
-            <!-- Logo -->
-            <div class="header-left">
-              <div class="logo-circle">
-                <a class="auth-brand" href="../Fanar/index.html">
-                    <img src="../images/logo.png" alt="VibeBite logo" class="auth-logo" >
-                </a>
-              </div>
+                <!-- User Info -->
+                <div class="user-card">
+                    <div class="user-info">
+                        <img
+                          id="userAvatar"
+                          src="../images/default-user.png"
+                          alt="User profile"
+                        >
+                        <div>
+                            <div class="user-name" id="userFullName">Jwana Alothman</div>
+                            <div class="muted" id="userEmail">Jwana@gmail.com</div>
+                        </div>
+                        
+                        <a class="btn btn-main" href="My recipes.html">
+                      📖 My Recipes
+                    </a>
+                    </div>
+
+                    <div class="user-stats">
+                        <p>
+                            <strong>Number of Recipes:</strong>
+                            <span id="recipeCount">0</span>
+                        </p>
+                        <p>
+                            <strong>Total Likes:</strong>
+                            <span id="totalLikes">0</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- All Recipes + Filter -->
+                <section class="panel">
+                    <div class="panel-head filter-head">
+
+                      <h2>All Available Recipes</h2>
+
+                      <div class="filter-row">
+                        <select id="categoryFilter" class="select">
+                          <option value="all">All Categories</option>
+                          <option value="breakfast">Breakfast</option>
+                          <option value="lunch">Lunch</option>
+                          <option value="dinner">Dinner</option>
+                          <option value="snack">Snack</option>
+                          <option value="drink">Drink</option>
+                        </select>
+
+                        <button class="filter-btn" onclick="applyFilter()">
+                          Filter
+                        </button>
+                      </div>
+
+                    </div>
+
+                    <div class="table-wrap">
+                        <table class="table" id="allRecipesTable">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Recipe Name</th>
+                                <th>Recipe Photo</th>
+                                <th>Recipe Creator</th>
+                                <th>Total Likes</th>
+                                <th>Category</th>
+                                <th>Actions</th>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr data-category="drink">
+                                    <td>1</td>
+                                    <td>
+                                        <a href="../Maraheb/View recipe.html?id=1">
+                                          Green Energy Smoothie
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <img src="../images/green-energy-smoothie.png" alt="Green Energy Smoothie" class="recipe-photo">
+                                    </td>
+                                    <td>
+                                        <img src="../images/user1.jpg" alt="John Doe" class="creator-photo">
+                                        John Doe
+                                    </td>
+                                    <td>42</td>
+                                    <td>Drink</td>
+                                    <td class="actions">
+                                        <button class="btn btn-outline mini">Like</button>
+                                        <button class="btn btn-outline mini">Favorite</button>
+                                        <a class="btn btn-primary mini" href="../Maraheb/View recipe.html?id=1">View</a>
+                                    </td>
+                                </tr>
+
+                                <tr data-category="breakfast">
+                                    <td>2</td>
+                                    <td>
+                                        <a href="../Maraheb/View recipe.html?id=2">
+                                          Cinnamon Fruit Oats
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <img src="../images/innamon-fruit-oats.png" alt="Cinnamon Fruit Oats" class="recipe-photo">
+                                    </td>
+                                    <td>
+                                        <img src="../images/user2.avif" alt="Jane Doe" class="creator-photo">
+                                        Jane Doe
+                                    </td>
+                                    <td>35</td>
+                                    <td>Breakfast</td>
+                                    <td class="actions">
+                                        <button class="btn btn-outline mini">Like</button>
+                                        <button class="btn btn-outline mini">Favorite</button>
+                                        <a class="btn btn-primary mini" href="../Maraheb/View recipe.html?id=2">View</a>
+                                    </td>
+                                </tr>
+
+                                <tr data-category="lunch">
+                                    <td>3</td>
+                                    <td>
+                                        <a href="../Maraheb/View recipe.html?id=3">
+                                          Fresh Quinoa Salad
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <img src="../images/fresh-quinoa-salad.webp" alt="Fresh Quinoa Salad" class="recipe-photo">
+                                    </td>
+                                    <td>
+                                        <img src="../images/user3.jpg" alt="Alice Smith" class="creator-photo">
+                                        Alice Smith
+                                    </td>
+                                    <td>50</td>
+                                    <td>Lunch</td>
+                                    <td class="actions">
+                                        <button class="btn btn-outline mini">Like</button>
+                                        <button class="btn btn-outline mini">Favorite</button>
+                                        <a class="btn btn-primary mini" href="../Maraheb/View recipe.html?id=3">View</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Favorites -->
+                <section class="panel">
+                    <div class="panel-head">
+                        <h2>My Favorite Recipes</h2>
+                        <p class="muted">Your saved favorites</p>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table class="table" id="favTable">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Recipe Name</th>
+                                    <th>Recipe Photo</th>
+                                    <th>Creator</th>
+                                    <th>Remove</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="favBody">
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <a href="../Maraheb/View recipe.html?id=3">
+                                          Fresh Quinoa Salad
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <img src="../images/fresh-quinoa-salad.webp" alt="Fresh Quinoa Salad" class="recipe-photo">
+                                    </td>
+                                    <td>
+                                        <img src="../images/user3.jpg" alt="Alice Smith" class="creator-photo">
+                                        Alice Smith
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-outline mini" href="User page.html">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Action Buttons  -->
+                <div class="page-end-actions">
+                    <a class="btn btn-main" href="../Lujain/Add recipe.html">
+                      ➕ Add New Recipe
+                    </a>
+                </div>
 
             </div>
+        </main>
 
-            <nav class="header-nav icons-nav">
+        <footer class="footer">
+            <div class="footer-center">
+                <div class="foot-name">VibeBite</div>
+                <div class="foot-small">Bites for every vibe.</div>
 
-                <a href="../Jwana/User page.html" class="nav-item nav-user">
-                  <img src="../images/userr.png" alt="User">
-                  <span>User</span>
-                </a>
+                <div class="footer-links">
+                    <a href="#">Instagram</a>
+                    <span>|</span>
+                    <a href="#">Twitter</a>
+                </div>
+                <div class="copy">© 2026 VibeBite</div>
+            </div>
+        </footer>
 
-                <a href="../Jwana/My recipes.html" class="nav-item nav-recipes">
-                  <img src="../images/book.png" alt="My Recipes">
-                  <span>My Recipes</span>
-                </a>
+        <script src="user-page.js"></script>
+        
 
-                <a href="../Lujain/Add recipe.html" class="nav-item nav-add">
-                  <img src="../images/add.png" alt="Add Recipe">
-                  <span>Add recipe</span>
-                </a>
-
-                <a href="../Lujain/Edit recipe.html" class="nav-item nav-edit">
-                  <img src="../images/edit.png" alt="Edit Recipe">
-                  <span>Edit recipe</span>
-                </a>
-
-                <a href="../Maraheb/View recipe.html" class="nav-item nav-view">
-                  <img src="../images/view.png" alt="View Recipe">
-                  <span>View recipe</span>
-                </a>
-
-            </nav>
-
-            <!-- Right -->
-            <button class="btn btn-outline signout-btn" id="signOutBtn">
-              <img src="../images/exit.png" alt="Sign Out" class="signout-icon">
-              <span>Sign Out</span>
-            </button>
-
-        </div>
-    </header>
-   
-  
-
-  <main class="section">
-    <div class="container">
-
-      <!-- Welcome -->
-      <div class="section-head">
-        <h1 class="page-title">
-          Welcome, <span id="userNameText">User name</span> 👋
-        </h1>
-        <p class="muted">View and manage your favorite recipes.</p>
-      </div>
-
-      <!-- User Info -->
-      <div class="user-card">
-        <div class="user-info">
-          <img
-            id="userAvatar"
-            src="../images/default-user.png"
-            alt="User profile"
-          >
-          <div>
-            <div class="user-name" id="userFullName">Jwana Alothman</div>
-            <div class="muted" id="userEmail">Jwana@email.com</div>
-          </div>
-        </div>
-
-        <div class="user-stats">
-          <p>
-            <strong>Number of Recipes:</strong>
-            <span id="recipeCount">0</span>
-          </p>
-          <p>
-            <strong>Total Likes:</strong>
-            <span id="totalLikes">0</span>
-          </p>
-        </div>
-      </div>
-
-      <!-- All Recipes + Filter -->
-      <section class="panel">
-        <div class="panel-head filter-head">
-
-          <h2>All Available Recipes</h2>
-
-          <div class="filter-row">
-            <select id="categoryFilter" class="select">
-              <option value="all">All Categories</option>
-              <option value="breakfast">Breakfast</option>
-              <option value="lunch">Lunch</option>
-              <option value="dinner">Dinner</option>
-              <option value="snack">Snack</option>
-              <option value="drink">Drink</option>
-            </select>
-
-            <button class="filter-btn" onclick="applyFilter()">
-              Filter
-            </button>
-          </div>
-
-        </div>
-          
-        <div class="table-wrap">
-          <table class="table" id="allRecipesTable">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Recipe Name</th>
-                <th>Recipe Photo</th>
-                <th>Recipe Creator</th>
-                <th>Total Likes</th>
-                <th>Category</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr data-category="drink">
-                <td>1</td>
-                <td>
-                  <a href="../Maraheb/View recipe.html?id=1">
-                    Green Energy Smoothie
-                  </a>
-                </td>
-                <td>
-                  <img src="../images/green-energy-smoothie.png" alt="Green Energy Smoothie" class="recipe-photo">
-                </td>
-                <td>
-                  <img src="../images/user1.jpg" alt="John Doe" class="creator-photo">
-                  John Doe
-                </td>
-                <td>42</td>
-                <td>Drink</td>
-                <td class="actions">
-                  <button class="btn btn-outline mini">Like</button>
-                  <button class="btn btn-outline mini">Favorite</button>
-                  <a class="btn btn-primary mini" href="../Maraheb/View recipe.html?id=1">View</a>
-                </td>
-              </tr>
-
-              <tr data-category="breakfast">
-                <td>2</td>
-                <td>
-                  <a href="../Maraheb/View recipe.html?id=2">
-                    Cinnamon Fruit Oats
-                  </a>
-                </td>
-                <td>
-                  <img src="../images/innamon-fruit-oats.png" alt="Cinnamon Fruit Oats" class="recipe-photo">
-                </td>
-                <td>
-                  <img src="../images/user2.avif" alt="Jane Doe" class="creator-photo">
-                  Jane Doe
-                </td>
-                <td>35</td>
-                <td>Breakfast</td>
-                <td class="actions">
-                  <button class="btn btn-outline mini">Like</button>
-                  <button class="btn btn-outline mini">Favorite</button>
-                  <a class="btn btn-primary mini" href="../Maraheb/View recipe.html?id=2">View</a>
-                </td>
-              </tr>
-
-              <tr data-category="lunch">
-                <td>3</td>
-                <td>
-                  <a href="../Maraheb/View recipe.html?id=3">
-                    Fresh Quinoa Salad
-                  </a>
-                </td>
-                <td>
-                  <img src="../images/fresh-quinoa-salad.webp" alt="Fresh Quinoa Salad" class="recipe-photo">
-                </td>
-                <td>
-                  <img src="../images/user3.jpg" alt="Alice Smith" class="creator-photo">
-                  Alice Smith
-                </td>
-                <td>50</td>
-                <td>Lunch</td>
-                <td class="actions">
-                  <button class="btn btn-outline mini">Like</button>
-                  <button class="btn btn-outline mini">Favorite</button>
-                  <a class="btn btn-primary mini" href="../Maraheb/View recipe.html?id=3">View</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- Favorites -->
-      <section class="panel">
-        <div class="panel-head">
-          <h2>My Favorite Recipes</h2>
-          <p class="muted">Your saved favorites</p>
-        </div>
-
-        <div class="table-wrap">
-          <table class="table" id="favTable">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Recipe Name</th>
-                <th>Recipe Photo</th>
-                <th>Creator</th>
-                <th>Remove</th>
-              </tr>
-            </thead>
-
-            <tbody id="favBody">
-              <tr>
-                <td>1</td>
-                <td>
-                  <a href="../Maraheb/View recipe.html?id=3">
-                    Fresh Quinoa Salad
-                  </a>
-                </td>
-                <td>
-                  <img src="../images/fresh-quinoa-salad.webp" alt="Fresh Quinoa Salad" class="recipe-photo">
-                </td>
-                <td>
-                  <img src="../images/user3.jpg" alt="Alice Smith" class="creator-photo">
-                  Alice Smith
-                </td>
-                <td>
-                  <button class="btn remove-btn mini">Remove</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- Action Buttons  -->
-      <div class="page-end-actions">
-        <a class="btn btn-main" href="My recipes.html">
-          📖 Go to My Recipes
-        </a>
-        <a class="btn btn-main" href="../Lujain/Add recipe.html">
-          ➕ Add New Recipe
-        </a>
-      </div>
-
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-center">
-      <div class="foot-name">VibeBite</div>
-      <div class="foot-small">Bites for every vibe.</div>
-
-      <div class="footer-links">
-        <a href="#">Instagram</a>
-        <span>|</span>
-        <a href="#">Twitter</a>
-      </div>
-
-      <div class="copy">© 2026 VibeBite</div>
-    </div>
-  </footer>
-
-  <script src="user-page.js"></script>
-  <script src="../Fanar/script.js"></script>
-
-</body>
+    </body>
 </html>

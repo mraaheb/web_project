@@ -1,6 +1,4 @@
-/* ============================
-   RECIPE FORM PAGES (Add & Edit)
-   ============================ */
+/* RECIPE FORM PAGES (Add & Edit)*/
 
 /* Main Section */
 body .section {
@@ -290,9 +288,7 @@ body .section {
   transform: translateY(0);
 }
 
-/* ============================
-   INGREDIENT & STEP FIELDS
-   ============================ */
+/* INGREDIENT & STEP FIELDS */
 
 /* Ingredient Row with Label */
 .ing-field {
@@ -408,9 +404,7 @@ body .section {
   border-color: var(--teal);
 }
 
-/* ============================
-   DELETE BUTTON STYLES
-   ============================ */
+/* DELETE BUTTON STYLES */
 
 .delete-btn {
   flex-shrink: 0;
@@ -456,9 +450,7 @@ body .section {
   margin-top: 28px;
 }
 
-/* ============================
-   RESPONSIVE DESIGN
-   ============================ */
+/* RESPONSIVE DESIGN */
 
 @media (max-width: 980px) {
   .panel {

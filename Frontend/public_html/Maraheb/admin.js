@@ -1,4 +1,4 @@
-// ========== Admin Page (Phase 1 - UI Simulation) ==========
+//Admin Page 
 
 const toastEl = document.getElementById("adToast");
 
@@ -103,9 +103,7 @@ document.querySelectorAll('form[data-form="reportAction"]').forEach((form) => {
 refreshCounts();
 
 
-  /* =========================
-     5. Sign out button
-     ========================= */
+  /*Sign out button*/
   const signOutBtn = document.getElementById("signOutBtn");
   if (signOutBtn) {
     signOutBtn.addEventListener("click", function () {

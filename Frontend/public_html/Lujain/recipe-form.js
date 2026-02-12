@@ -9,55 +9,52 @@ document.addEventListener("DOMContentLoaded", function () {
     var stepsList = document.getElementById("stepsList");
     var msgAdd = document.getElementById("addRecipeMsg");
 
-    // ===== FILE VALIDATION FOR ADD RECIPE =====
+    //  FILE VALIDATION FOR ADD RECIPE 
     var recipePhotoInput = document.getElementById("recipePhoto");
     var recipeVideoInput = document.getElementById("recipeVideoFile");
 
-    // التحقق من صورة الوصفة
     if (recipePhotoInput) {
       recipePhotoInput.addEventListener("change", function(e) {
         var file = e.target.files[0];
         if (file) {
           var validImageTypes = ["image/jpeg", "image/jpg", "image/png", "image/gif", "image/webp"];
           if (!validImageTypes.includes(file.type)) {
-            alert("❌ الرجاء اختيار صورة فقط (JPG, PNG, GIF, WEBP)\nPlease select an image file only (JPG, PNG, GIF, WEBP)");
+            alert("❌ Please select an image file only (JPG, PNG, GIF, WEBP)");
             e.target.value = "";
             return false;
           }
-          // التحقق من حجم الملف (أقل من 5MB)
+          
           if (file.size > 5 * 1024 * 1024) {
-            alert("❌ حجم الصورة كبير جداً. الرجاء اختيار صورة أقل من 5MB\nImage size is too large. Please select an image less than 5MB");
+            alert("❌ Image size is too large. Please select an image less than 5MB");
             e.target.value = "";
             return false;
           }
-          console.log("✅ تم اختيار صورة صحيحة:", file.name);
+          console.log("✅ Image seccessfully selected:", file.name);
         }
       });
     }
 
-    // التحقق من فيديو الوصفة
     if (recipeVideoInput) {
       recipeVideoInput.addEventListener("change", function(e) {
         var file = e.target.files[0];
         if (file) {
           var validVideoTypes = ["video/mp4", "video/webm", "video/ogg", "video/quicktime", "video/x-msvideo", "video/x-matroska"];
           if (!validVideoTypes.includes(file.type)) {
-            alert("❌ الرجاء اختيار فيديو فقط (MP4, WEBM, OGG, MOV, AVI, MKV)\nPlease select a video file only (MP4, WEBM, OGG, MOV, AVI, MKV)");
+            alert("❌ Please select a video file only (MP4, WEBM, OGG, MOV, AVI, MKV)");
             e.target.value = "";
             return false;
           }
-          // التحقق من حجم الملف (أقل من 50MB)
+          // التحقق من حجم الملف 
           if (file.size > 50 * 1024 * 1024) {
-            alert("❌ حجم الفيديو كبير جداً. الرجاء اختيار فيديو أقل من 50MB\nVideo size is too large. Please select a video less than 50MB");
+            alert("❌ Video size is too large. Please select a video less than 50MB");
             e.target.value = "";
             return false;
           }
-          console.log("✅ تم اختيار فيديو صحيح:", file.name);
+          console.log("✅ Video seccessfully selected:", file.name);
         }
       });
     }
 
-    // إضافة مكون جديد (Name + Quantity) مع Label
     if (addIngBtn && ingList) {
       addIngBtn.addEventListener("click", function () {
         var wrapper = document.createElement("div");
@@ -227,13 +224,13 @@ document.addEventListener("DOMContentLoaded", function () {
       // التحقق النهائي من الصورة
       var photoFile = recipePhotoInput.files[0];
       if (!photoFile) {
-        alert("❌ الرجاء اختيار صورة للوصفة\nPlease select a recipe photo");
+        alert("❌ Please select a recipe photo");
         return false;
       }
       
       if (msgAdd) {
         msgAdd.className = "form-msg show";
-        msgAdd.textContent = "Recipe saved successfully (demo). Redirecting...";
+        msgAdd.textContent = "Recipe saved successfully. Redirecting...";
       }
       setTimeout(function () {
         window.location.href = "../Jwana/My recipes.html";
@@ -241,14 +238,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* ===== EDIT RECIPE: NO ADD BUTTONS - EDIT ONLY ===== */
+  /* EDIT RECIPE: */
   var editRecipeForm = document.getElementById("editRecipeForm");
   if (editRecipeForm) {
     var ingList2 = document.getElementById("editIngredientsList");
     var stepsList2 = document.getElementById("editStepsList");
     var msgEdit = document.getElementById("editRecipeMsg");
 
-    // ===== FILE VALIDATION FOR EDIT RECIPE =====
+    // FILE VALIDATION FOR EDIT RECIPE 
     var editPhotoInput = document.getElementById("editRecipePhoto");
     var editVideoInput = document.getElementById("editRecipeVideoFile");
 
@@ -259,17 +256,17 @@ document.addEventListener("DOMContentLoaded", function () {
         if (file) {
           var validImageTypes = ["image/jpeg", "image/jpg", "image/png", "image/gif", "image/webp"];
           if (!validImageTypes.includes(file.type)) {
-            alert("❌ الرجاء اختيار صورة فقط (JPG, PNG, GIF, WEBP)\nPlease select an image file only (JPG, PNG, GIF, WEBP)");
+            alert("❌ Please select an image file only (JPG, PNG, GIF, WEBP)");
             e.target.value = "";
             return false;
           }
-          // التحقق من حجم الملف (أقل من 5MB)
+          // التحقق من حجم الملف 
           if (file.size > 5 * 1024 * 1024) {
-            alert("❌ حجم الصورة كبير جداً. الرجاء اختيار صورة أقل من 5MB\nImage size is too large. Please select an image less than 5MB");
+            alert("❌ Image size is too large. Please select an image less than 5MB");
             e.target.value = "";
             return false;
           }
-          console.log("✅ تم اختيار صورة صحيحة:", file.name);
+          console.log("✅ Image seccessfully selected:", file.name);
         }
       });
     }
@@ -281,17 +278,17 @@ document.addEventListener("DOMContentLoaded", function () {
         if (file) {
           var validVideoTypes = ["video/mp4", "video/webm", "video/ogg", "video/quicktime", "video/x-msvideo", "video/x-matroska"];
           if (!validVideoTypes.includes(file.type)) {
-            alert("❌ الرجاء اختيار فيديو فقط (MP4, WEBM, OGG, MOV, AVI, MKV)\nPlease select a video file only (MP4, WEBM, OGG, MOV, AVI, MKV)");
+            alert("❌ Please select a video file only (MP4, WEBM, OGG, MOV, AVI, MKV)");
             e.target.value = "";
             return false;
           }
           // التحقق من حجم الملف (أقل من 50MB)
           if (file.size > 50 * 1024 * 1024) {
-            alert("❌ حجم الفيديو كبير جداً. الرجاء اختيار فيديو أقل من 50MB\nVideo size is too large. Please select a video less than 50MB");
+            alert("❌ Video size is too large. Please select a video less than 50MB");
             e.target.value = "";
             return false;
           }
-          console.log("✅ تم اختيار فيديو صحيح:", file.name);
+          console.log("✅ Video seccessfully selected:", file.name);
         }
       });
     }

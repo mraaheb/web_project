@@ -1,4 +1,4 @@
-/* ========== View Recipe (Scoped) ========== */
+/* View Recipe */
 
 
 .page-view-recipe{
@@ -284,7 +284,7 @@
   color: rgba(12,26,30,.88);
 }
 
-/* Details head (Category داخل Details) */
+/* Details head  */
 .page-view-recipe .vr-detailsHead{
   display:flex;
   align-items:center;
@@ -526,7 +526,7 @@
   .page-view-recipe .vr-grid{ grid-template-columns: 1fr; }
   .page-view-recipe .vr-creator{ width: 100%; }
 }
-/* ========== ADMIN PAGE (append to end of Maraheb.css) ========== */
+/* ADMIN PAGE  */
 
 .ad-wrap{
   width: min(1150px, calc(100% - 40px));
@@ -597,10 +597,10 @@
 }
 
 /* Grid */
-/* ✅ FIX: one column so "Reported Recipes" comes UNDER "My Information" */
+
 .ad-grid{
   display:grid;
-  grid-template-columns: 1fr; /* كان عمودين وخرب الترتيب */
+  grid-template-columns: 1fr; 
   gap: 14px;
   align-items:start;
 }
@@ -843,14 +843,12 @@
   .ad-table{ min-width: 680px; }
 }
 /* =========================
-   ADMIN FIX: hide user icon nav in admin only
-========================= */
+   ADMIN FIX: hide user icon nav in admin only*/
 .page-admin .icons-nav,
 .page-admin .header-nav{
   display: none !important;
 }
 
-/* خلّي الهيدر مرتب: لوغو يسار + زر ساين اوت يمين */
 .page-admin .creative-header .header-inner{
   display: flex;
   align-items: center;
@@ -858,12 +856,10 @@
   gap: 14px;
 }
 
-/* تأكيد إن زر Sign Out يثبت يمين */
 .page-admin #signOutBtn{
   margin-left: auto;
 }
 
-/* (اختياري) لو تبين الهيدر أخف بالأدمن */
 .page-admin .creative-header{
   padding: 12px 0;
 }

@@ -1,84 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-  <title>VibeBite | Sign up</title>
+    <head>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <title>VibeBite | Sign up</title>
 
 
-  <link rel="stylesheet" href="../CSS/base.css" >
-  <link rel="stylesheet" href="../CSS/Fanar.css" >
-</head>
+        <link rel="stylesheet" href="../CSS/base.css" >
+        <link rel="stylesheet" href="../CSS/Fanar.css" >
+    </head>
 
-<body class="auth-page">
+    <body class="auth-page">
 
-  <main class="auth-layout">
-    <!-- LEFT IMAGE -->
-    <section class="auth-photo" aria-hidden="true">
-      <img src="../images/signup.jpg" alt="" loading="eager" fetchpriority="high">
-      <div class="photo-overlay">
-        <h2>Your mood. Your meal.</h2>
-        <p>Recipes chosen for your mood — easy, quick, and healthy.</p>
-      </div>
-    </section>
+        <main class="auth-layout">
+            <!-- LEFT IMAGE -->
+            <section class="auth-photo" aria-hidden="true">
+                <img src="../images/signup.jpg" alt="" loading="eager" fetchpriority="high">
+                <div class="photo-overlay">
+                    <h2>Your mood. Your meal.</h2>
+                    <p>Recipes chosen for your mood — easy, quick, and healthy.</p>
+                </div>
+            </section>
 
-    <!-- RIGHT  FORM -->
-    <section class="auth-panel">
-      <div class="auth-top">
-        <a class="auth-brand" href="index.html">
-          <img src="../images/logo.png" alt="VibeBite logo" class="auth-logo" >
-        </a>
-      </div>
+            <!-- RIGHT  FORM -->
+            <section class="auth-panel">
+                <div class="auth-top">
+                  <a class="auth-brand" href="index.html">
+                    <img src="../images/logo.png" alt="VibeBite logo" class="auth-logo" >
+                  </a>
+                </div>
 
-      <div class="auth-card">
-        <h1 class="auth-title center-title">Create your account ✨</h1>
-        <p class="auth-sub center-sub"> Sign up to save your favorite recipes.</p>
-        
-        <!--FORM -->
-        <form class="auth-form" id="signupForm" onsubmit="return goToUserPage();">
-          <div class="grid-2">
-            <div class="field">
-              <label class="field-label" for="firstName">First name <span class="required">*</span> </label>
-              <input class="field-input" id="firstName" name="firstName" type="text" placeholder="First name" required >
-            </div>
+                <div class="auth-card">
+                    <h1 class="auth-title center-title">Create your account ✨</h1>
+                    <p class="auth-sub center-sub"> Sign up to save your favorite recipes.</p>
 
-            <div class="field">
-              <label class="field-label" for="lastName">Last name <span class="required">*</span> </label>
-              <input class="field-input" id="lastName" name="lastName" type="text" placeholder="Last name" required >
-            </div>
-          </div>
+                    <!--FORM -->
+                    <form class="auth-form" id="signupForm" onsubmit="return goToUserPage();">
+                        <div class="grid-2">
+                            <div class="field">
+                                <label class="field-label" for="firstName">First name <span class="required">*</span> </label>
+                                <input class="field-input" id="firstName" name="firstName" type="text" placeholder="First name" required >
+                            </div>
 
-          <div class="field">
-            <label class="field-label" for="email">Email  <span class="required">*</span> </label>
-            <input class="field-input" id="email" name="email" type="email" placeholder="name@example.com" required >
-          </div>
+                            <div class="field">
+                                <label class="field-label" for="lastName">Last name <span class="required">*</span> </label>
+                                <input class="field-input" id="lastName" name="lastName" type="text" placeholder="Last name" required >
+                            </div>
+                        </div>
 
-          <div class="field">
-            <label class="field-label" for="password">Password <span class="required">*</span> </label>
-            <input class="field-input" id="password" name="password" type="password" placeholder="••••••••" required minlength="6" >
-          </div>
+                        <div class="field">
+                            <label class="field-label" for="email">Email  <span class="required">*</span> </label>
+                            <input class="field-input" id="email" name="email" type="email" placeholder="name@example.com" required >
+                        </div>
 
-          <div class="avatar-row">
-            <div class="avatar-pick">
-              <label class="field-label" for="profileImg">Profile image (optional)</label>
-              <input class="field-file" id="profileImg" name="profileImg" type="file" accept="image/*" >
-            </div>
-          </div>
+                        <div class="field">
+                            <label class="field-label" for="password">Password <span class="required">*</span> </label>
+                            <input class="field-input" id="password" name="password" type="password" placeholder="••••••••" required minlength="6" >
+                        </div>
 
-          <button class="btn btn-main" type="submit">Create account</button>
-          
-          
+                        <div class="avatar-row">
+                            <div class="avatar-pick">
+                                <label class="field-label" for="profileImg">Profile image (optional)</label>
+                                <input class="field-file" id="profileImg" name="profileImg" type="file" accept="image/*" >
+                            </div>
+                        </div>
 
-          <p class="auth-foot">
-            Already have an account?
-            <a href="login.html">Login</a>
-          </p>
-        </form>
-      </div>
+                        <button class="btn btn-main" type="submit">Create account</button>
 
-    </section>
-  </main>
 
-  <script src="script.js"></script>
-</body>
+
+                        <p class="auth-foot">
+                            Already have an account?
+                            <a href="login.html">Login</a>
+                        </p>
+                    </form>
+                </div>
+
+            </section>
+        </main>
+
+      <script src="script.js"></script>
+    </body>
 </html>

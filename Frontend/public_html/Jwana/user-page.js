@@ -1,18 +1,12 @@
-// ===========================
 // USER PAGE SCRIPT
-// ===========================
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  // =========================
-  // Count Recipes
-  // =========================
+  // Count Recipes 
   const recipeRows = document.querySelectorAll("#allRecipesTable tbody tr");
   document.getElementById("recipeCount").textContent = recipeRows.length;
 
-  // =========================
   // Count Total Likes
-  // =========================
   let totalLikes = 0;
   recipeRows.forEach(row => {
     const likesCell = row.cells[4];
@@ -20,17 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   document.getElementById("totalLikes").textContent = totalLikes;
 
-  // =========================
   // Welcome Name
-  // =========================
   const userNameText = document.getElementById("userNameText");
   if (userNameText) {
     userNameText.textContent = "Jwana Alothman";
   }
 
-  // =========================
   // Sign Out
-  // =========================
   const signOutBtn = document.getElementById("signOutBtn");
   if (signOutBtn) {
     signOutBtn.addEventListener("click", function () {
@@ -38,9 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // =========================
   // Add Recipe Button
-  // =========================
   const addRecipeBtn = document.getElementById("addRecipeBtn");
   if (addRecipeBtn) {
     addRecipeBtn.addEventListener("click", function () {
@@ -50,9 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-// =========================
 // Remove Favorite Button
-// =========================
 const removeButtons = document.querySelectorAll(".remove-btn");
 
 removeButtons.forEach(btn => {
@@ -65,9 +51,7 @@ removeButtons.forEach(btn => {
 });
 
 
-// =========================
-// FILTER FUNCTION (خليها خارج DOMContentLoaded)
-// =========================
+// FILTER FUNCTION 
 function applyFilter() {
 
   const selectedCategory = document
