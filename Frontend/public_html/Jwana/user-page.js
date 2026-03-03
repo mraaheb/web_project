@@ -1,73 +1,36 @@
 // ===========================
-// USER PAGE SCRIPT (PHASE 1)
+// USER PAGE SCRIPT
 // ===========================
 
 document.addEventListener("DOMContentLoaded", function () {
- // حساب عدد الوصفات
-  const recipeRows = document.querySelectorAll("#allRecipesTable tbody tr");
-  const recipeCount = recipeRows.length;
-  document.getElementById("recipeCount").textContent = recipeCount;
 
-  // حساب عدد الإعجابات الإجمالي
+  // =========================
+  // Count Recipes
+  // =========================
+  const recipeRows = document.querySelectorAll("#allRecipesTable tbody tr");
+  document.getElementById("recipeCount").textContent = recipeRows.length;
+
+  // =========================
+  // Count Total Likes
+  // =========================
   let totalLikes = 0;
   recipeRows.forEach(row => {
-    const likesCell = row.cells[4]; // الحصول على العمود الذي يحتوي على عدد الإعجابات
-    totalLikes += parseInt(likesCell.textContent); // إضافة الإعجاب للعدد الإجمالي
+    const likesCell = row.cells[4];
+    totalLikes += parseInt(likesCell.textContent);
   });
   document.getElementById("totalLikes").textContent = totalLikes;
-  /* =========================
-     1. Welcome user name
-     ========================= */
+
+  // =========================
+  // Welcome Name
+  // =========================
   const userNameText = document.getElementById("userNameText");
   if (userNameText) {
-    userNameText.textContent = "Jwana"; // static demo
+    userNameText.textContent = "Jwana Alothman";
   }
 
-  /* =========================
-     2. Like button (UI only)
-     ========================= */
-  const likeButtons = document.querySelectorAll('[data-action="like"]');
-
-  likeButtons.forEach(btn => {
-    btn.addEventListener("click", function () {
-      alert("Recipe liked!");
-    });
-  });
-
-  /* =========================
-     3. Favorite button (UI only)
-     ========================= */
-  const favButtons = document.querySelectorAll('[data-action="fav"]');
-
-  favButtons.forEach(btn => {
-    btn.addEventListener("click", function () {
-      alert("Added to favorites!");
-    });
-  });
-
-  /* =========================
-     4. Category filter (UI only)
-     ========================= */
-  const filter = document.getElementById("categoryFilter");
-  const rows = document.querySelectorAll("#allRecipesTable tbody tr");
-
-  if (filter) {
-    filter.addEventListener("change", function () {
-      const selected = this.value;
-
-      rows.forEach(row => {
-        if (selected === "all" || row.dataset.category === selected) {
-          row.style.display = "";
-        } else {
-          row.style.display = "none";
-        }
-      });
-    });
-  }
-
-  /* =========================
-     5. Sign out button
-     ========================= */
+  // =========================
+  // Sign Out
+  // =========================
   const signOutBtn = document.getElementById("signOutBtn");
   if (signOutBtn) {
     signOutBtn.addEventListener("click", function () {
@@ -75,14 +38,57 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-});
-document.addEventListener("DOMContentLoaded", function () {
+  // =========================
+  // Add Recipe Button
+  // =========================
   const addRecipeBtn = document.getElementById("addRecipeBtn");
-
   if (addRecipeBtn) {
     addRecipeBtn.addEventListener("click", function () {
-      // عند النقر على الزر، سيتم تحويل المستخدم إلى الصفحة المطلوبة
-      window.location.href = "../Lujain/Add recipe.html"; //
+      window.location.href = "../Lujain/Add recipe.html";
     });
   }
+
 });
+
+// =========================
+// Remove Favorite Button
+// =========================
+const removeButtons = document.querySelectorAll(".remove-btn");
+
+removeButtons.forEach(btn => {
+  btn.addEventListener("click", function () {
+
+    // يرجع لنفس صفحة اليوزر بدون أي رسالة
+    window.location.reload();
+
+  });
+});
+
+
+// =========================
+// FILTER FUNCTION (خليها خارج DOMContentLoaded)
+// =========================
+function applyFilter() {
+
+  const selectedCategory = document
+    .getElementById("categoryFilter")
+    .value
+    .toLowerCase();
+
+  const rows = document.querySelectorAll("#allRecipesTable tbody tr");
+
+  rows.forEach(row => {
+
+    const rowCategory = row
+      .getAttribute("data-category")
+      .toLowerCase();
+
+    if (selectedCategory === "all" || rowCategory === selectedCategory) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+
+  });
+
+}

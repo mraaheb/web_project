@@ -17,21 +17,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-
-  // =========================
-  // Delete Button
-  // =========================
-  const deleteButtons = document.querySelectorAll(".delete-btn");
+  /* =========================
+     2. Delete button (disabled)
+     ========================= */
+  const deleteButtons = document.querySelectorAll(".btn-outline");
 
   deleteButtons.forEach(btn => {
-    btn.addEventListener("click", function () {
-
-      // إعادة تحميل نفس الصفحة بدون أي رسالة
-      window.location.reload();
-
-    });
+    if (btn.textContent.trim() === "Delete") {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        alert("Delete is not functional in Phase 1.");
+      });
+    }
   });
 
+ 
   /* =========================
      5. Sign out button
      ========================= */
@@ -45,3 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
 });
+
+
+

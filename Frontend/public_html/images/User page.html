@@ -7,7 +7,7 @@
   <title>VibeBite | User</title>
 
   <link rel="stylesheet" href="../CSS/base.css">
-  <link rel="stylesheet" href="my-style.css">
+  <link rel="stylesheet" href="../CSS/Jwana.css">
 </head>
 
 <body id="page-user" >
@@ -27,6 +27,8 @@
             </div>
 
             <nav class="header-nav icons-nav">
+
+                
 
                 <a href="../Jwana/User page.html" class="nav-item nav-user">
                   <img src="../images/userr.png" alt="User">
@@ -61,6 +63,8 @@
               <span>Sign Out</span>
             </button>
 
+            
+
         </div>
     </header>
    
@@ -78,54 +82,65 @@
       </div>
 
       <!-- User Info -->
-      <div class="user-card">
-        <div class="user-info">
-          <img
-            id="userAvatar"
-            src="../images/default-user.png"
-            alt="User profile"
-          >
-          <div>
-            <div class="user-name" id="userFullName">Jwana Alothman</div>
-            <div class="muted" id="userEmail">Jwana@email.com</div>
-          </div>
+      <section class="panel">
+        <div class="panel-head">
+          <h2>User Information</h2>
+          <a class="btn btn-primary small-btn" href="My recipes.html">
+            Go to My Recipes
+          </a>
         </div>
 
-        <div class="user-stats">
-          <p>
-            <strong>Number of Recipes:</strong>
-            <span id="recipeCount">0</span>
-          </p>
-          <p>
-            <strong>Total Likes:</strong>
-            <span id="totalLikes">0</span>
-          </p>
+        <div class="user-card">
+          <div class="user-info">
+            <img
+              id="userAvatar"
+              src="../images/default-user.png"
+              alt="User profile"
+              style="
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid #ddd;
+              "
+            >
+            <div>
+              <div class="user-name" id="userFullName">Guest User</div>
+              <div class="muted" id="userEmail">guest@email.com</div>
+            </div>
+          </div>
+
+          <div class="user-stats">
+            <p>
+              <strong>Number of Recipes:</strong>
+              <span id="recipeCount">0</span>
+            </p>
+            <p>
+              <strong>Total Likes:</strong>
+              <span id="totalLikes">0</span>
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
 
       <!-- All Recipes + Filter -->
       <section class="panel">
-        <div class="panel-head filter-head">
-
+        <div class="panel-head">
           <h2>All Available Recipes</h2>
 
           <div class="filter-row">
+            <label class="muted" for="categoryFilter">Filter by category:</label>
             <select id="categoryFilter" class="select">
-              <option value="all">All Categories</option>
+              <option value="all">All</option>
               <option value="breakfast">Breakfast</option>
               <option value="lunch">Lunch</option>
               <option value="dinner">Dinner</option>
               <option value="snack">Snack</option>
               <option value="drink">Drink</option>
             </select>
-
-            <button class="filter-btn" onclick="applyFilter()">
-              Filter
-            </button>
           </div>
-
         </div>
-          
+
         <div class="table-wrap">
           <table class="table" id="allRecipesTable">
             <thead>
@@ -218,7 +233,7 @@
       <section class="panel">
         <div class="panel-head">
           <h2>My Favorite Recipes</h2>
-          <p class="muted">Your saved favorites</p>
+          <p class="muted">.</p>
         </div>
 
         <div class="table-wrap">
@@ -249,7 +264,9 @@
                   Alice Smith
                 </td>
                 <td>
-                  <button class="btn remove-btn mini">Remove</button>
+                  <button class="btn btn-outline mini" onclick="removeFavorite();">
+                    Remove
+                  </button>
                 </td>
               </tr>
             </tbody>
@@ -257,15 +274,9 @@
         </div>
       </section>
 
-      <!-- Action Buttons  -->
-      <div class="page-end-actions">
-        <a class="btn btn-main" href="My recipes.html">
-          📖 Go to My Recipes
-        </a>
-        <a class="btn btn-main" href="../Lujain/Add recipe.html">
-          ➕ Add New Recipe
-        </a>
-      </div>
+      <button id="addRecipeBtn" class="btn btn-main">
+        Add New Recipe
+      </button>
 
     </div>
   </main>
